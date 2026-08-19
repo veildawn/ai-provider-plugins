@@ -3,7 +3,7 @@
   "plugins": [
     {
       "id": "qoder",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "type": "integration",
       "name": {
         "en": "Qoder CN (Lingma)",
@@ -28,11 +28,11 @@
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.14.0"
+      "min_app_version": "0.15.0"
     },
     {
       "id": "qoder-intl",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "type": "integration",
       "name": {
         "en": "Qoder International",
@@ -56,7 +56,7 @@
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.14.0"
+      "min_app_version": "0.15.0"
     },
     {
       "id": "workbuddy",
@@ -147,7 +147,7 @@
     },
     {
       "id": "cursor",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "type": "integration",
       "name": {
         "en": "Cursor",
@@ -171,7 +171,7 @@
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.14.0"
+      "min_app_version": "0.15.0"
     },
     {
       "id": "antigravity",
@@ -233,7 +233,7 @@
     },
     {
       "id": "qianwen",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "type": "integration",
       "name": {
         "en": "Qianwen Token Plan",
@@ -258,11 +258,11 @@
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.14.0"
+      "min_app_version": "0.15.0"
     },
     {
       "id": "ark",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "type": "integration",
       "name": {
         "en": "Volcengine Ark Plans",
@@ -289,11 +289,11 @@
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.14.0"
+      "min_app_version": "0.15.0"
     },
     {
       "id": "stepfun",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "type": "integration",
       "name": {
         "en": "StepFun Step Plan",
@@ -320,7 +320,7 @@
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.14.0"
+      "min_app_version": "0.15.0"
     },
     {
       "id": "mimo",
@@ -345,6 +345,36 @@
       "tags": [
         "cn",
         "xiaomi"
+      ],
+      "publisher": "veildawn",
+      "updated_at": "2026-08-19",
+      "key_id": "ed25519:a2b36ebc3a600442",
+      "min_app_version": "0.14.0"
+    },
+    {
+      "id": "glm",
+      "version": "1.0.0",
+      "type": "integration",
+      "name": {
+        "en": "GLM Coding Plan",
+        "zh": "GLM Coding Plan"
+      },
+      "description": {
+        "en": "GLM Coding Plan (Zhipu) quota windows and model catalog carried by the provider plugin.",
+        "zh": "由 Provider 插件提供 GLM Coding Plan（智谱）配额窗口与模型目录。"
+      },
+      "provider_name": "glm",
+      "protocols": [
+        "openai",
+        "anthropic"
+      ],
+      "capabilities": [
+        "provider",
+        "wasm"
+      ],
+      "tags": [
+        "cn",
+        "zhipu"
       ],
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
@@ -382,7 +412,7 @@
     },
     {
       "id": "opencode-zen",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "type": "integration",
       "name": {
         "en": "OpenCode Zen",
@@ -408,7 +438,7 @@
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.14.0"
+      "min_app_version": "0.15.0"
     }
   ]
 }
