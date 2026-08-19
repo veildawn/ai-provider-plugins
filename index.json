@@ -60,22 +60,23 @@
     },
     {
       "id": "workbuddy",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "type": "integration",
       "name": {
-        "zh": "WorkBuddy（腾讯 CodeBuddy）",
-        "en": "WorkBuddy (Tencent CodeBuddy)"
+        "en": "WorkBuddy (Tencent CodeBuddy)",
+        "zh": "WorkBuddy（腾讯 CodeBuddy）"
       },
       "description": {
-        "zh": "Keycloak 会话登录 + /v2/chat/completions。",
-        "en": "Keycloak session login plus the /v2/chat/completions surface."
+        "en": "WorkBuddy quota and account model catalog carried by the provider plugin.",
+        "zh": "由 Provider 插件提供 WorkBuddy 配额与账号模型目录。"
       },
       "provider_name": "workbuddy",
       "protocols": [
         "openai"
       ],
       "capabilities": [
-        "provider"
+        "provider",
+        "wasm"
       ],
       "tags": [
         "cn",
@@ -83,19 +84,20 @@
       ],
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
-      "key_id": "ed25519:4da5f976df1e1bfb"
+      "key_id": "ed25519:4da5f976df1e1bfb",
+      "min_app_version": "0.14.0"
     },
     {
       "id": "kimi",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "type": "integration",
       "name": {
-        "zh": "Kimi（月之暗面）",
-        "en": "Kimi (Moonshot)"
+        "en": "Kimi (Moonshot)",
+        "zh": "Kimi（月之暗面）"
       },
       "description": {
-        "zh": "Kimi Coding API：设备码登录 + CLI 指纹。",
-        "en": "Kimi Coding API: device-flow login plus the CLI fingerprint."
+        "en": "Kimi Coding usage windows and model catalog carried by the provider plugin.",
+        "zh": "由 Provider 插件提供 Kimi Coding 用量窗口与模型目录。"
       },
       "provider_name": "kimi",
       "protocols": [
@@ -103,7 +105,8 @@
         "openai"
       ],
       "capabilities": [
-        "provider"
+        "provider",
+        "wasm"
       ],
       "tags": [
         "cn",
@@ -111,7 +114,8 @@
       ],
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
-      "key_id": "ed25519:4da5f976df1e1bfb"
+      "key_id": "ed25519:4da5f976df1e1bfb",
+      "min_app_version": "0.14.0"
     },
     {
       "id": "kiro",
@@ -280,15 +284,15 @@
     },
     {
       "id": "xai",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "type": "integration",
       "name": {
-        "zh": "xAI",
-        "en": "xAI"
+        "en": "xAI",
+        "zh": "xAI"
       },
       "description": {
-        "zh": "第一方 xAI OAuth：设备码登录 + Grok 计费。",
-        "en": "First-party xAI OAuth: device-flow login plus Grok billing."
+        "en": "xAI Grok billing windows, rate-limit parsing and model listing carried by the provider plugin.",
+        "zh": "由 Provider 插件提供 xAI Grok 计费窗口、速率限制解析与模型目录。"
       },
       "provider_name": "xai",
       "protocols": [
@@ -296,7 +300,8 @@
         "anthropic"
       ],
       "capabilities": [
-        "provider"
+        "provider",
+        "wasm"
       ],
       "tags": [
         "xai",
@@ -304,7 +309,187 @@
       ],
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
-      "key_id": "ed25519:4da5f976df1e1bfb"
+      "key_id": "ed25519:4da5f976df1e1bfb",
+      "min_app_version": "0.14.0"
+    },
+    {
+      "id": "qianwen",
+      "version": "1.0.0",
+      "type": "integration",
+      "name": {
+        "en": "Qianwen Token Plan",
+        "zh": "千问 Token Plan"
+      },
+      "description": {
+        "en": "Qianwen console quota windows and subscription model catalog carried by the provider plugin.",
+        "zh": "由 Provider 插件提供千问控制台配额窗口与订阅模型目录。"
+      },
+      "provider_name": "qianwen",
+      "protocols": [
+        "anthropic"
+      ],
+      "capabilities": [
+        "provider",
+        "wasm"
+      ],
+      "tags": [
+        "cn",
+        "alibaba"
+      ],
+      "publisher": "veildawn",
+      "updated_at": "2026-08-19",
+      "key_id": "ed25519:4da5f976df1e1bfb",
+      "min_app_version": "0.14.0"
+    },
+    {
+      "id": "ark",
+      "version": "1.0.0",
+      "type": "integration",
+      "name": {
+        "en": "Volcengine Ark Plans",
+        "zh": "火山方舟套餐"
+      },
+      "description": {
+        "en": "Signed Ark Agent Plan, Team seat and Coding Plan quota plus model catalogs.",
+        "zh": "方舟 Agent Plan、团队席位与 Coding Plan 签名配额及模型目录。"
+      },
+      "provider_name": "ark",
+      "protocols": [
+        "openai",
+        "anthropic",
+        "responses"
+      ],
+      "capabilities": [
+        "provider",
+        "wasm"
+      ],
+      "tags": [
+        "cn",
+        "volcengine"
+      ],
+      "publisher": "veildawn",
+      "updated_at": "2026-08-19",
+      "key_id": "ed25519:4da5f976df1e1bfb",
+      "min_app_version": "0.14.0"
+    },
+    {
+      "id": "stepfun",
+      "version": "1.0.0",
+      "type": "integration",
+      "name": {
+        "en": "StepFun Step Plan",
+        "zh": "阶跃星辰 Step Plan"
+      },
+      "description": {
+        "en": "Step Plan credit and rolling-window quota carried by the provider plugin.",
+        "zh": "由 Provider 插件提供 Step Plan Credits 与滚动窗口配额。"
+      },
+      "provider_name": "stepfun",
+      "protocols": [
+        "openai",
+        "anthropic",
+        "responses"
+      ],
+      "capabilities": [
+        "provider",
+        "wasm"
+      ],
+      "tags": [
+        "cn",
+        "stepfun"
+      ],
+      "publisher": "veildawn",
+      "updated_at": "2026-08-19",
+      "key_id": "ed25519:4da5f976df1e1bfb",
+      "min_app_version": "0.14.0"
+    },
+    {
+      "id": "mimo",
+      "version": "1.0.0",
+      "type": "integration",
+      "name": {
+        "en": "MiMo Token Plan",
+        "zh": "MiMo Token Plan"
+      },
+      "description": {
+        "en": "MiMo monthly and plan Credit usage plus model listing carried by the provider plugin.",
+        "zh": "由 Provider 插件提供 MiMo 月度与套餐 Credits 用量及模型目录。"
+      },
+      "provider_name": "mimo",
+      "protocols": [
+        "openai"
+      ],
+      "capabilities": [
+        "provider",
+        "wasm"
+      ],
+      "tags": [
+        "cn",
+        "xiaomi"
+      ],
+      "publisher": "veildawn",
+      "updated_at": "2026-08-19",
+      "key_id": "ed25519:4da5f976df1e1bfb",
+      "min_app_version": "0.14.0"
+    },
+    {
+      "id": "opencode-go",
+      "version": "1.0.0",
+      "type": "integration",
+      "name": {
+        "en": "OpenCode Go",
+        "zh": "OpenCode Go"
+      },
+      "description": {
+        "en": "OpenCode Go console usage windows and model listing carried by the provider plugin.",
+        "zh": "由 Provider 插件提供 OpenCode Go 控制台用量窗口与模型目录。"
+      },
+      "provider_name": "opencode-go",
+      "protocols": [
+        "openai",
+        "responses"
+      ],
+      "capabilities": [
+        "provider",
+        "wasm"
+      ],
+      "tags": [
+        "opencode"
+      ],
+      "publisher": "veildawn",
+      "updated_at": "2026-08-19",
+      "key_id": "ed25519:4da5f976df1e1bfb",
+      "min_app_version": "0.14.0"
+    },
+    {
+      "id": "opencode-zen",
+      "version": "1.0.0",
+      "type": "integration",
+      "name": {
+        "en": "OpenCode Zen",
+        "zh": "OpenCode Zen"
+      },
+      "description": {
+        "en": "OpenCode Zen prepaid balance and model listing carried by the provider plugin.",
+        "zh": "由 Provider 插件提供 OpenCode Zen 预付余额与模型目录。"
+      },
+      "provider_name": "opencode",
+      "protocols": [
+        "openai",
+        "anthropic",
+        "responses"
+      ],
+      "capabilities": [
+        "provider",
+        "wasm"
+      ],
+      "tags": [
+        "opencode"
+      ],
+      "publisher": "veildawn",
+      "updated_at": "2026-08-19",
+      "key_id": "ed25519:4da5f976df1e1bfb",
+      "min_app_version": "0.14.0"
     }
   ]
 }
