@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "id": "kimi",
+  "type": "integration",
+  "version": "1.0.0",
+  "name": {
+    "en": "Kimi (Moonshot)",
+    "zh": "Kimi（月之暗面）"
+  },
+  "description": {
+    "en": "Kimi Coding API: device-flow login plus the CLI fingerprint.",
+    "zh": "Kimi Coding API：设备码登录 + CLI 指纹。"
+  },
+  "homepage": "https://api.kimi.com",
+  "author": "veildawn",
+  "publisher": "veildawn",
+  "signature": {
+    "alg": "ed25519",
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "mb1Vtk8+Zmx9JnX5JrnIEf64vsMroLEqysIvGASxtI1eL3Cb7s2rPPDXe3ZmZs5mysF1tVvPlHbYQWocqdLrAQ=="
+  },
+  "provides": {
+    "providers": [
+      {
+        "name": "kimi",
+        "display_name": "Kimi",
+        "transport": "kimi-code",
+        "protocols": [
+          "anthropic",
+          "openai"
+        ],
+        "base_url": "https://api.kimi.com/coding"
+      }
+    ]
+  }
+}

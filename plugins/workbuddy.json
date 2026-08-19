@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "id": "workbuddy",
+  "type": "integration",
+  "version": "1.0.0",
+  "name": {
+    "en": "WorkBuddy (Tencent CodeBuddy)",
+    "zh": "WorkBuddy（腾讯 CodeBuddy）"
+  },
+  "description": {
+    "en": "Keycloak session login plus the /v2/chat/completions surface.",
+    "zh": "Keycloak 会话登录 + /v2/chat/completions。"
+  },
+  "homepage": "https://copilot.tencent.com",
+  "author": "veildawn",
+  "publisher": "veildawn",
+  "signature": {
+    "alg": "ed25519",
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "TbCbTuRUmrerHAwk79HZTH7rnnAsT8dQetVdyLGhgUTXC8LtBdXbQp6ChVBKqenyqjh4a5nGcvBWzhes5lqUAA=="
+  },
+  "provides": {
+    "providers": [
+      {
+        "name": "workbuddy",
+        "display_name": "WorkBuddy",
+        "transport": "keycloak",
+        "base_url": "https://copilot.tencent.com"
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "id": "google-ai-studio",
+  "type": "integration",
+  "version": "1.0.0",
+  "name": {
+    "en": "Google AI Studio",
+    "zh": "Google AI Studio"
+  },
+  "description": {
+    "en": "The public Gemini API with x-goog-api-key auth.",
+    "zh": "Gemini 公开 API：x-goog-api-key。"
+  },
+  "homepage": "https://aistudio.google.com",
+  "author": "veildawn",
+  "publisher": "veildawn",
+  "signature": {
+    "alg": "ed25519",
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "eNMGSeE4HPbb76PpPBahtOWEY8h2yo5slgjGdzDSgpA8oA502t5L+/Z+Ooh49jHK0XbbWuNPmMObt92gnhZCAQ=="
+  },
+  "docs": {
+    "en": "Paste an AI Studio API key as the account.",
+    "zh": "粘贴 AI Studio API key 作为账号。"
+  },
+  "provides": {
+    "providers": [
+      {
+        "name": "google-ai-studio",
+        "display_name": "Google AI Studio",
+        "transport": "gemini-aistudio",
+        "base_url": "https://generativelanguage.googleapis.com",
+        "operation_url": true
+      }
+    ]
+  }
+}

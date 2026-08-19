@@ -1,0 +1,310 @@
+{
+  "version": 1,
+  "plugins": [
+    {
+      "id": "qoder",
+      "version": "2.0.0",
+      "type": "integration",
+      "name": {
+        "en": "Qoder CN (Lingma)",
+        "zh": "Qoder（通义灵码）"
+      },
+      "description": {
+        "en": "Qoder CN with COSY signing and stream decoding carried by the plugin.",
+        "zh": "插件自带 COSY 签名与流解码的 Qoder 国内版。"
+      },
+      "provider_name": "qoder",
+      "protocols": [
+        "openai"
+      ],
+      "capabilities": [
+        "provider",
+        "wasm"
+      ],
+      "tags": [
+        "cn",
+        "alibaba"
+      ],
+      "publisher": "veildawn",
+      "updated_at": "2026-08-19",
+      "key_id": "ed25519:4da5f976df1e1bfb",
+      "min_app_version": "0.14.0"
+    },
+    {
+      "id": "qoder-intl",
+      "version": "2.0.0",
+      "type": "integration",
+      "name": {
+        "en": "Qoder International",
+        "zh": "Qoder 国际版"
+      },
+      "description": {
+        "en": "Qoder International with COSY signing and stream decoding carried by the plugin.",
+        "zh": "插件自带 COSY 签名与流解码的 Qoder 国际版。"
+      },
+      "provider_name": "qoder-intl",
+      "protocols": [
+        "openai"
+      ],
+      "capabilities": [
+        "provider",
+        "wasm"
+      ],
+      "tags": [
+        "intl"
+      ],
+      "publisher": "veildawn",
+      "updated_at": "2026-08-19",
+      "key_id": "ed25519:4da5f976df1e1bfb",
+      "min_app_version": "0.14.0"
+    },
+    {
+      "id": "workbuddy",
+      "version": "1.0.0",
+      "type": "integration",
+      "name": {
+        "zh": "WorkBuddy（腾讯 CodeBuddy）",
+        "en": "WorkBuddy (Tencent CodeBuddy)"
+      },
+      "description": {
+        "zh": "Keycloak 会话登录 + /v2/chat/completions。",
+        "en": "Keycloak session login plus the /v2/chat/completions surface."
+      },
+      "provider_name": "workbuddy",
+      "protocols": [
+        "openai"
+      ],
+      "capabilities": [
+        "provider"
+      ],
+      "tags": [
+        "cn",
+        "tencent"
+      ],
+      "publisher": "veildawn",
+      "updated_at": "2026-08-19",
+      "key_id": "ed25519:4da5f976df1e1bfb"
+    },
+    {
+      "id": "kimi",
+      "version": "1.0.0",
+      "type": "integration",
+      "name": {
+        "zh": "Kimi（月之暗面）",
+        "en": "Kimi (Moonshot)"
+      },
+      "description": {
+        "zh": "Kimi Coding API：设备码登录 + CLI 指纹。",
+        "en": "Kimi Coding API: device-flow login plus the CLI fingerprint."
+      },
+      "provider_name": "kimi",
+      "protocols": [
+        "anthropic",
+        "openai"
+      ],
+      "capabilities": [
+        "provider"
+      ],
+      "tags": [
+        "cn",
+        "moonshot"
+      ],
+      "publisher": "veildawn",
+      "updated_at": "2026-08-19",
+      "key_id": "ed25519:4da5f976df1e1bfb"
+    },
+    {
+      "id": "kiro",
+      "version": "2.0.0",
+      "type": "integration",
+      "name": {
+        "en": "Kiro (CodeWhisperer)",
+        "zh": "Kiro（CodeWhisperer）"
+      },
+      "description": {
+        "en": "Kiro provider with CodeWhisperer framing, account metadata and quota code carried by the plugin.",
+        "zh": "插件自带 CodeWhisperer 帧、账号元数据与配额代码的 Kiro Provider。"
+      },
+      "provider_name": "kiro",
+      "protocols": [
+        "anthropic"
+      ],
+      "capabilities": [
+        "provider",
+        "wasm"
+      ],
+      "tags": [
+        "aws"
+      ],
+      "publisher": "veildawn",
+      "updated_at": "2026-08-19",
+      "key_id": "ed25519:4da5f976df1e1bfb",
+      "min_app_version": "0.14.0"
+    },
+    {
+      "id": "cursor",
+      "version": "2.0.0",
+      "type": "integration",
+      "name": {
+        "en": "Cursor",
+        "zh": "Cursor"
+      },
+      "description": {
+        "en": "Cursor IDE provider with Connect-RPC code carried by the plugin.",
+        "zh": "由插件自带 Connect-RPC 代码的 Cursor IDE Provider。"
+      },
+      "provider_name": "cursor",
+      "protocols": [
+        "openai"
+      ],
+      "capabilities": [
+        "provider",
+        "wasm"
+      ],
+      "tags": [
+        "cursor"
+      ],
+      "publisher": "veildawn",
+      "updated_at": "2026-08-19",
+      "key_id": "ed25519:4da5f976df1e1bfb",
+      "min_app_version": "0.14.0"
+    },
+    {
+      "id": "antigravity",
+      "version": "2.0.0",
+      "type": "integration",
+      "name": {
+        "en": "Antigravity",
+        "zh": "Antigravity"
+      },
+      "description": {
+        "en": "Google Antigravity provider with v1internal envelope code carried by the plugin.",
+        "zh": "插件自带 Google v1internal 包装代码的 Antigravity Provider。"
+      },
+      "provider_name": "antigravity",
+      "protocols": [
+        "openai"
+      ],
+      "capabilities": [
+        "provider",
+        "wasm"
+      ],
+      "tags": [
+        "google"
+      ],
+      "publisher": "veildawn",
+      "updated_at": "2026-08-19",
+      "key_id": "ed25519:4da5f976df1e1bfb",
+      "min_app_version": "0.14.0"
+    },
+    {
+      "id": "google-ai-studio",
+      "version": "1.0.0",
+      "type": "integration",
+      "name": {
+        "zh": "Google AI Studio",
+        "en": "Google AI Studio"
+      },
+      "description": {
+        "zh": "Gemini 公开 API：x-goog-api-key。",
+        "en": "The public Gemini API with x-goog-api-key auth."
+      },
+      "provider_name": "google-ai-studio",
+      "protocols": [
+        "openai"
+      ],
+      "capabilities": [
+        "provider"
+      ],
+      "tags": [
+        "google",
+        "gemini"
+      ],
+      "publisher": "veildawn",
+      "updated_at": "2026-08-19",
+      "key_id": "ed25519:4da5f976df1e1bfb"
+    },
+    {
+      "id": "openai",
+      "version": "1.0.0",
+      "type": "integration",
+      "name": {
+        "zh": "OpenAI（OAuth 通道）",
+        "en": "OpenAI (OAuth channel)"
+      },
+      "description": {
+        "zh": "第一方 OpenAI OAuth：ChatGPT 订阅后端。",
+        "en": "First-party OpenAI OAuth: the ChatGPT subscription backend."
+      },
+      "provider_name": "openai",
+      "protocols": [
+        "openai",
+        "responses"
+      ],
+      "capabilities": [
+        "provider"
+      ],
+      "tags": [
+        "openai"
+      ],
+      "publisher": "veildawn",
+      "updated_at": "2026-08-19",
+      "key_id": "ed25519:4da5f976df1e1bfb"
+    },
+    {
+      "id": "anthropic",
+      "version": "1.0.0",
+      "type": "integration",
+      "name": {
+        "zh": "Anthropic（OAuth 通道）",
+        "en": "Anthropic (OAuth channel)"
+      },
+      "description": {
+        "zh": "第一方 Anthropic OAuth：Claude Code CLI 模拟。",
+        "en": "First-party Anthropic OAuth with Claude Code CLI mimicry."
+      },
+      "provider_name": "anthropic",
+      "protocols": [
+        "anthropic"
+      ],
+      "capabilities": [
+        "provider"
+      ],
+      "tags": [
+        "anthropic",
+        "claude"
+      ],
+      "publisher": "veildawn",
+      "updated_at": "2026-08-19",
+      "key_id": "ed25519:4da5f976df1e1bfb"
+    },
+    {
+      "id": "xai",
+      "version": "1.0.0",
+      "type": "integration",
+      "name": {
+        "zh": "xAI",
+        "en": "xAI"
+      },
+      "description": {
+        "zh": "第一方 xAI OAuth：设备码登录 + Grok 计费。",
+        "en": "First-party xAI OAuth: device-flow login plus Grok billing."
+      },
+      "provider_name": "xai",
+      "protocols": [
+        "openai",
+        "anthropic"
+      ],
+      "capabilities": [
+        "provider"
+      ],
+      "tags": [
+        "xai",
+        "grok"
+      ],
+      "publisher": "veildawn",
+      "updated_at": "2026-08-19",
+      "key_id": "ed25519:4da5f976df1e1bfb"
+    }
+  ]
+}

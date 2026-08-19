@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "id": "xai",
+  "type": "integration",
+  "version": "1.0.0",
+  "name": {
+    "en": "xAI",
+    "zh": "xAI"
+  },
+  "description": {
+    "en": "First-party xAI OAuth: device-flow login plus Grok billing.",
+    "zh": "第一方 xAI OAuth：设备码登录 + Grok 计费。"
+  },
+  "homepage": "https://x.ai",
+  "author": "veildawn",
+  "publisher": "veildawn",
+  "signature": {
+    "alg": "ed25519",
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "BYAHT1jwqHfYLsFJn9VoTjbV4oc6hq5Mw+HD4FC6IHdossKQETn0G+FJnvtX3mTgJPzR1ZRXPAUwc51wNcszDQ=="
+  },
+  "provides": {
+    "providers": [
+      {
+        "name": "xai",
+        "display_name": "xAI",
+        "transport": "xai-oai",
+        "protocols": [
+          "openai",
+          "anthropic"
+        ],
+        "base_url": "https://api.x.ai"
+      }
+    ]
+  }
+}

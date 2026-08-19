@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "id": "openai",
+  "type": "integration",
+  "version": "1.0.0",
+  "name": {
+    "en": "OpenAI (OAuth channel)",
+    "zh": "OpenAI（OAuth 通道）"
+  },
+  "description": {
+    "en": "First-party OpenAI OAuth: the ChatGPT subscription backend.",
+    "zh": "第一方 OpenAI OAuth：ChatGPT 订阅后端。"
+  },
+  "homepage": "https://openai.com",
+  "author": "veildawn",
+  "publisher": "veildawn",
+  "signature": {
+    "alg": "ed25519",
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "AopTeZSLa9ljj01fp7HFXUe7qy5JdBeGvTvYc4nPXECSrk4kQxg8d5v7cqRbur9uzRjQdbKAC8PbuF4acvu1CQ=="
+  },
+  "provides": {
+    "providers": [
+      {
+        "name": "openai",
+        "display_name": "OpenAI",
+        "transport": "openai-oai",
+        "protocols": [
+          "openai",
+          "responses"
+        ],
+        "base_url": "https://api.openai.com"
+      }
+    ]
+  }
+}
