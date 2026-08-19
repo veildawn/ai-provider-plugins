@@ -27,7 +27,7 @@
       ],
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
-      "key_id": "ed25519:4da5f976df1e1bfb",
+      "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.14.0"
     },
     {
@@ -55,7 +55,7 @@
       ],
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
-      "key_id": "ed25519:4da5f976df1e1bfb",
+      "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.14.0"
     },
     {
@@ -84,7 +84,7 @@
       ],
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
-      "key_id": "ed25519:4da5f976df1e1bfb",
+      "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.14.0"
     },
     {
@@ -114,12 +114,12 @@
       ],
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
-      "key_id": "ed25519:4da5f976df1e1bfb",
+      "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.14.0"
     },
     {
       "id": "kiro",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "type": "integration",
       "name": {
         "en": "Kiro (CodeWhisperer)",
@@ -142,7 +142,7 @@
       ],
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
-      "key_id": "ed25519:4da5f976df1e1bfb",
+      "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.14.0"
     },
     {
@@ -170,12 +170,12 @@
       ],
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
-      "key_id": "ed25519:4da5f976df1e1bfb",
+      "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.14.0"
     },
     {
       "id": "antigravity",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "type": "integration",
       "name": {
         "en": "Antigravity",
@@ -198,7 +198,7 @@
       ],
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
-      "key_id": "ed25519:4da5f976df1e1bfb",
+      "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.14.0"
     },
     {
@@ -309,7 +309,7 @@
       ],
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
-      "key_id": "ed25519:4da5f976df1e1bfb",
+      "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.14.0"
     },
     {
@@ -338,7 +338,7 @@
       ],
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
-      "key_id": "ed25519:4da5f976df1e1bfb",
+      "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.14.0"
     },
     {
@@ -369,7 +369,7 @@
       ],
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
-      "key_id": "ed25519:4da5f976df1e1bfb",
+      "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.14.0"
     },
     {
@@ -400,7 +400,7 @@
       ],
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
-      "key_id": "ed25519:4da5f976df1e1bfb",
+      "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.14.0"
     },
     {
@@ -429,7 +429,7 @@
       ],
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
-      "key_id": "ed25519:4da5f976df1e1bfb",
+      "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.14.0"
     },
     {
@@ -458,7 +458,7 @@
       ],
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
-      "key_id": "ed25519:4da5f976df1e1bfb",
+      "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.14.0"
     },
     {
@@ -488,7 +488,7 @@
       ],
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
-      "key_id": "ed25519:4da5f976df1e1bfb",
+      "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.14.0"
     }
   ]

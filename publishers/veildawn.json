@@ -1,9 +1,17 @@
 {
   "handle": "veildawn",
-  "keys": [{
-    "key_id": "ed25519:4da5f976df1e1bfb",
-    "alg": "ed25519",
-    "public_key": "TaX5dt8eG/vhX3WQ0OMD7XaoWoIuglDESGHJxGJBevk=",
-    "created_at": "2026-08-19T00:00:00Z"
-  }]
+  "keys": [
+    {
+      "key_id": "ed25519:4da5f976df1e1bfb",
+      "alg": "ed25519",
+      "public_key": "TaX5dt8eG/vhX3WQ0OMD7XaoWoIuglDESGHJxGJBevk=",
+      "created_at": "2026-08-19T00:00:00Z"
+    },
+    {
+      "key_id": "ed25519:a2b36ebc3a600442",
+      "alg": "ed25519",
+      "public_key": "orNuvDpgBEI0iM0CcJELmA1z3jsivJSRwUjzhhblzLE=",
+      "created_at": "2026-08-19T11:11:46Z"
+    }
+  ]
 }
