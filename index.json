@@ -3,7 +3,7 @@
   "plugins": [
     {
       "id": "qoder",
-      "version": "2.0.0",
+      "version": "1.0.0",
       "type": "integration",
       "name": {
         "en": "Qoder CN (Lingma)",
@@ -32,7 +32,7 @@
     },
     {
       "id": "qoder-intl",
-      "version": "2.0.0",
+      "version": "1.0.0",
       "type": "integration",
       "name": {
         "en": "Qoder International",
@@ -60,7 +60,7 @@
     },
     {
       "id": "workbuddy",
-      "version": "2.0.0",
+      "version": "1.0.0",
       "type": "integration",
       "name": {
         "en": "WorkBuddy (Tencent CodeBuddy)",
@@ -89,7 +89,7 @@
     },
     {
       "id": "kimi",
-      "version": "2.0.0",
+      "version": "1.0.0",
       "type": "integration",
       "name": {
         "en": "Kimi (Moonshot)",
@@ -119,7 +119,7 @@
     },
     {
       "id": "kiro",
-      "version": "2.1.0",
+      "version": "1.0.0",
       "type": "integration",
       "name": {
         "en": "Kiro (CodeWhisperer)",
@@ -147,7 +147,7 @@
     },
     {
       "id": "cursor",
-      "version": "2.0.0",
+      "version": "1.0.0",
       "type": "integration",
       "name": {
         "en": "Cursor",
@@ -175,7 +175,7 @@
     },
     {
       "id": "antigravity",
-      "version": "2.1.0",
+      "version": "1.0.0",
       "type": "integration",
       "name": {
         "en": "Antigravity",
@@ -284,7 +284,7 @@
     },
     {
       "id": "xai",
-      "version": "2.0.0",
+      "version": "1.0.0",
       "type": "integration",
       "name": {
         "en": "xAI",
