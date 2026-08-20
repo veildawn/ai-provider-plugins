@@ -60,7 +60,7 @@
     },
     {
       "id": "workbuddy",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "type": "integration",
       "name": {
         "en": "WorkBuddy (Tencent CodeBuddy)",
@@ -83,13 +83,13 @@
         "tencent"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-19",
+      "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.14.0"
     },
     {
       "id": "kimi",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "type": "integration",
       "name": {
         "en": "Kimi (Moonshot)",
@@ -113,7 +113,7 @@
         "moonshot"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-19",
+      "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.14.0"
     },
@@ -203,7 +203,7 @@
     },
     {
       "id": "xai",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "type": "integration",
       "name": {
         "en": "xAI",
@@ -227,7 +227,7 @@
         "grok"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-19",
+      "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.14.0"
     },
@@ -353,7 +353,7 @@
     },
     {
       "id": "minimax",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "type": "integration",
       "name": {
         "en": "MiniMax Token Plan",
@@ -377,13 +377,13 @@
         "minimax"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-19",
+      "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.14.0"
     },
     {
       "id": "glm",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "type": "integration",
       "name": {
         "en": "GLM Coding Plan",
@@ -407,7 +407,7 @@
         "zhipu"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-19",
+      "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.14.0"
     },
