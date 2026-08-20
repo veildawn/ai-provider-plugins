@@ -17,7 +17,23 @@ type publisher struct {
 	} `json:"keys"`
 }
 
+type revocation struct {
+	Revoked []struct {
+		KeyID string `json:"key_id"`
+	} `json:"revoked"`
+}
+
 func main() {
+	revoked := map[string]bool{}
+	if raw, err := os.ReadFile("revoke.json"); err == nil {
+		var doc revocation
+		if err := json.Unmarshal(raw, &doc); err != nil {
+			panic(err)
+		}
+		for _, item := range doc.Revoked {
+			revoked[item.KeyID] = true
+		}
+	}
 	keys := map[string]map[string]ed25519.PublicKey{}
 	publisherPaths, _ := filepath.Glob("publishers/*.json")
 	for _, path := range publisherPaths {
@@ -39,6 +55,10 @@ func main() {
 		}
 	}
 	paths, _ := filepath.Glob("plugins/*.json")
+	if len(paths) == 0 {
+		fmt.Println("plugins/ absent (build artifacts not committed) — nothing to verify")
+		return
+	}
 	for _, path := range paths {
 		raw, err := os.ReadFile(path)
 		if err != nil {
@@ -63,6 +83,9 @@ func main() {
 		sig, err := base64.StdEncoding.DecodeString(encoded)
 		if err != nil {
 			panic(err)
+		}
+		if revoked[keyID] {
+			panic(path + ": signed with revoked key " + keyID)
 		}
 		key := keys[publisherID][keyID]
 		if len(key) != ed25519.PublicKeySize || !ed25519.Verify(key, canonical, sig) {

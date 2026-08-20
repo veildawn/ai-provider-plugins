@@ -4,178 +4,701 @@
   "title": "AI Proxy integration Manifest v3",
   "type": "object",
   "additionalProperties": false,
-  "required": ["manifest_version", "id", "type", "version", "name", "description", "publisher", "signature", "provides"],
+  "required": [
+    "manifest_version",
+    "id",
+    "type",
+    "version",
+    "name",
+    "description",
+    "publisher",
+    "signature",
+    "provides"
+  ],
   "properties": {
-    "manifest_version": {"const": 3},
-    "id": {"$ref": "#/$defs/slug"},
-    "type": {"const": "integration"},
-    "version": {"type": "string", "minLength": 1},
-    "name": {"$ref": "#/$defs/text"},
-    "description": {"$ref": "#/$defs/text"},
-    "homepage": {"type": "string", "format": "uri"},
-    "author": {"type": "string"},
-    "publisher": {"$ref": "#/$defs/slug"},
-    "min_app_version": {"type": "string"},
-    "docs": {"$ref": "#/$defs/text"},
-    "icon": {"type": "string", "pattern": "^data:image/(png|jpeg|webp);base64,"},
-    "signature": {"$ref": "#/$defs/signature"},
-    "depends": {"type": "array", "maxItems": 8, "items": {"$ref": "#/$defs/dependency"}},
-    "provides": {"$ref": "#/$defs/provides"},
-    "modules": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/module"}}
+    "manifest_version": {
+      "const": 3
+    },
+    "id": {
+      "$ref": "#/$defs/slug"
+    },
+    "type": {
+      "const": "integration"
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "name": {
+      "$ref": "#/$defs/text"
+    },
+    "description": {
+      "$ref": "#/$defs/text"
+    },
+    "homepage": {
+      "type": "string",
+      "format": "uri"
+    },
+    "author": {
+      "type": "string"
+    },
+    "publisher": {
+      "$ref": "#/$defs/slug"
+    },
+    "min_app_version": {
+      "type": "string"
+    },
+    "docs": {
+      "$ref": "#/$defs/text"
+    },
+    "icon": {
+      "type": "string",
+      "pattern": "^data:image/(png|jpeg|webp);base64,"
+    },
+    "signature": {
+      "$ref": "#/$defs/signature"
+    },
+    "depends": {
+      "type": "array",
+      "maxItems": 8,
+      "items": {
+        "$ref": "#/$defs/dependency"
+      }
+    },
+    "provides": {
+      "$ref": "#/$defs/provides"
+    },
+    "modules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/module"
+      }
+    }
   },
   "$defs": {
-    "slug": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{0,63}$"},
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{0,63}$"
+    },
     "text": {
       "type": "object",
       "minProperties": 1,
-      "required": ["en"],
-      "propertyNames": {"pattern": "^[A-Za-z]{2,3}(-[A-Za-z0-9]+)*$"},
-      "additionalProperties": {"type": "string", "minLength": 1}
+      "required": [
+        "en"
+      ],
+      "propertyNames": {
+        "pattern": "^[A-Za-z]{2,3}(-[A-Za-z0-9]+)*$"
+      },
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
     },
     "signature": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["alg", "key_id", "sig"],
+      "required": [
+        "alg",
+        "key_id",
+        "sig"
+      ],
       "properties": {
-        "alg": {"const": "ed25519"},
-        "key_id": {"type": "string", "pattern": "^ed25519:[0-9a-f]{16}$"},
-        "sig": {"type": "string", "pattern": "^[A-Za-z0-9+/]{86}==$"}
+        "alg": {
+          "const": "ed25519"
+        },
+        "key_id": {
+          "type": "string",
+          "pattern": "^ed25519:[0-9a-f]{16}$"
+        },
+        "sig": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9+/]{86}==$"
+        }
       }
     },
     "dependency": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id"],
-      "properties": {"id": {"$ref": "#/$defs/slug"}, "range": {"type": "string"}}
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/slug"
+        },
+        "range": {
+          "type": "string"
+        }
+      }
     },
     "provides": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["providers"],
+      "required": [
+        "providers"
+      ],
       "properties": {
-        "providers": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/provider"}},
-        "account": {"$ref": "#/$defs/account"},
-        "model_facts": {"type": "array", "items": {"type": "object"}},
-        "model_pools": {"type": "array", "items": {"type": "object"}},
-        "plans": {"type": "array", "items": {"type": "object"}}
+        "providers": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/provider"
+          }
+        },
+        "account": {
+          "$ref": "#/$defs/account"
+        },
+        "model_facts": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "model_pools": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "plans": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
       }
     },
     "account": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["flow"],
+      "required": [
+        "flow"
+      ],
       "properties": {
-        "flow": {"enum": ["form", "oauth", "device_code", "keycloak"]},
-        "title": {"$ref": "#/$defs/text"},
-        "description": {"$ref": "#/$defs/text"},
-        "guide_url": {"type": "string", "format": "uri", "pattern": "^https?://"},
-        "fields": {"type": "array", "maxItems": 32, "items": {"$ref": "#/$defs/account_field"}}
+        "flow": {
+          "enum": [
+            "form",
+            "oauth",
+            "device_code",
+            "keycloak"
+          ]
+        },
+        "title": {
+          "$ref": "#/$defs/text"
+        },
+        "description": {
+          "$ref": "#/$defs/text"
+        },
+        "guide_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https?://"
+        },
+        "fields": {
+          "type": "array",
+          "maxItems": 32,
+          "items": {
+            "$ref": "#/$defs/account_field"
+          }
+        }
       },
       "allOf": [
         {
-          "if": {"properties": {"flow": {"const": "form"}}},
-          "then": {"required": ["fields"], "properties": {"fields": {"minItems": 1}}}
+          "if": {
+            "properties": {
+              "flow": {
+                "const": "form"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "fields"
+            ],
+            "properties": {
+              "fields": {
+                "minItems": 1
+              }
+            }
+          }
         }
       ]
     },
     "account_field": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["name", "label", "type"],
+      "required": [
+        "name",
+        "label",
+        "type"
+      ],
       "properties": {
-        "name": {"type": "string", "pattern": "^[a-z][a-z0-9_]{0,63}$"},
-        "label": {"$ref": "#/$defs/text"},
-        "type": {"enum": ["text", "password", "textarea", "select"]},
-        "required": {"type": "boolean"},
-        "placeholder": {"type": "string"},
-        "help_text": {"$ref": "#/$defs/text"},
-        "options": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/account_field_option"}}
+        "name": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]{0,63}$"
+        },
+        "label": {
+          "$ref": "#/$defs/text"
+        },
+        "type": {
+          "enum": [
+            "text",
+            "password",
+            "textarea",
+            "select"
+          ]
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "placeholder": {
+          "type": "string"
+        },
+        "help_text": {
+          "$ref": "#/$defs/text"
+        },
+        "options": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/account_field_option"
+          }
+        }
       }
     },
     "account_field_option": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["value"],
+      "required": [
+        "value"
+      ],
       "properties": {
-        "value": {"type": "string", "minLength": 1},
-        "label": {"$ref": "#/$defs/text"}
+        "value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "$ref": "#/$defs/text"
+        }
       }
     },
     "provider": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["name", "base_url"],
+      "required": [
+        "name",
+        "base_url"
+      ],
       "properties": {
-        "name": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$"},
-        "display_name": {"type": "string"},
-        "kind": {"enum": ["custom", "aiproxy"]},
-        "transport": {"enum": ["cosy", "cosy-intl", "keycloak", "kimi-code", "codewhisperer", "cursor-rpc", "gemini-v1internal", "gemini-aistudio", "openai-oai", "anthropic-oai", "xai-oai"]},
-        "module": {"type": "string", "pattern": "^[a-z][a-z0-9_]{0,63}$"},
-        "http": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^(\\*\\.)?[A-Za-z0-9.-]+$"}},
-        "protocols": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["openai", "anthropic", "responses"]}},
-        "base_url": {"type": "string", "format": "uri", "pattern": "^https?://"},
-        "protocol_bases": {"type": "object", "additionalProperties": {"$ref": "#/$defs/protocol_base"}},
-        "operation_url": {"type": "boolean"},
-        "family": {"enum": ["openai", "anthropic", "responses"]},
-        "route_prefix": {"type": "string", "pattern": "^[a-z0-9_-]*$"},
-        "headers": {"type": "object", "additionalProperties": {"type": "string"}},
-        "icon": {"type": "string"},
-        "cloudflare_tls": {"type": "boolean"},
-        "pooled_upstream": {"type": "boolean"},
-        "quota_on_402": {"type": "boolean"},
-        "count_tokens_upstream": {"type": "boolean"},
-        "auto_official_pricing": {"type": "boolean"},
+        "name": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_-]*$"
+        },
+        "display_name": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "custom",
+            "aiproxy"
+          ]
+        },
+        "transport": {
+          "enum": [
+            "cosy",
+            "cosy-intl",
+            "keycloak",
+            "kimi-code",
+            "codewhisperer",
+            "cursor-rpc",
+            "gemini-v1internal",
+            "gemini-aistudio",
+            "openai-oai",
+            "anthropic-oai",
+            "xai-oai"
+          ]
+        },
+        "module": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]{0,63}$"
+        },
+        "http": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^(\\*\\.)?[A-Za-z0-9.-]+$"
+          }
+        },
+        "protocols": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "openai",
+              "anthropic",
+              "responses"
+            ]
+          }
+        },
+        "base_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https?://"
+        },
+        "protocol_bases": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/protocol_base"
+          }
+        },
+        "operation_url": {
+          "type": "boolean"
+        },
+        "family": {
+          "enum": [
+            "openai",
+            "anthropic",
+            "responses"
+          ]
+        },
+        "route_prefix": {
+          "type": "string",
+          "pattern": "^[a-z0-9_-]*$"
+        },
+        "headers": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "icon": {
+          "type": "string"
+        },
+        "cloudflare_tls": {
+          "type": "boolean"
+        },
+        "pooled_upstream": {
+          "type": "boolean"
+        },
+        "quota_on_402": {
+          "type": "boolean"
+        },
+        "count_tokens_upstream": {
+          "type": "boolean"
+        },
+        "auto_official_pricing": {
+          "type": "boolean"
+        },
         "quota_query": {},
-        "prompt": {"$ref": "#/$defs/prompt"},
-        "models": {"type": "array", "items": {"$ref": "#/$defs/model"}}
-      }
+        "prompt": {
+          "$ref": "#/$defs/prompt"
+        },
+        "models": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/model"
+          }
+        },
+        "relay": {
+          "$ref": "#/$defs/relay"
+        }
+      },
+      "oneOf": [
+        {
+          "required": [
+            "module"
+          ]
+        },
+        {
+          "required": [
+            "relay"
+          ]
+        }
+      ]
     },
     "module": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "runtime", "data", "sha256"],
+      "required": [
+        "id",
+        "runtime",
+        "data",
+        "sha256"
+      ],
       "properties": {
-        "id": {"type": "string", "pattern": "^[a-z][a-z0-9_]{0,63}$"},
-        "runtime": {"const": "wasm@1"},
-        "data": {"type": "string", "contentEncoding": "base64", "maxLength": 11184812},
-        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]{0,63}$"
+        },
+        "runtime": {
+          "const": "wasm@1"
+        },
+        "data": {
+          "type": "string",
+          "contentEncoding": "base64",
+          "maxLength": 11184812
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
       }
     },
     "protocol_base": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["base_url"],
-      "properties": {"base_url": {"type": "string", "format": "uri"}, "operation_url": {"type": "boolean"}}
+      "required": [
+        "base_url"
+      ],
+      "properties": {
+        "base_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "operation_url": {
+          "type": "boolean"
+        }
+      }
     },
     "prompt": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["system_replace"],
-      "properties": {"system_replace": {"type": "array", "minItems": 1, "maxItems": 10, "items": {"$ref": "#/$defs/replacement"}}}
+      "required": [
+        "system_replace"
+      ],
+      "properties": {
+        "system_replace": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 10,
+          "items": {
+            "$ref": "#/$defs/replacement"
+          }
+        }
+      }
     },
     "replacement": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["find", "replace"],
-      "properties": {"find": {"type": "string", "minLength": 1}, "replace": {"type": "string"}, "note": {"type": "string"}}
+      "required": [
+        "find",
+        "replace"
+      ],
+      "properties": {
+        "find": {
+          "type": "string",
+          "minLength": 1
+        },
+        "replace": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      }
     },
     "model": {
       "oneOf": [
-        {"type": "string", "minLength": 1},
+        {
+          "type": "string",
+          "minLength": 1
+        },
         {
           "type": "object",
           "additionalProperties": false,
-          "required": ["id"],
+          "required": [
+            "id"
+          ],
           "properties": {
-            "id": {"type": "string", "minLength": 1},
-            "context_window": {"type": "integer", "minimum": 1},
-            "prompt_per_1m": {"type": "number", "minimum": 0},
-            "completion_per_1m": {"type": "number", "minimum": 0},
-            "cache_read_per_1m": {"type": "number", "minimum": 0},
-            "cache_write_per_1m": {"type": "number", "minimum": 0}
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "context_window": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "prompt_per_1m": {
+              "type": "number",
+              "minimum": 0
+            },
+            "completion_per_1m": {
+              "type": "number",
+              "minimum": 0
+            },
+            "cache_read_per_1m": {
+              "type": "number",
+              "minimum": 0
+            },
+            "cache_write_per_1m": {
+              "type": "number",
+              "minimum": 0
+            }
           }
         }
       ]
+    },
+    "relay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "quota_url",
+        "windows"
+      ],
+      "description": "Declarative relay: the host serves this provider without a wasm module.",
+      "properties": {
+        "quota_url": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "quota_method": {
+          "type": "string",
+          "enum": [
+            "GET",
+            "POST"
+          ]
+        },
+        "quota_bearer": {
+          "type": "boolean"
+        },
+        "plan_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "models_url": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "models_fallback": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/relay_model"
+          }
+        },
+        "windows": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/relay_window"
+          }
+        }
+      }
+    },
+    "relay_window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "key"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "used_percent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "percent_of": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "total",
+            "remaining"
+          ],
+          "properties": {
+            "total": {
+              "type": "string",
+              "minLength": 1
+            },
+            "remaining": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "refill": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "type": "string",
+              "enum": [
+                "rolling",
+                "cycle"
+              ]
+            },
+            "seconds": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "cycle": {
+              "type": "string",
+              "enum": [
+                "hour",
+                "day",
+                "week",
+                "month"
+              ]
+            }
+          }
+        },
+        "reset_path": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "path"
+          ]
+        },
+        {
+          "required": [
+            "percent_of"
+          ]
+        },
+        {
+          "required": [
+            "used_percent"
+          ]
+        }
+      ]
+    },
+    "relay_model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "display_name": {
+          "type": "string"
+        },
+        "context_window": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
     }
   }
 }

@@ -28,7 +28,9 @@
       "publisher": "veildawn",
       "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.15.0"
+      "min_app_version": "0.15.0",
+      "module_sha256": "44c1f95f734d9c28d418c97ef1d6a359209d0c3e8b2a37b180c4fb640367a786",
+      "module_bytes": 5950413
     },
     {
       "id": "qoder-intl",
@@ -56,7 +58,9 @@
       "publisher": "veildawn",
       "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.15.0"
+      "min_app_version": "0.15.0",
+      "module_sha256": "700c579c8b729d52056df117c63235b401655965490c4c938fc7b49b83bb7f66",
+      "module_bytes": 5950426
     },
     {
       "id": "workbuddy",
@@ -85,7 +89,9 @@
       "publisher": "veildawn",
       "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.14.0"
+      "min_app_version": "0.14.0",
+      "module_sha256": "ce12f1596631ccead125859f3089b683cc83e19169ad34ad8849539e308e4978",
+      "module_bytes": 198331
     },
     {
       "id": "kimi",
@@ -115,7 +121,9 @@
       "publisher": "veildawn",
       "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.14.0"
+      "min_app_version": "0.14.0",
+      "module_sha256": "4c8de5d37ffe81511cfb6e70b78ff1e9d5f278c08221eca703cc0f48bfe0f53c",
+      "module_bytes": 190713
     },
     {
       "id": "kiro",
@@ -143,7 +151,9 @@
       "publisher": "veildawn",
       "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.14.0"
+      "min_app_version": "0.14.0",
+      "module_sha256": "7edcfd6cb1151f28f90beb2ac0012d317842f09abf20370608577d43b6034fbc",
+      "module_bytes": 5578042
     },
     {
       "id": "cursor",
@@ -171,11 +181,13 @@
       "publisher": "veildawn",
       "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.15.0"
+      "min_app_version": "0.15.0",
+      "module_sha256": "d784ad51313d32a6e9262aa19417e9f06f9967ab6abb6790c6a08e4724bcb7c4",
+      "module_bytes": 5684908
     },
     {
       "id": "antigravity",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "type": "integration",
       "name": {
         "en": "Antigravity",
@@ -199,7 +211,9 @@
       "publisher": "veildawn",
       "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.14.0"
+      "min_app_version": "0.14.0",
+      "module_sha256": "4bfb5638940ca2d0702c8e9be3607a803871f2171cdc24a3d73e0beb74ff114b",
+      "module_bytes": 252970
     },
     {
       "id": "xai",
@@ -229,7 +243,9 @@
       "publisher": "veildawn",
       "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.14.0"
+      "min_app_version": "0.14.0",
+      "module_sha256": "af41a75ef34d14a489232bff2d92bfd7a75ace93fa017222e96807598c9421c5",
+      "module_bytes": 225494
     },
     {
       "id": "qianwen",
@@ -258,7 +274,9 @@
       "publisher": "veildawn",
       "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.15.0"
+      "min_app_version": "0.15.0",
+      "module_sha256": "5e1cb2d64f459f472e3898d89edcb47de2b7a43b181f405614a70fc4c6d07add",
+      "module_bytes": 5494259
     },
     {
       "id": "ark",
@@ -289,7 +307,9 @@
       "publisher": "veildawn",
       "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.15.0"
+      "min_app_version": "0.15.0",
+      "module_sha256": "76f84eef1c26cb4a9d3065d13b1e9dec94a9ad2621e0834a003342ef7f61dea4",
+      "module_bytes": 5625246
     },
     {
       "id": "stepfun",
@@ -320,7 +340,9 @@
       "publisher": "veildawn",
       "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.15.0"
+      "min_app_version": "0.15.0",
+      "module_sha256": "2a053f6d947eb4574fb54455cc9387cb6abdfa0c75f515fde5ffdce0ae6adbe9",
+      "module_bytes": 5512744
     },
     {
       "id": "mimo",
@@ -349,7 +371,9 @@
       "publisher": "veildawn",
       "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.15.0"
+      "min_app_version": "0.15.0",
+      "module_sha256": "3727f3503a18043a128dcc4a88aa3acb45ac2341dd17b60f1a631626e67514ed",
+      "module_bytes": 5491237
     },
     {
       "id": "minimax",
@@ -379,7 +403,9 @@
       "publisher": "veildawn",
       "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.14.0"
+      "min_app_version": "0.14.0",
+      "module_sha256": "d6ef3392d6b94d931fa890d109577b6ae0172ce2c5fa9ad99ed8dd9beaa7dc7d",
+      "module_bytes": 159749
     },
     {
       "id": "glm",
@@ -409,7 +435,9 @@
       "publisher": "veildawn",
       "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.14.0"
+      "min_app_version": "0.14.0",
+      "module_sha256": "dd3c33fbea9a79e42ef157653963103f4b4d8a9b09b66a06e6633a991c2d7cbf",
+      "module_bytes": 157081
     },
     {
       "id": "opencode-go",
@@ -438,7 +466,9 @@
       "publisher": "veildawn",
       "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.15.0"
+      "min_app_version": "0.15.0",
+      "module_sha256": "8aa6f1c5a62d20a77926b1c18fc8770dce0dfc9fea0f6dbb097f2ec3a582e8a6",
+      "module_bytes": 5477942
     },
     {
       "id": "opencode-zen",
@@ -468,7 +498,9 @@
       "publisher": "veildawn",
       "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.15.0"
+      "min_app_version": "0.15.0",
+      "module_sha256": "ed58da0fc26a9c6995e033aedea37fef2e55a774e0a9d9a205316b6c7cb3b036",
+      "module_bytes": 6007241
     }
   ]
 }
