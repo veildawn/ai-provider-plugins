@@ -352,6 +352,36 @@
       "min_app_version": "0.15.0"
     },
     {
+      "id": "minimax",
+      "version": "1.0.0",
+      "type": "integration",
+      "name": {
+        "en": "MiniMax Token Plan",
+        "zh": "MiniMax Token Plan"
+      },
+      "description": {
+        "en": "MiniMax token-plan quota windows and model catalog carried by the provider plugin.",
+        "zh": "由 Provider 插件提供 MiniMax 套餐配额窗口与模型目录。"
+      },
+      "provider_name": "minimax",
+      "protocols": [
+        "openai",
+        "anthropic"
+      ],
+      "capabilities": [
+        "provider",
+        "wasm"
+      ],
+      "tags": [
+        "cn",
+        "minimax"
+      ],
+      "publisher": "veildawn",
+      "updated_at": "2026-08-19",
+      "key_id": "ed25519:a2b36ebc3a600442",
+      "min_app_version": "0.14.0"
+    },
+    {
       "id": "glm",
       "version": "1.0.0",
       "type": "integration",
