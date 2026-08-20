@@ -324,7 +324,7 @@
     },
     {
       "id": "mimo",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "type": "integration",
       "name": {
         "en": "MiMo Token Plan",
@@ -349,7 +349,7 @@
       "publisher": "veildawn",
       "updated_at": "2026-08-19",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.14.0"
+      "min_app_version": "0.15.0"
     },
     {
       "id": "glm",
