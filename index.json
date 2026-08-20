@@ -3,7 +3,7 @@
   "plugins": [
     {
       "id": "qoder",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "type": "integration",
       "name": {
         "en": "Qoder CN (Lingma)",
@@ -26,13 +26,13 @@
         "alibaba"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-19",
+      "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.15.0"
     },
     {
       "id": "qoder-intl",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "type": "integration",
       "name": {
         "en": "Qoder International",
@@ -54,7 +54,7 @@
         "intl"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-19",
+      "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.15.0"
     },
@@ -119,7 +119,7 @@
     },
     {
       "id": "kiro",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "type": "integration",
       "name": {
         "en": "Kiro (CodeWhisperer)",
@@ -141,13 +141,13 @@
         "aws"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-19",
+      "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.14.0"
     },
     {
       "id": "cursor",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "type": "integration",
       "name": {
         "en": "Cursor",
@@ -175,7 +175,7 @@
     },
     {
       "id": "antigravity",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "type": "integration",
       "name": {
         "en": "Antigravity",
@@ -197,7 +197,7 @@
         "google"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-19",
+      "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.14.0"
     },
@@ -233,7 +233,7 @@
     },
     {
       "id": "qianwen",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "type": "integration",
       "name": {
         "en": "Qianwen Token Plan",
@@ -262,7 +262,7 @@
     },
     {
       "id": "ark",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "type": "integration",
       "name": {
         "en": "Volcengine Ark Plans",
@@ -293,7 +293,7 @@
     },
     {
       "id": "stepfun",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "type": "integration",
       "name": {
         "en": "StepFun Step Plan",
@@ -324,7 +324,7 @@
     },
     {
       "id": "mimo",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "type": "integration",
       "name": {
         "en": "MiMo Token Plan",
@@ -413,7 +413,7 @@
     },
     {
       "id": "opencode-go",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "type": "integration",
       "name": {
         "en": "OpenCode Go",
@@ -442,7 +442,7 @@
     },
     {
       "id": "opencode-zen",
-      "version": "1.2.0",
+      "version": "1.2.1",
       "type": "integration",
       "name": {
         "en": "OpenCode Zen",
