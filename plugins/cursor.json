@@ -25,6 +25,43 @@
     "zh": "Cursor"
   },
   "provides": {
+    "account": {
+      "description": {
+        "en": "Copy the access token and Machine ID from Cursor's local state.",
+        "zh": "从 Cursor 本地状态中复制访问令牌与 Machine ID。"
+      },
+      "fields": [
+        {
+          "label": {
+            "en": "Access token",
+            "zh": "访问令牌"
+          },
+          "name": "access_token",
+          "required": true,
+          "type": "password"
+        },
+        {
+          "help_text": {
+            "en": "From storage.serviceMachineId in Cursor's state.vscdb.",
+            "zh": "取自 Cursor state.vscdb 中的 storage.serviceMachineId。"
+          },
+          "label": {
+            "en": "Machine ID",
+            "zh": "机器 ID"
+          },
+          "name": "machine_id",
+          "placeholder": "storage.serviceMachineId",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "flow": "form",
+      "guide_url": "https://cursor.com",
+      "title": {
+        "en": "Import Cursor session",
+        "zh": "导入 Cursor 会话"
+      }
+    },
     "providers": [
       {
         "base_url": "https://api2.cursor.sh",
@@ -44,8 +81,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "GNq3o7Yn8Ns2cYVgQyk1SqG/DewIduS6fjK5bKuoxFOysfdg1ga0lI7DXldEkjcNyJAzD4J+trMOq6Yri/dZAA=="
+    "sig": "k6amor/EdKagCLv3bRgdsw9bjiHb3ph0J3+d7FegO5rP9Seey59xyIQ+mwsZxJhmT3quMqkv+pmU4UNAFZ0VBw=="
   },
   "type": "integration",
-  "version": "1.1.0"
+  "version": "1.1.1"
 }

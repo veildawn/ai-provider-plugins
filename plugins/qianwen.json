@@ -21,6 +21,41 @@
     "zh": "千问 Token Plan"
   },
   "provides": {
+    "account": {
+      "description": {
+        "en": "Add the serving key and, optionally, a console cookie for quota refresh.",
+        "zh": "填写推理密钥，并可选补充用于刷新额度的控制台 Cookie。"
+      },
+      "fields": [
+        {
+          "label": {
+            "en": "API key",
+            "zh": "API 密钥"
+          },
+          "name": "access_token",
+          "required": true,
+          "type": "password"
+        },
+        {
+          "help_text": {
+            "en": "Optional. Paste the login_qianwenai_ticket cookie from the Token Plan console to refresh Credits usage.",
+            "zh": "可选。从 Token Plan 控制台粘贴 login_qianwenai_ticket Cookie，用于刷新 Credits 用量。"
+          },
+          "label": {
+            "en": "Quota console cookie",
+            "zh": "额度控制台 Cookie"
+          },
+          "name": "console_cookie",
+          "placeholder": "login_qianwenai_ticket=…",
+          "type": "password"
+        }
+      ],
+      "flow": "form",
+      "title": {
+        "en": "Connect Qianwen Token Plan",
+        "zh": "连接千问 Token Plan"
+      }
+    },
     "providers": [
       {
         "base_url": "https://token-plan.cn-beijing.maas.aliyuncs.com/apps/anthropic",
@@ -41,8 +76,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "sM/uOBLgp51/gX/e7n2Lmum//fW6uZELRLGXhmZRJzmNMps7uMahstDn+xN/iiINvjO0Q6xMOlkk6qb7Jxr/Dg=="
+    "sig": "3cGxMXC8XpVTjJkb9eflg1YFwcP/wAPaJNYJVVsRa5WfvvfuovLfj2sG4NxvDkcqaz1QpJPEkZzispLJKnd3Bw=="
   },
   "type": "integration",
-  "version": "1.1.0"
+  "version": "1.1.1"
 }

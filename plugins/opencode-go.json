@@ -21,6 +21,55 @@
     "zh": "OpenCode Go"
   },
   "provides": {
+    "account": {
+      "description": {
+        "en": "Add the serving key and optional console details for quota refresh.",
+        "zh": "填写推理密钥，并可选补充用于刷新额度的控制台信息。"
+      },
+      "fields": [
+        {
+          "label": {
+            "en": "API key",
+            "zh": "API 密钥"
+          },
+          "name": "access_token",
+          "required": true,
+          "type": "password"
+        },
+        {
+          "help_text": {
+            "en": "Optional. Paste the auth cookie from opencode.ai to refresh 5-hour, weekly, and monthly usage.",
+            "zh": "可选。从 opencode.ai 粘贴 auth Cookie，用于刷新 5 小时、每周与每月用量。"
+          },
+          "label": {
+            "en": "Quota console cookie",
+            "zh": "额度控制台 Cookie"
+          },
+          "name": "console_cookie",
+          "placeholder": "auth=Fe26.2**…",
+          "type": "password"
+        },
+        {
+          "help_text": {
+            "en": "Optional. Set the workspace explicitly if automatic discovery selects the wrong one.",
+            "zh": "可选。自动发现选择了错误工作区时，填写目标 Workspace ID。"
+          },
+          "label": {
+            "en": "Workspace ID",
+            "zh": "Workspace ID"
+          },
+          "name": "workspace_id",
+          "placeholder": "wrk_…",
+          "type": "text"
+        }
+      ],
+      "flow": "form",
+      "guide_url": "https://opencode.ai",
+      "title": {
+        "en": "Connect OpenCode Go",
+        "zh": "连接 OpenCode Go"
+      }
+    },
     "providers": [
       {
         "base_url": "https://opencode.ai/zen/go/v1",
@@ -43,8 +92,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "moo6JKYAjpTlt6majn07yM5eLDSrqIYnUzd9HwqUshSeFDIkQ8fWEc4YOiF6SNVtOOnZOPHVbqgwIcQlyj4hBA=="
+    "sig": "vCikH2bKpIXY/vx5DwVGD8ntuigqEyJAuyZZ3CZNBm5h9qYUboAPTswWHPhv8SxZcUOdAkZf16kLr1GSKMryAw=="
   },
   "type": "integration",
-  "version": "1.0.0"
+  "version": "1.0.1"
 }

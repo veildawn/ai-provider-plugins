@@ -21,6 +21,42 @@
     "zh": "MiMo Token Plan"
   },
   "provides": {
+    "account": {
+      "description": {
+        "en": "Add the serving key and, optionally, a console cookie for quota refresh.",
+        "zh": "填写推理密钥，并可选补充用于刷新额度的控制台 Cookie。"
+      },
+      "fields": [
+        {
+          "label": {
+            "en": "API key",
+            "zh": "API 密钥"
+          },
+          "name": "access_token",
+          "required": true,
+          "type": "password"
+        },
+        {
+          "help_text": {
+            "en": "Optional. Paste the full cookie block from platform.xiaomimimo.com to refresh monthly and plan quota. Re-paste it when the session expires.",
+            "zh": "可选。从 platform.xiaomimimo.com 粘贴完整 Cookie，用于刷新月度与套餐额度；登录态过期后需重新粘贴。"
+          },
+          "label": {
+            "en": "MiMo quota console cookie",
+            "zh": "MiMo 额度控制台 Cookie"
+          },
+          "name": "console_cookie",
+          "placeholder": "api-platform_serviceToken=…; xiaomichatbot_serviceToken=…",
+          "type": "password"
+        }
+      ],
+      "flow": "form",
+      "guide_url": "https://platform.xiaomimimo.com",
+      "title": {
+        "en": "Connect MiMo Token Plan",
+        "zh": "连接 MiMo Token Plan"
+      }
+    },
     "providers": [
       {
         "base_url": "https://token-plan-cn.xiaomimimo.com/v1",
@@ -42,8 +78,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "NJJqQIV24m3EitXxBhwN2C+fhgeDRpyeqlKL2sCpjZF+ufObWvkIXWkPdJmJ3cytSadZJurh9AKtm33z/AbIBg=="
+    "sig": "djMRhRJuagcFTml8WaxJtXAfNZgvsNkyyZvtK4o8b83rgu5VK/+IXKULoHbMLdRQr3INv6xBpjXYwokcl0gZBw=="
   },
   "type": "integration",
-  "version": "1.1.0"
+  "version": "1.1.1"
 }

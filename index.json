@@ -147,7 +147,7 @@
     },
     {
       "id": "cursor",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "type": "integration",
       "name": {
         "en": "Cursor",
@@ -169,7 +169,7 @@
         "cursor"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-19",
+      "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.15.0"
     },
@@ -233,7 +233,7 @@
     },
     {
       "id": "qianwen",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "type": "integration",
       "name": {
         "en": "Qianwen Token Plan",
@@ -256,13 +256,13 @@
         "alibaba"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-19",
+      "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.15.0"
     },
     {
       "id": "ark",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "type": "integration",
       "name": {
         "en": "Volcengine Ark Plans",
@@ -287,13 +287,13 @@
         "volcengine"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-19",
+      "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.15.0"
     },
     {
       "id": "stepfun",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "type": "integration",
       "name": {
         "en": "StepFun Step Plan",
@@ -318,13 +318,13 @@
         "stepfun"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-19",
+      "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.15.0"
     },
     {
       "id": "mimo",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "type": "integration",
       "name": {
         "en": "MiMo Token Plan",
@@ -347,7 +347,7 @@
         "xiaomi"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-19",
+      "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.15.0"
     },
@@ -413,7 +413,7 @@
     },
     {
       "id": "opencode-go",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "type": "integration",
       "name": {
         "en": "OpenCode Go",
@@ -436,13 +436,13 @@
         "opencode"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-19",
+      "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.14.0"
     },
     {
       "id": "opencode-zen",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "type": "integration",
       "name": {
         "en": "OpenCode Zen",
@@ -466,7 +466,7 @@
         "opencode"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-19",
+      "updated_at": "2026-08-20",
       "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.15.0"
     }
