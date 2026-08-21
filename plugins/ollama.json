@@ -29,22 +29,20 @@
       "fields": [
         {
           "label": {
-            "en": "API Key",
+            "en": "API key",
             "zh": "API Key"
           },
           "name": "api_key",
-          "placeholder": "Ollama Cloud API Key (本地实例可填任意字符或留空)",
           "required": false,
           "type": "password"
         },
         {
-          "default": "https://ollama.com/api",
           "label": {
             "en": "Base URL",
             "zh": "Base URL"
           },
           "name": "base_url",
-          "placeholder": "https://ollama.com/api 或 http://localhost:11434/api",
+          "placeholder": "https://ollama.com",
           "required": false,
           "type": "string"
         }
@@ -61,7 +59,7 @@
         "confirm": true,
         "id": "reauth",
         "label": {
-          "en": "Edit Config",
+          "en": "Edit config",
           "zh": "修改配置"
         },
         "type": "flow"
@@ -69,7 +67,7 @@
       {
         "id": "open_portal",
         "label": {
-          "en": "Ollama Portal",
+          "en": "Ollama portal",
           "zh": "Ollama 官网"
         },
         "type": "link",
@@ -94,7 +92,7 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:4da5f976df1e1bfb",
-    "sig": "ASFyT958CLqSBVVBa/0Q+urW9lRwDFd7xh/243s04ZhzT/10nuuUy/7D6q/RxeeXiZ5nJhzGglfILbLW6HgVCQ=="
+    "sig": "Hk1DHleY7cmRkEyhJOMC7FW/1KBHY+kqxTdVYz8vhmmxG6qeK1qtDnLQRSXKgoQaVFysqA8HgYoTsWN+z6liBA=="
   },
   "type": "integration",
   "version": "1.0.0"
