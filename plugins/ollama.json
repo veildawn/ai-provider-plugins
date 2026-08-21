@@ -70,7 +70,6 @@
         "display_name": "Ollama",
         "module": "provider",
         "name": "ollama",
-        "operation_url": true,
         "protocols": [
           "openai",
           "responses"
@@ -82,8 +81,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:4da5f976df1e1bfb",
-    "sig": "JAYWr6xorbAghuCWrI1f6V7NWFoseirSLQ+GtUiUW+62iUND9z/2vvlV3cB+pKfXd3VPlXJFU7Abu8Evuh4NAg=="
+    "sig": "GWsrMEPK3AGrZ/bkWD+ij+ZgR+AJBcWcDDcoHKyBYP5t1/OJnGR6VJMAcSvnGr1M1p2DEdsJeZrIi9n1bdfhCA=="
   },
   "type": "integration",
-  "version": "1.0.6"
+  "version": "1.0.7"
 }
