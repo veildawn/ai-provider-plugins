@@ -187,7 +187,7 @@
     },
     {
       "id": "ollama",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "type": "integration",
       "name": {
         "en": "Ollama",

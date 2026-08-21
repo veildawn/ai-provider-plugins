@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "id": "ollama",
   "type": "integration",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": {
     "en": "Ollama",
     "zh": "Ollama"
@@ -17,7 +17,7 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:4da5f976df1e1bfb",
-    "sig": "AFnrvgngdeQucMxwhHu7E2w+8KnnUOBQINR429xGsW11Y1PR2qfiUCX9w6l84sJeKHZRKXvY7MbvaD5Ux35jCg=="
+    "sig": "GyO9rQrsdIDYSHZ8QB5FK5phpxsVDQ7TmLOV783oEWps+zIz4un6aaIpckVd3QyBqnx8WML6xJ0MZUmWdlF7Dg=="
   },
   "min_app_version": "0.16.0",
   "provides": {
