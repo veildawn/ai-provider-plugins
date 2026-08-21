@@ -44,7 +44,7 @@
           "name": "base_url",
           "placeholder": "https://ollama.com",
           "required": false,
-          "type": "string"
+          "type": "text"
         }
       ],
       "flow": "form",
@@ -92,7 +92,7 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:4da5f976df1e1bfb",
-    "sig": "Hk1DHleY7cmRkEyhJOMC7FW/1KBHY+kqxTdVYz8vhmmxG6qeK1qtDnLQRSXKgoQaVFysqA8HgYoTsWN+z6liBA=="
+    "sig": "wQ4bTh6t00ecNVwYvAzi7K0zotQM78tb0YTzM+QvhUhtdu5PXCRAYy40Fuy76niyDp/VITET2oG5xkpSh7dLDg=="
   },
   "type": "integration",
   "version": "1.0.0"
