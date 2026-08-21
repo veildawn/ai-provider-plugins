@@ -66,7 +66,7 @@
     ],
     "providers": [
       {
-        "base_url": "https://ollama.com/v1",
+        "base_url": "https://ollama.com",
         "display_name": "Ollama",
         "module": "provider",
         "name": "ollama",
@@ -82,8 +82,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:4da5f976df1e1bfb",
-    "sig": "L+QW5H3KtXs0pHL4tBzLGkJ6jvwVfVAvzbNPYP5CO+kdR6CjPTxrc4OFu8m/HPdbYE3T7XUd93WBS59REFiYBw=="
+    "sig": "JAYWr6xorbAghuCWrI1f6V7NWFoseirSLQ+GtUiUW+62iUND9z/2vvlV3cB+pKfXd3VPlXJFU7Abu8Evuh4NAg=="
   },
   "type": "integration",
-  "version": "1.0.5"
+  "version": "1.0.6"
 }
