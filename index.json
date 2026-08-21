@@ -3,15 +3,15 @@
   "plugins": [
     {
       "id": "qoder",
-      "version": "1.1.1",
+      "version": "2.0.0",
       "type": "integration",
       "name": {
         "en": "Qoder CN (Lingma)",
         "zh": "Qoder（通义灵码）"
       },
       "description": {
-        "en": "Qoder CN with COSY signing and stream decoding carried by the plugin.",
-        "zh": "插件自带 COSY 签名与流解码的 Qoder 国内版。"
+        "en": "Qoder CN COSY signing, stream unwrap, quota windows and model catalog.",
+        "zh": "Qoder 国内版 COSY 签名、流解码、配额窗口与模型目录。"
       },
       "provider_name": "qoder",
       "protocols": [
@@ -26,23 +26,23 @@
         "alibaba"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-20",
+      "updated_at": "2026-08-21",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.15.0",
-      "module_sha256": "44c1f95f734d9c28d418c97ef1d6a359209d0c3e8b2a37b180c4fb640367a786",
-      "module_bytes": 5950413
+      "min_app_version": "0.17.0",
+      "module_sha256": "abd9bf210d1c56717092918598286e6ab7f30f6498362b12c45c91018b40b18c",
+      "module_bytes": 280127
     },
     {
       "id": "qoder-intl",
-      "version": "1.1.1",
+      "version": "2.0.0",
       "type": "integration",
       "name": {
         "en": "Qoder International",
         "zh": "Qoder 国际版"
       },
       "description": {
-        "en": "Qoder International with COSY signing and stream decoding carried by the plugin.",
-        "zh": "插件自带 COSY 签名与流解码的 Qoder 国际版。"
+        "en": "Qoder International COSY signing, stream unwrap, quota windows and model catalog.",
+        "zh": "Qoder 国际版 COSY 签名、流解码、配额窗口与模型目录。"
       },
       "provider_name": "qoder-intl",
       "protocols": [
@@ -56,11 +56,11 @@
         "intl"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-20",
+      "updated_at": "2026-08-21",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.15.0",
-      "module_sha256": "700c579c8b729d52056df117c63235b401655965490c4c938fc7b49b83bb7f66",
-      "module_bytes": 5950426
+      "min_app_version": "0.17.0",
+      "module_sha256": "abd9bf210d1c56717092918598286e6ab7f30f6498362b12c45c91018b40b18c",
+      "module_bytes": 280127
     },
     {
       "id": "workbuddy",
@@ -87,11 +87,11 @@
         "tencent"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-20",
+      "updated_at": "2026-08-21",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.14.0",
-      "module_sha256": "ce12f1596631ccead125859f3089b683cc83e19169ad34ad8849539e308e4978",
-      "module_bytes": 198331
+      "min_app_version": "0.17.0",
+      "module_sha256": "c1e011091b1460f8b55720b8621f6d47e4e66369151aa6d5d929c1ecafcc0de7",
+      "module_bytes": 198240
     },
     {
       "id": "kimi",
@@ -119,23 +119,23 @@
         "moonshot"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-20",
+      "updated_at": "2026-08-21",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.14.0",
-      "module_sha256": "4c8de5d37ffe81511cfb6e70b78ff1e9d5f278c08221eca703cc0f48bfe0f53c",
-      "module_bytes": 190713
+      "min_app_version": "0.17.0",
+      "module_sha256": "4d2cd6ef43c01f87d9a858feaf52eb253e140d7af4407079e064798c08034358",
+      "module_bytes": 184810
     },
     {
       "id": "kiro",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "type": "integration",
       "name": {
         "en": "Kiro (CodeWhisperer)",
         "zh": "Kiro（CodeWhisperer）"
       },
       "description": {
-        "en": "Kiro provider with CodeWhisperer framing, account metadata and quota code carried by the plugin.",
-        "zh": "插件自带 CodeWhisperer 帧、账号元数据与配额代码的 Kiro Provider。"
+        "en": "Kiro CodeWhisperer fingerprint, profile ARN resolution, usage windows and model listing.",
+        "zh": "Kiro（CodeWhisperer）指纹、profile ARN 解析、用量窗口与模型目录。"
       },
       "provider_name": "kiro",
       "protocols": [
@@ -149,11 +149,11 @@
         "aws"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-20",
+      "updated_at": "2026-08-21",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.14.0",
-      "module_sha256": "7edcfd6cb1151f28f90beb2ac0012d317842f09abf20370608577d43b6034fbc",
-      "module_bytes": 5578042
+      "min_app_version": "0.17.0",
+      "module_sha256": "78713e5e3ca2de110a19cd6bd413fa68e1777c8022df180c6362e483332369aa",
+      "module_bytes": 192526
     },
     {
       "id": "cursor",
@@ -164,8 +164,8 @@
         "zh": "Cursor"
       },
       "description": {
-        "en": "Cursor IDE provider with Connect-RPC code carried by the plugin.",
-        "zh": "由插件自带 Connect-RPC 代码的 Cursor IDE Provider。"
+        "en": "Cursor Connect-RPC fingerprint, in-band error classification, usage windows and model catalog.",
+        "zh": "Cursor Connect-RPC 指纹、带内错误分类、用量窗口与模型目录。"
       },
       "provider_name": "cursor",
       "protocols": [
@@ -179,11 +179,11 @@
         "cursor"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-20",
+      "updated_at": "2026-08-21",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.15.0",
-      "module_sha256": "d784ad51313d32a6e9262aa19417e9f06f9967ab6abb6790c6a08e4724bcb7c4",
-      "module_bytes": 5684908
+      "min_app_version": "0.17.0",
+      "module_sha256": "e5c61704da4163cefaa728d3f0c1fcd891213b5480abe318b147c5c8cbb5b9cc",
+      "module_bytes": 275937
     },
     {
       "id": "antigravity",
@@ -209,11 +209,11 @@
         "google"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-20",
+      "updated_at": "2026-08-21",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.14.0",
-      "module_sha256": "4bfb5638940ca2d0702c8e9be3607a803871f2171cdc24a3d73e0beb74ff114b",
-      "module_bytes": 252970
+      "min_app_version": "0.17.0",
+      "module_sha256": "18626fabd69d25fdf7fb251b6e3f391816b364486be7108b647d37fa0af45cb7",
+      "module_bytes": 252291
     },
     {
       "id": "xai",
@@ -241,11 +241,11 @@
         "grok"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-20",
+      "updated_at": "2026-08-21",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.14.0",
-      "module_sha256": "af41a75ef34d14a489232bff2d92bfd7a75ace93fa017222e96807598c9421c5",
-      "module_bytes": 225494
+      "min_app_version": "0.17.0",
+      "module_sha256": "396fab143146d306593f453c94f42320e44cadfcfddd8b078f0aa6eedb758eed",
+      "module_bytes": 220175
     },
     {
       "id": "qianwen",
@@ -272,11 +272,11 @@
         "alibaba"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-20",
+      "updated_at": "2026-08-21",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.15.0",
-      "module_sha256": "5e1cb2d64f459f472e3898d89edcb47de2b7a43b181f405614a70fc4c6d07add",
-      "module_bytes": 5494259
+      "min_app_version": "0.17.0",
+      "module_sha256": "26468148219f73eb3485e1257cd0b4e935ca7d8f99f80541b77544bf96d59573",
+      "module_bytes": 173196
     },
     {
       "id": "ark",
@@ -305,11 +305,11 @@
         "volcengine"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-20",
+      "updated_at": "2026-08-21",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.15.0",
-      "module_sha256": "76f84eef1c26cb4a9d3065d13b1e9dec94a9ad2621e0834a003342ef7f61dea4",
-      "module_bytes": 5625246
+      "min_app_version": "0.17.0",
+      "module_sha256": "8aff0fdb18ddb41fb41bbea4769f61e6ce2c97dfc8c341f8cbaf96fae26e2701",
+      "module_bytes": 211958
     },
     {
       "id": "stepfun",
@@ -338,11 +338,11 @@
         "stepfun"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-20",
+      "updated_at": "2026-08-21",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.15.0",
-      "module_sha256": "2a053f6d947eb4574fb54455cc9387cb6abdfa0c75f515fde5ffdce0ae6adbe9",
-      "module_bytes": 5512744
+      "min_app_version": "0.17.0",
+      "module_sha256": "eaa7d8432aebf0e0ab8c305657083b3066f14591a893cfe2aafc830d149c154e",
+      "module_bytes": 199522
     },
     {
       "id": "mimo",
@@ -369,11 +369,11 @@
         "xiaomi"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-20",
+      "updated_at": "2026-08-21",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.15.0",
-      "module_sha256": "3727f3503a18043a128dcc4a88aa3acb45ac2341dd17b60f1a631626e67514ed",
-      "module_bytes": 5491237
+      "min_app_version": "0.17.0",
+      "module_sha256": "463c757338a5c3c85e34731f53c5a2b3628c8fcf56bd7f66a3a413aa18448fe1",
+      "module_bytes": 143629
     },
     {
       "id": "minimax",
@@ -401,11 +401,11 @@
         "minimax"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-20",
+      "updated_at": "2026-08-21",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.14.0",
-      "module_sha256": "d6ef3392d6b94d931fa890d109577b6ae0172ce2c5fa9ad99ed8dd9beaa7dc7d",
-      "module_bytes": 159749
+      "min_app_version": "0.17.0",
+      "module_sha256": "1a7c734660342335c6a0684b792b3750c61a65721859579a46240a4e1f7c5ac2",
+      "module_bytes": 153592
     },
     {
       "id": "glm",
@@ -433,11 +433,11 @@
         "zhipu"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-20",
+      "updated_at": "2026-08-21",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.14.0",
-      "module_sha256": "dd3c33fbea9a79e42ef157653963103f4b4d8a9b09b66a06e6633a991c2d7cbf",
-      "module_bytes": 157081
+      "min_app_version": "0.17.0",
+      "module_sha256": "a79df90ee2c9d170a9f441117bcbd6ea175b208da00578963c38133bd8891851",
+      "module_bytes": 151211
     },
     {
       "id": "opencode-go",
@@ -464,11 +464,11 @@
         "opencode"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-20",
+      "updated_at": "2026-08-21",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.15.0",
-      "module_sha256": "8aa6f1c5a62d20a77926b1c18fc8770dce0dfc9fea0f6dbb097f2ec3a582e8a6",
-      "module_bytes": 5477942
+      "min_app_version": "0.17.0",
+      "module_sha256": "fea83f50d833a51654d880b4858761ea0f2b7a388f12849164272d8da07c93d2",
+      "module_bytes": 161936
     },
     {
       "id": "opencode-zen",
@@ -496,11 +496,43 @@
         "opencode"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-20",
+      "updated_at": "2026-08-21",
       "key_id": "ed25519:a2b36ebc3a600442",
-      "min_app_version": "0.15.0",
-      "module_sha256": "ed58da0fc26a9c6995e033aedea37fef2e55a774e0a9d9a205316b6c7cb3b036",
-      "module_bytes": 6007241
+      "min_app_version": "0.17.0",
+      "module_sha256": "641efeb1fe66b15a0ae08e6d7d4590b76953a1e1fc3bf6448722dcc6c3c96e07",
+      "module_bytes": 204060
+    },
+    {
+      "id": "deepseek",
+      "version": "1.1.0",
+      "type": "integration",
+      "name": {
+        "zh": "DeepSeek",
+        "en": "DeepSeek"
+      },
+      "description": {
+        "zh": "DeepSeek 第一方 API：OpenAI/Responses/Anthropic 三臂同 Key，并轮询账户余额。",
+        "en": "DeepSeek's first-party API: OpenAI, Responses and Anthropic arms on one key, plus account balance."
+      },
+      "provider_name": "deepseek",
+      "protocols": [
+        "openai",
+        "responses",
+        "anthropic"
+      ],
+      "capabilities": [
+        "provider",
+        "wasm"
+      ],
+      "tags": [
+        "deepseek"
+      ],
+      "publisher": "veildawn",
+      "updated_at": "2026-08-21",
+      "min_app_version": "0.17.0",
+      "key_id": "ed25519:a2b36ebc3a600442",
+      "module_sha256": "a57646818cbeb5d65a0fb230fd1fb0495d7b4dc66ab2892d59d4fc9e040d9fe6",
+      "module_bytes": 164271
     }
   ]
 }

@@ -16,17 +16,23 @@ revoke.json              Revocation list
 
 ## Supported Provider Integrations
 
-- **Qoder / Qoder International** (`qoder`, `qoder-intl`)
+Requires [`ai-proxy-service`](https://github.com/veildawn/ai-proxy-service) **0.17.0+** (`min_app_version`).
+
+- **Qoder CN / International** (`qoder`, `qoder-intl`)
 - **Kiro / AWS CodeWhisperer** (`kiro`)
 - **Cursor** (`cursor`)
 - **Google Antigravity** (`antigravity`)
-- **Google AI Studio** (`google-ai-studio`)
-- **OpenAI OAuth** (`openai`)
-- **Anthropic** (`anthropic`)
+- **DeepSeek** (`deepseek`)
 - **xAI** (`xai`)
 - **Kimi** (`kimi`)
 - **WorkBuddy** (`workbuddy`)
-- **Quota Guard** (`quota-guard`)
+- **Volcengine Ark Plans** (`ark`)
+- **Qianwen Token Plan** (`qianwen`)
+- **StepFun Step Plan** (`stepfun`)
+- **MiMo Token Plan** (`mimo`)
+- **MiniMax Token Plan** (`minimax`)
+- **GLM Coding Plan** (`glm`)
+- **OpenCode Go / Zen** (`opencode-go`, `opencode`)
 
 ## Validation
 
