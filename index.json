@@ -186,6 +186,37 @@
       "module_bytes": 275937
     },
     {
+      "id": "ollama",
+      "version": "1.0.0",
+      "type": "integration",
+      "name": {
+        "en": "Ollama",
+        "zh": "Ollama"
+      },
+      "description": {
+        "en": "Ollama Cloud & local models: OpenAI / Responses protocols and self-hosted routing.",
+        "zh": "Ollama 云端与本地模型服务：支持 OpenAI / Responses 协议与自托管实例路由。"
+      },
+      "provider_name": "ollama",
+      "protocols": [
+        "openai",
+        "responses"
+      ],
+      "capabilities": [
+        "provider",
+        "wasm"
+      ],
+      "tags": [
+        "ollama"
+      ],
+      "publisher": "veildawn",
+      "updated_at": "2026-08-21",
+      "min_app_version": "0.16.0",
+      "key_id": "ed25519:4da5f976df1e1bfb",
+      "module_sha256": "a8236367f57a18e99739567936cfdba941bf463c2bcbfb94bfcd8e4f3721a311",
+      "module_bytes": 169346
+    },
+    {
       "id": "antigravity",
       "version": "1.1.0",
       "type": "integration",
