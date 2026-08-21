@@ -187,15 +187,15 @@
     },
     {
       "id": "ollama",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "type": "integration",
       "name": {
         "en": "Ollama",
         "zh": "Ollama"
       },
       "description": {
-        "en": "Ollama Cloud & local models: OpenAI / Responses protocols and self-hosted routing.",
-        "zh": "Ollama 云端与本地模型服务：支持 OpenAI / Responses 协议与自托管实例路由。"
+        "en": "Ollama Cloud official model service: OpenAI / Responses protocols and Quota polling.",
+        "zh": "Ollama 云端与官方托管模型服务：支持 OpenAI / Responses 协议与 Quota 轮询。"
       },
       "provider_name": "ollama",
       "protocols": [
