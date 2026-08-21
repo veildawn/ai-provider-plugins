@@ -2,6 +2,43 @@
   "version": 1,
   "plugins": [
     {
+      "id": "openai",
+      "version": "1.0.0",
+      "type": "integration",
+      "name": {
+        "en": "OpenAI",
+        "zh": "OpenAI"
+      },
+      "description": {
+        "en": "OpenAI API provider with GPT models support.",
+        "zh": "OpenAI API 提供商，支持 GPT 模型。"
+      },
+      "provider_name": "codex",
+      "protocols": [
+        "openai",
+        "responses"
+      ],
+      "min_app_version": "0.17.0"
+    },
+    {
+      "id": "anthropic",
+      "version": "1.0.0",
+      "type": "integration",
+      "name": {
+        "en": "Anthropic",
+        "zh": "Anthropic"
+      },
+      "description": {
+        "en": "Anthropic API provider with Claude models support.",
+        "zh": "Anthropic API 提供商，支持 Claude 模型。"
+      },
+      "provider_name": "anthropic",
+      "protocols": [
+        "anthropic"
+      ],
+      "min_app_version": "0.17.0"
+    },
+    {
       "id": "qoder",
       "version": "2.0.0",
       "type": "integration",
