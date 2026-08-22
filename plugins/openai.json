@@ -47,7 +47,8 @@
           "sec-fetch-site": "none"
         },
         "http": [
-          "auth.openai.com"
+          "auth.openai.com",
+          "chatgpt.com"
         ],
         "images_vocabulary": "openai_full",
         "is_default": true,
@@ -68,7 +69,7 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:4da5f976df1e1bfb",
-    "sig": "Pl3efSHORu7HIaiCEV1tN2k+4zIQIDm8Qs+gYDn0uBCtr4OnMf3oVw0qNo3ROOPSF0HgdHP5DoTcWa0LNYSgDg=="
+    "sig": "hHzaolBZ/3A9GpaLXkFz/Hx8ZFa33ekMrRKP8CpSVT89oSjYGsFyKj3qk8LUpOC3ykoTvqbEctFiaSi/CKQLBQ=="
   },
   "type": "integration",
   "version": "1.0.0"
