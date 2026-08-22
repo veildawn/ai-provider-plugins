@@ -46,7 +46,6 @@
       },
       "provider_name": "codex",
       "protocols": [
-        "openai",
         "responses",
         "realtime"
       ],

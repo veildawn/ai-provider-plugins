@@ -46,7 +46,6 @@
         "module": "provider",
         "name": "codex",
         "protocols": [
-          "openai",
           "responses",
           "realtime"
         ],
@@ -60,7 +59,7 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:4da5f976df1e1bfb",
-    "sig": "y7cVMXrph9MkPW8gjAPuQw7asj09I4YEvVc9KTixkCPpx2eAgDGNIXr+muMxhfhmjAl0zJZqy6BQV0m1AXIPCw=="
+    "sig": "+LKjws+7AUtKByDTpzQGKXybNUXpjsGQIWC3k52aFt/5Us9n5cFTEMAXAvu0zgBrYPCd1pstrvQb65A7jeV4Aw=="
   },
   "type": "integration",
   "version": "1.0.0"
