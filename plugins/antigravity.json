@@ -42,6 +42,7 @@
         "module": "provider",
         "name": "antigravity",
         "operation_url": true,
+        "thinking_in_model_id": true,
         "transport": "gemini-v1internal"
       }
     ]
@@ -50,7 +51,7 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:4da5f976df1e1bfb",
-    "sig": "1GrG91ZVROZUcRaGTqMhZZU1fUN5Oj+zG2XsLzyl7XwQhSUzhhLDZpZTJ16r5co/AipQE6zhsRZbhjXvTJBKAQ=="
+    "sig": "SJEc5KmWF2lK2zBWIx2d8iEEcWV4jgN7tRj4kD169Kkg33NZRbg38GkQ4jj0XpZmAOLErROnUJZXlp8JH3/IDg=="
   },
   "type": "integration",
   "version": "1.1.0"
