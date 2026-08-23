@@ -34,7 +34,7 @@
     },
     {
       "id": "openai",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "type": "integration",
       "name": {
         "en": "OpenAI",
@@ -58,7 +58,7 @@
       ],
       "publisher": "veildawn",
       "updated_at": "2026-08-23",
-      "min_app_version": "0.17.0",
+      "min_app_version": "0.17.17",
       "key_id": "ed25519:4da5f976df1e1bfb",
       "module_sha256": "ea713ff58724bd159d39f3fe5103d2cc8cb520e9c58e59cdc3cb867542d7f4fe",
       "module_bytes": 281757,

@@ -201,6 +201,12 @@
           "items": {
             "$ref": "#/$defs/account_field"
           }
+        },
+        "controls": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/account_control"
+          }
         }
       },
       "allOf": [
@@ -279,6 +285,27 @@
           "minLength": 1
         },
         "label": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "account_control": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "key",
+        "label"
+      ],
+      "properties": {
+        "key": {
+          "enum": [
+            "ws_enabled"
+          ]
+        },
+        "label": {
+          "$ref": "#/$defs/text"
+        },
+        "help_text": {
           "$ref": "#/$defs/text"
         }
       }
