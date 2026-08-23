@@ -51,6 +51,7 @@
         ],
         "supports_realtime": true,
         "supports_ws_incremental": true,
+        "translation_profile": "codex-responses-v1",
         "transport": "openai-oai"
       }
     ]
@@ -59,7 +60,7 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:4da5f976df1e1bfb",
-    "sig": "Fw4bCqRzVUP8IF2GGUVAJq0dp55wm4jOLAM7Ffqu5jzP52zyLpVXo8ylue1AGNRjr448wrgZxb4PQlSckxS6Ag=="
+    "sig": "KGJd3YmrI+llSsPcItkTCJcdkAge3476mujIahfW3pkkysNf4Fn2z1trD7JN2rDB7Q6bX7RIIr9DlgDkxDKgCQ=="
   },
   "type": "integration",
   "version": "1.0.0"
