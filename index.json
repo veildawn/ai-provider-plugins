@@ -2,6 +2,37 @@
   "version": 1,
   "plugins": [
     {
+      "id": "sensenova",
+      "version": "1.0.0",
+      "type": "integration",
+      "name": {
+        "en": "SenseNova Coding Plan",
+        "zh": "商汤日日新 Coding Plan"
+      },
+      "description": {
+        "en": "SenseNova Token Plan OpenAI-compatible API with account model discovery and Coding Plan quota polling.",
+        "zh": "商汤日日新 Token Plan OpenAI 兼容 API，支持账号模型发现与 Coding Plan 按模型额度查询。"
+      },
+      "provider_name": "sensenova",
+      "protocols": [
+        "openai"
+      ],
+      "capabilities": [
+        "provider",
+        "wasm"
+      ],
+      "tags": [
+        "china",
+        "coding-plan"
+      ],
+      "publisher": "veildawn",
+      "updated_at": "2026-08-24",
+      "min_app_version": "0.17.18",
+      "key_id": "ed25519:4da5f976df1e1bfb",
+      "module_sha256": "08a241979771b02095088118d5226fb66b10c256d91ac16379502d5d74cd8368",
+      "module_bytes": 177435
+    },
+    {
       "id": "ollama",
       "version": "1.0.9",
       "type": "integration",
