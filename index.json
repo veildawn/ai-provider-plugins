@@ -3,7 +3,7 @@
   "plugins": [
     {
       "id": "sensenova",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "type": "integration",
       "name": {
         "en": "SenseNova Coding Plan",
@@ -29,8 +29,8 @@
       "updated_at": "2026-08-24",
       "min_app_version": "0.17.18",
       "key_id": "ed25519:4da5f976df1e1bfb",
-      "module_sha256": "08a241979771b02095088118d5226fb66b10c256d91ac16379502d5d74cd8368",
-      "module_bytes": 177435
+      "module_sha256": "c119f8ef785d4193c353594817a779431b080f871b198d47dbe1347227c4ca3b",
+      "module_bytes": 178449
     },
     {
       "id": "ollama",
