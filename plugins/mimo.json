@@ -63,6 +63,7 @@
         "display_name": "MiMo",
         "family": "openai",
         "http": [
+          "api.xiaomimimo.com",
           "platform.xiaomimimo.com"
         ],
         "module": "provider",
@@ -78,8 +79,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:4da5f976df1e1bfb",
-    "sig": "4i7FH46JspNG6Jojf9F46Ezyd9fO46+OqMiKJMD4zVYi/k6peltRsvLOKkRJ9SJwugCuDFv20xyfzzrRb/jsDg=="
+    "sig": "DiNvnKBYNNNmVdn0tbM+d+hbH5azx7caUi7seNGbEdrNwmS0BmQsi4TLZXTEAtEie435L6HHA6AyWSxH1ddSBA=="
   },
   "type": "integration",
-  "version": "1.1.3"
+  "version": "1.1.4"
 }
