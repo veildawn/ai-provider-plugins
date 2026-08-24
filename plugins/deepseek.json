@@ -71,7 +71,7 @@
         "display_name": "DeepSeek",
         "module": "provider",
         "name": "deepseek",
-        "operation_url": false,
+        "operation_url": true,
         "protocol_bases": {
           "anthropic": {
             "base_url": "https://api.deepseek.com/anthropic"
@@ -89,8 +89,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:4da5f976df1e1bfb",
-    "sig": "O0hmfoCenY+jAQvQhMv7wOwNYBA/gxv79/xqUV0ED2QqdWQuhYmeTjXM7CKryBQX85oSOarwhnbEDbTrJ/NzDg=="
+    "sig": "BPNP1O+nfrj5BnV44igQ63T2JQ1k2s3fEGkRty93R2lip5QsaY/scdJHMLFmaux5Hk0v+sqmpXfkft2lXk7nCQ=="
   },
   "type": "integration",
-  "version": "1.1.1"
+  "version": "1.1.2"
 }
