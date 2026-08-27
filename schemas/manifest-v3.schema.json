@@ -166,6 +166,42 @@
           "items": {
             "type": "object"
           }
+        },
+        "actions": {
+          "type": "array",
+          "maxItems": 16,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "label",
+              "type"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "label": {
+                "$ref": "#/$defs/text"
+              },
+              "type": {
+                "enum": [
+                  "flow",
+                  "link"
+                ]
+              },
+              "confirm": {
+                "type": "boolean"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https?://"
+              }
+            }
+          }
         }
       }
     },
@@ -366,7 +402,8 @@
             "enum": [
               "openai",
               "anthropic",
-              "responses"
+              "responses",
+              "realtime"
             ]
           }
         },
@@ -431,6 +468,37 @@
         },
         "relay": {
           "$ref": "#/$defs/relay"
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "cache_affinity": {
+          "type": "boolean"
+        },
+        "long_context_beta": {
+          "type": "string"
+        },
+        "thinking_in_model_id": {
+          "type": "boolean"
+        },
+        "translation_profile": {
+          "type": "string"
+        },
+        "is_default": {
+          "type": "boolean"
+        },
+        "supports_realtime": {
+          "type": "boolean"
+        },
+        "supports_ws_incremental": {
+          "type": "boolean"
+        },
+        "images_vocabulary": {
+          "type": "string"
         }
       },
       "oneOf": [
