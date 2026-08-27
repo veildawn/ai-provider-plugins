@@ -81,7 +81,8 @@
             "enum": [
               "openai",
               "anthropic",
-              "responses"
+              "responses",
+              "realtime"
             ]
           }
         },
