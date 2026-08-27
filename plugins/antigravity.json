@@ -42,6 +42,11 @@
         "module": "provider",
         "name": "antigravity",
         "operation_url": true,
+        "protocols": [
+          "openai",
+          "anthropic",
+          "responses"
+        ],
         "thinking_in_model_id": true,
         "transport": "gemini-v1internal"
       }
@@ -51,8 +56,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "+SOa73Ijnj5MOt6LAE9YZvs6kvYFYUWHhRgidnR0PGDLpUDFtBdXX/aKcICRuB3nAhWb0z7Avqjr3cVxjHPxCw=="
+    "sig": "finlJGfaTl3HBSNTBSZpPQ6aFPx+NlYtWML42Ty4fj7lj61BAYCLv0sXtdwnQ31nOfjuoeZ1aLKo5R6jFSU+BA=="
   },
   "type": "integration",
-  "version": "1.1.4"
+  "version": "1.1.5"
 }

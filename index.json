@@ -318,7 +318,7 @@
     },
     {
       "id": "antigravity",
-      "version": "1.1.4",
+      "version": "1.1.5",
       "type": "integration",
       "name": {
         "en": "Antigravity",
@@ -330,7 +330,9 @@
       },
       "provider_name": "antigravity",
       "protocols": [
-        "openai"
+        "openai",
+        "anthropic",
+        "responses"
       ],
       "capabilities": [
         "provider",
