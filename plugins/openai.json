@@ -62,6 +62,9 @@
           "responses",
           "realtime"
         ],
+        "request_overrides": {
+          "store": false
+        },
         "supports_realtime": true,
         "supports_ws_incremental": true,
         "translation_profile": "codex-responses-v1",
@@ -73,8 +76,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:4da5f976df1e1bfb",
-    "sig": "WMq997qbwbK2goRX1AIXDlRBP9ObUtWVORPEH0vScbEoXy8kJV9L60n/ZWLAUmS8O1Z5wuVMaqPw4bfdNjzYBQ=="
+    "sig": "Ft/csosKNnv+I7bmnh+HNM8BeHPaVk7RixKjzNECWjYNnU3qtiWNtS6LgoB72C5gKKaL5sfezQN2dMfiwBHyDw=="
   },
   "type": "integration",
-  "version": "1.1.1"
+  "version": "1.1.2"
 }
