@@ -63,6 +63,7 @@
           "realtime"
         ],
         "request_overrides": {
+          "max_output_tokens": null,
           "store": false,
           "stream": true
         },
@@ -77,8 +78,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:4da5f976df1e1bfb",
-    "sig": "vGUxzF5X4akvAVPSPnRoaFGtTrjYFRn9BS/VWIHhB9Am4/DjOv/XnhzzL3d79XzRiMgL+qZ1esvqXkaJFIhlAA=="
+    "sig": "lj4KAMT2TFB96whn01As6457jOAz0myZgKCAY4maDBXGDTKGvu2bp+wIOipFbheZ1QIzlMpT4BSe4uOq1OSEBw=="
   },
   "type": "integration",
-  "version": "1.1.3"
+  "version": "1.1.4"
 }
