@@ -224,19 +224,20 @@
     },
     {
       "id": "kimi",
-      "version": "1.2.1",
+      "version": "1.3.0",
       "type": "integration",
       "name": {
         "en": "Kimi (Moonshot)",
         "zh": "Kimi（月之暗面）"
       },
       "description": {
-        "en": "Kimi Coding usage windows and model catalog carried by the provider plugin.",
-        "zh": "由 Provider 插件提供 Kimi Coding 用量窗口与模型目录。"
+        "en": "Kimi Coding OpenAI and Anthropic arms, prompt-cache usage, quota windows, and model catalog.",
+        "zh": "由 Provider 插件提供 Kimi Coding 的 OpenAI / Anthropic 双臂、提示缓存用量、配额窗口与模型目录。"
       },
       "provider_name": "kimi",
       "protocols": [
-        "anthropic"
+        "anthropic",
+        "openai"
       ],
       "capabilities": [
         "provider",
@@ -247,11 +248,11 @@
         "moonshot"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-08-29",
-      "key_id": "ed25519:4da5f976df1e1bfb",
+      "updated_at": "2026-08-31",
+      "key_id": "ed25519:a2b36ebc3a600442",
       "min_app_version": "0.17.0",
-      "module_sha256": "1b727ca7d4a178ec5b537a8793b80fe0033877eaa583c5d468e0cfeb767ea402",
-      "module_bytes": 241598,
+      "module_sha256": "18e406ba6dd7574d043cacf2c9511673a27f712355aafaf926a6995a74868710",
+      "module_bytes": 256806,
       "icon": "data:image/png;base64,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"
     },
     {
