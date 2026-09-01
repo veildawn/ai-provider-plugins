@@ -566,6 +566,10 @@
         },
         "images_vocabulary": {
           "type": "string"
+        },
+        "request_overrides": {
+          "type": "object",
+          "additionalProperties": true
         }
       },
       "oneOf": [
