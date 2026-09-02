@@ -1,0 +1,233 @@
+{
+  "version": 3,
+  "description": "Single source of truth for the provider wasm@1 ABI. scripts/gen_abi.py generates the Go and Rust guest SDK types and tests/wasmcheck host constants from this file; sdk/python stays dictionary-based. The ai-proxy-service gateway must implement the same constants (hook names, limits, payload shapes). Bump `version` and the providers' min_app_version when anything here changes incompatibly. v2 adds prepare_request and interpret_response hooks for full driver-in-WASM support. v3 promotes prepare_request and interpret_response from optional to recommended for full request construction control, and adds optional multi-round auth hooks.",
+  "runtime": "wasm@1",
+  "hooks": {
+    "required": ["transform_request", "poll_quota", "list_models"],
+    "recommended": ["prepare_request", "interpret_response"],
+    "optional": ["transform_response", "realtime_models", "realtime_voices", "realtime_encode", "realtime_socket", "auth_start", "auth_poll", "auth_refresh"],
+    "memory": "memory",
+    "exports": {
+      "alloc": {"params": ["i32"], "results": ["i32"]},
+      "dealloc": {"params": ["i32", "i32"], "results": [], "optional": true},
+      "transform_request": {"params": ["i32", "i32"], "results": ["i64"]},
+      "transform_response": {"params": ["i32", "i32"], "results": ["i64"], "optional": true},
+      "poll_quota": {"params": ["i32", "i32"], "results": ["i64"]},
+      "list_models": {"params": ["i32", "i32"], "results": ["i64"]},
+      "prepare_request": {"params": ["i32", "i32"], "results": ["i64"], "optional": true, "doc": "Builds the complete HTTP request for an upstream call. Replaces the compiled Driver.Prepare when exported. The host checks for this hook before falling back to compiled transport drivers."},
+      "interpret_response": {"params": ["i32", "i32"], "results": ["i64"], "optional": true, "doc": "Processes the upstream HTTP response. Replaces the compiled Driver.Response when exported. The host calls this after receiving the upstream response, before passing it to the translator."},
+      "realtime_models": {"params": ["i32", "i32"], "results": ["i64"], "optional": true, "doc": "Returns the voice models a realtime-capable provider serves. The host calls this to populate the voice model list."},
+      "realtime_voices": {"params": ["i32", "i32"], "results": ["i64"], "optional": true, "doc": "Returns the output voices a realtime session accepts. The host calls this to populate the voice list."},
+      "realtime_encode": {"params": ["i32", "i32"], "results": ["i64"], "optional": true, "doc": "Encodes a RealtimeCall into the provider's wire body. Replaces the compiled Realtime driver encoding when exported."},
+      "realtime_socket": {"params": ["i32", "i32"], "results": ["i64"], "optional": true, "doc": "Builds the upstream websocket dial for a realtime session. Replaces the compiled RealtimeSocketFor when exported."},
+      "auth_start": {"params": ["i32", "i32"], "results": ["i64"], "optional": true, "doc": "Begins an interactive auth flow. It may ask the host for bounded, allowlisted HTTP rounds before returning an AuthResult."},
+      "auth_poll": {"params": ["i32", "i32"], "results": ["i64"], "optional": true, "doc": "Resumes an interactive auth flow. It may ask the host for bounded, allowlisted HTTP rounds before returning an AuthResult."},
+      "auth_refresh": {"params": ["i32", "i32"], "results": ["i64"], "optional": true, "doc": "Refreshes a stored credential. It may ask the host for bounded, allowlisted HTTP rounds before returning an AuthResult."}
+    },
+    "conventions": "Arguments are the pointer and length of a UTF-8 JSON buffer; a hook returns (output_ptr << 32) | output_len. The gateway creates a fresh instance per request, quota poll, model probe, or auth operation."
+  },
+  "limits": {
+    "max_module_bytes": 8388608,
+    "max_hook_payload_bytes": 8388608,
+    "max_operation_rounds": 8,
+    "max_peek_bytes": 65536,
+    "max_python_source_bytes": 65536,
+    "memory_limit_pages": 1024
+  },
+  "types": {
+    "HTTPPayload": {
+      "doc": "Request/response transform exchange unit. body/peeked are Base64 in JSON.",
+      "fields": [
+        {"name": "provider", "type": "string", "tag": "provider", "omit": "empty"},
+        {"name": "account_id", "type": "string", "tag": "account_id", "omit": "empty"},
+        {"name": "method", "type": "string", "tag": "method", "omit": "empty"},
+        {"name": "url", "type": "string", "tag": "url", "omit": "empty"},
+        {"name": "endpoint", "type": "string", "tag": "endpoint", "omit": "empty"},
+        {"name": "token", "type": "string", "tag": "token", "omit": "empty"},
+        {"name": "credential", "type": "json", "tag": "credential", "omit": "none", "doc": "Provider-specific account credential fields."},
+        {"name": "headers", "type": "headers", "tag": "headers", "omit": "empty"},
+        {"name": "body", "type": "bytes", "tag": "body", "omit": "empty"},
+        {"name": "status_code", "type": "i32", "tag": "status_code", "omit": "zero"},
+        {"name": "stream", "type": "bool", "tag": "stream", "omit": "false"},
+        {"name": "stream_eof", "type": "bool", "tag": "stream_eof", "omit": "false"},
+        {"name": "stream_mode", "type": "string", "tag": "stream_mode", "omit": "empty"},
+        {"name": "peek_bytes", "type": "i32", "tag": "peek_bytes", "omit": "zero"},
+        {"name": "peeked", "type": "bytes", "tag": "peeked", "omit": "empty"},
+        {"name": "stream_close", "type": "bool", "tag": "stream_close", "omit": "false"},
+        {"name": "error", "type": "string", "tag": "error", "omit": "empty"},
+        {"name": "error_condition", "type": "string", "tag": "error_condition", "omit": "empty", "doc": "Plugin-driven error classification. The host uses this to decide health impact (cooldown, disable, pass-through) instead of guessing from HTTP status codes. Empty = unclassified exception; the host shows the message to the user without penalizing the account. Known values: rate_limit, auth_expired, suspended, overloaded, content_filter, model_unavailable."},
+        {"name": "no_redirect", "type": "bool", "tag": "no_redirect", "omit": "false"}
+      ]
+    },
+    "AuthPayload": {
+      "doc": "Provider-neutral interactive-auth input. state is opaque to the host and is resumed verbatim.",
+      "fields": [
+        {"name": "provider", "type": "string", "tag": "provider", "omit": "empty"},
+        {"name": "account_id", "type": "string", "tag": "account_id", "omit": "empty"},
+        {"name": "token", "type": "string", "tag": "token", "omit": "empty"},
+        {"name": "credential", "type": "json", "tag": "credential", "omit": "none", "doc": "Stored provider credential for refresh operations."},
+        {"name": "state", "type": "json", "tag": "state", "omit": "none", "doc": "Opaque state returned by a prior auth result."},
+        {"name": "callback_url", "type": "string", "tag": "callback_url", "omit": "empty"}
+      ]
+    },
+    "AuthResult": {
+      "doc": "Terminal interactive-auth result. pending results carry state; completed results carry credential.",
+      "fields": [
+        {"name": "status", "type": "string", "tag": "status", "omit": "empty"},
+        {"name": "auth_url", "type": "string", "tag": "auth_url", "omit": "empty"},
+        {"name": "user_code", "type": "string", "tag": "user_code", "omit": "empty"},
+        {"name": "verify_url", "type": "string", "tag": "verify_url", "omit": "empty"},
+        {"name": "state", "type": "json", "tag": "state", "omit": "none"},
+        {"name": "credential", "type": "json", "tag": "credential", "omit": "none"},
+        {"name": "email", "type": "string", "tag": "email", "omit": "empty"},
+        {"name": "expires_at", "type": "rfc3339", "optional": true, "tag": "expires_at", "omit": "none"}
+      ]
+    },
+    "AuthOperation": {
+      "doc": "auth_start/auth_poll/auth_refresh multi-round unit. round_state is preserved only between host HTTP rounds; reply with request asks for one round, reply without request is terminal.",
+      "fields": [
+        {"name": "payload", "type": "AuthPayload", "tag": "payload", "omit": "never"},
+        {"name": "response", "type": "HTTPPayload", "optional": true, "tag": "response", "omit": "none"},
+        {"name": "round_state", "type": "json", "tag": "round_state", "omit": "none", "doc": "Guest-owned opaque state preserved only while one auth hook is performing bounded HTTP rounds."},
+        {"name": "request", "type": "HTTPPayload", "optional": true, "tag": "request", "omit": "none"},
+        {"name": "result", "type": "AuthResult", "optional": true, "tag": "result", "omit": "none"},
+        {"name": "error_status", "type": "i32", "tag": "error_status", "omit": "zero", "doc": "HTTP status attached to error so the host classifies hard auth failures."},
+        {"name": "error", "type": "string", "tag": "error", "omit": "empty"}
+      ]
+    },
+    "Operation": {
+      "doc": "poll_quota/list_models multi-round unit: reply with request to ask the host for one HTTP round; reply without request is terminal.",
+      "fields": [
+        {"name": "account", "type": "HTTPPayload", "tag": "account", "omit": "never"},
+        {"name": "response", "type": "HTTPPayload", "optional": true, "tag": "response", "omit": "none"},
+        {"name": "request", "type": "HTTPPayload", "optional": true, "tag": "request", "omit": "none"},
+        {"name": "result", "type": "json", "tag": "result", "omit": "none"},
+        {"name": "error_status", "type": "i32", "tag": "error_status", "omit": "zero", "doc": "HTTP status attached to error so the host classifies hard failures (401/403/429)."},
+        {"name": "credential_update", "type": "json", "tag": "credential_update", "omit": "none", "doc": "Credential fields the host merges into the stored encrypted blob after a successful operation."},
+        {"name": "error", "type": "string", "tag": "error", "omit": "empty"}
+      ]
+    },
+    "Window": {
+      "doc": "One quota metering window.",
+      "fields": [
+        {"name": "key", "type": "string", "tag": "key", "omit": "never"},
+        {"name": "label", "type": "string", "tag": "label", "omit": "never"},
+        {"name": "used_percent", "type": "f64", "tag": "used_percent", "omit": "never"},
+        {"name": "resets_at", "type": "rfc3339", "optional": true, "tag": "resets_at", "omit": "none"},
+        {"name": "limit", "type": "f64", "optional": true, "tag": "limit", "omit": "none"},
+        {"name": "remaining", "type": "f64", "optional": true, "tag": "remaining", "omit": "none"},
+        {"name": "kind", "type": "string", "tag": "kind", "omit": "empty"},
+        {"name": "unit", "type": "string", "tag": "unit", "omit": "empty"},
+        {"name": "refill", "type": "Refill", "tag": "refill", "omit": "empty"},
+        {"name": "scope", "type": "Scope", "optional": true, "tag": "scope", "omit": "none"},
+        {"name": "forfeits", "type": "bool", "optional": true, "tag": "forfeits", "omit": "none"},
+        {"name": "unlimited", "type": "bool", "tag": "unlimited", "omit": "false"}
+      ]
+    },
+    "Refill": {
+      "doc": "How a window refills.",
+      "fields": [
+        {"name": "kind", "type": "string", "tag": "kind", "omit": "empty"},
+        {"name": "seconds", "type": "i64", "tag": "seconds", "omit": "zero"},
+        {"name": "cycle", "type": "string", "tag": "cycle", "omit": "empty"}
+      ]
+    },
+    "Scope": {
+      "doc": "What a window meters when it is not the whole account.",
+      "fields": [
+        {"name": "kind", "type": "string", "tag": "kind", "omit": "empty"},
+        {"name": "name", "type": "string", "tag": "name", "omit": "empty"}
+      ]
+    },
+    "QuotaResult": {
+      "doc": "poll_quota terminal result.",
+      "fields": [
+        {"name": "windows", "type": "Window", "list": true, "tag": "windows", "omit": "never"},
+        {"name": "plan_label", "type": "string", "tag": "plan_label", "omit": "empty"}
+      ]
+    },
+    "Model": {
+      "doc": "One catalog model row.",
+      "fields": [
+        {"name": "id", "type": "string", "tag": "id", "omit": "never"},
+        {"name": "display_name", "type": "string", "tag": "display_name", "omit": "empty"},
+        {"name": "context_window", "type": "i32", "tag": "context_window", "omit": "zero"},
+        {"name": "effort_levels", "type": "string", "list": true, "tag": "effort_levels", "omit": "empty", "doc": "Reasoning levels the upstream explicitly advertises for this model."}
+      ]
+    },
+    "PrepareRequestInput": {
+      "doc": "Input to the prepare_request hook. Carries everything the host knows about the upstream call.",
+      "fields": [
+        {"name": "provider", "type": "string", "tag": "provider", "omit": "empty"},
+        {"name": "account_id", "type": "string", "tag": "account_id", "omit": "empty"},
+        {"name": "endpoint", "type": "string", "tag": "endpoint", "omit": "empty"},
+        {"name": "token", "type": "string", "tag": "token", "omit": "empty"},
+        {"name": "credential", "type": "json", "tag": "credential", "omit": "none"},
+        {"name": "body", "type": "bytes", "tag": "body", "omit": "empty"},
+        {"name": "base_url", "type": "string", "tag": "base_url", "omit": "empty"},
+        {"name": "stream", "type": "bool", "tag": "stream", "omit": "false"},
+        {"name": "session_id", "type": "string", "tag": "session_id", "omit": "empty"},
+        {"name": "client_headers", "type": "headers", "tag": "client_headers", "omit": "empty"}
+      ]
+    },
+    "PrepareRequestItem": {
+      "doc": "One HTTP request built by prepare_request.",
+      "fields": [
+        {"name": "method", "type": "string", "tag": "method", "omit": "empty"},
+        {"name": "url", "type": "string", "tag": "url", "omit": "empty"},
+        {"name": "headers", "type": "headers", "tag": "headers", "omit": "empty"},
+        {"name": "body", "type": "bytes", "tag": "body", "omit": "empty"}
+      ]
+    },
+    "PrepareRequestOutput": {
+      "doc": "Output of the prepare_request hook.",
+      "fields": [
+        {"name": "requests", "type": "PrepareRequestItem", "list": true, "tag": "requests", "omit": "never"},
+        {"name": "error", "type": "string", "tag": "error", "omit": "empty"}
+      ]
+    },
+    "InterpretResponseInput": {
+      "doc": "Input to the interpret_response hook.",
+      "fields": [
+        {"name": "provider", "type": "string", "tag": "provider", "omit": "empty"},
+        {"name": "endpoint", "type": "string", "tag": "endpoint", "omit": "empty"},
+        {"name": "status_code", "type": "i32", "tag": "status_code", "omit": "zero"},
+        {"name": "headers", "type": "headers", "tag": "headers", "omit": "empty"},
+        {"name": "body", "type": "bytes", "tag": "body", "omit": "empty"},
+        {"name": "stream", "type": "bool", "tag": "stream", "omit": "false"},
+        {"name": "original_request", "type": "PrepareRequestInput", "optional": true, "tag": "original_request", "omit": "none"}
+      ]
+    },
+    "InterpretResponseOutput": {
+      "doc": "Output of the interpret_response hook.",
+      "fields": [
+        {"name": "status_code", "type": "i32", "tag": "status_code", "omit": "zero"},
+        {"name": "headers", "type": "headers", "tag": "headers", "omit": "empty"},
+        {"name": "body", "type": "bytes", "tag": "body", "omit": "empty"},
+        {"name": "error", "type": "string", "tag": "error", "omit": "empty"},
+        {"name": "error_class", "type": "string", "tag": "error_class", "omit": "empty"}
+      ]
+    },
+    "RealtimeCall": {
+      "doc": "One SDP exchange for a realtime call.",
+      "fields": [
+        {"name": "sdp", "type": "string", "tag": "sdp", "omit": "empty"},
+        {"name": "session", "type": "json", "tag": "session", "omit": "none", "doc": "The realtime session config, required by the backend."}
+      ]
+    },
+    "RealtimeModel": {
+      "doc": "One voice model a client may open a session with.",
+      "fields": [
+        {"name": "id", "type": "string", "tag": "id", "omit": "never"},
+        {"name": "display_name", "type": "string", "tag": "display_name", "omit": "empty"}
+      ]
+    },
+    "RealtimeSocket": {
+      "doc": "One upstream websocket dial for a realtime session.",
+      "fields": [
+        {"name": "url", "type": "string", "tag": "url", "omit": "empty"},
+        {"name": "headers", "type": "headers", "tag": "headers", "omit": "empty"}
+      ]
+    }
+  }
+}
