@@ -196,8 +196,14 @@
               "type": {
                 "enum": [
                   "flow",
-                  "link"
+                  "link",
+                  "hook"
                 ]
+              },
+              "hook": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_]*$"
               },
               "confirm": {
                 "type": "boolean"
@@ -478,6 +484,15 @@
           "type": "string",
           "format": "uri",
           "pattern": "^https?://"
+        },
+        "failover_base_urls": {
+          "type": "array",
+          "description": "Ordered alternate upstream bases for the request path. The gateway's failover loop counts host-implicated attempts (upstream 5xx, empty streams, transport failures) per client request and rewrites the plugin's request URL onto entry i-1 on attempt i, clamped to the last entry. Auth, quota and model-list side calls always stay on base_url. Every entry must be an absolute http(s) URL whose host the provider already declares via base_url, protocol_bases or http.",
+          "items": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https?://"
+          }
         },
         "protocol_bases": {
           "type": "object",
