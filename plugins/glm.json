@@ -55,7 +55,6 @@
         "type": "hook"
       },
       {
-        "confirm": false,
         "hook": "view_plans",
         "id": "view_plans",
         "label": {
@@ -103,7 +102,7 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:4da5f976df1e1bfb",
-    "sig": "nSia0DXGZ0S3jA5Qy/lOIsw7hkPL7g+GJd+ISrGLagE+S9Dysz5kIaOr2pcQr3NAfscEayg4j1BLxf9Klph7AQ=="
+    "sig": "0Q/V4p/WjnmpY6/98Oeq9LZBEBig7QDsCqJojliPcI7Rw/v4Om/ehCSVnDse1BSji2+9BemxcXV8hCad9uDfAA=="
   },
   "type": "integration",
   "version": "1.3.9"
