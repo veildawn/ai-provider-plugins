@@ -37,7 +37,6 @@
       {
         "confirm": true,
         "hook": "reset_5h",
-        "icon": "clock-countdown",
         "id": "reset_5h",
         "label": {
           "en": "Reset 5-hour quota",
@@ -48,7 +47,6 @@
       {
         "confirm": true,
         "hook": "reset_7d",
-        "icon": "calendar-dots",
         "id": "reset_7d",
         "label": {
           "en": "Reset weekly quota",
@@ -85,7 +83,7 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "QlamJAtTjD7bsDDAE29U3+jPH+ILe215Bc5+8xEe1HG+WnL8qLIH41yHRNJ/Z6To5nWhR5RGdLnixfEnQwt3Cw=="
+    "sig": "arc0cmRjKSEbm8U6xrydwmHhPSKOJIvCPnNtLKdeE+zEDIP5Io5NS6SXDYBMF39D/MlPq/UksDvTmaePUUZaDw=="
   },
   "type": "integration",
   "version": "1.4.4"
