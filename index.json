@@ -913,7 +913,7 @@
     },
     {
       "id": "tokenhub",
-      "version": "1.1.9",
+      "version": "1.1.10",
       "type": "integration",
       "name": {
         "en": "Tencent Cloud TokenHub",
@@ -937,7 +937,7 @@
         "coding-plan"
       ],
       "publisher": "veildawn",
-      "updated_at": "2026-09-03",
+      "updated_at": "2026-09-09",
       "min_app_version": "0.17.18",
       "key_id": "ed25519:a2b36ebc3a600442",
       "module_sha256": "bd35b922ca072df058ec6bbeb7e3d85e26c691835799648cb36f64e49d1f802d",
