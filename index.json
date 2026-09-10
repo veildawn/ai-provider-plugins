@@ -521,7 +521,7 @@
     },
     {
       "id": "mimo-desktop",
-      "version": "2.1.1",
+      "version": "2.1.2",
       "type": "integration",
       "name": {
         "en": "MiMo Desktop",

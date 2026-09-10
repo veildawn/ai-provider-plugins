@@ -24,8 +24,8 @@
   "provides": {
     "account": {
       "description": {
-        "en": "Opens a login window on the host: sign in with the Xiaomi account and the MiMo X session is harvested automatically — no codes, no cookie digging. On remote deployments, paste the account.xiaomi.com cookie block in the callback box instead.",
-        "zh": "在宿主上打开登录窗口：用小米账号登录后自动收割 MiMo X 会话——无需验证码，也不用翻开发者工具。远程部署时改为在回调框粘贴 account.xiaomi.com 的 Cookie。"
+        "en": "A Xiaomi-account login QR appears on this screen. Scan it with the Mi account on your phone; the session is harvested and the MiMo X models unlock — nothing to paste. Hosts without any Chrome at all fall back to pasting the account.xiaomi.com cookie block.",
+        "zh": "页面会显示小米账号登录二维码，用手机上的小米账号扫码即可自动收割会话、解锁 MiMo X 模型——全程无需粘贴。完全没有 Chrome 的宿主才会退回手动粘贴 account.xiaomi.com 的 Cookie。"
       },
       "flow": "oauth",
       "guide_url": "https://account.xiaomi.com",
@@ -59,8 +59,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:4da5f976df1e1bfb",
-    "sig": "j+7nWwHoHCwDIV5PhDcQWbozW38jmW/9SXqX60MlXZ+g3KTXBGW1Uml1u+PBGOUoFOWx2BVDX3ERM1rlpp1OCA=="
+    "sig": "DAVM2cAo2bZw/aY/unWjlA1CTmqo/eypxLDIeTG9nHNGbgp1stQYy/iEkqZbZ7Zt5rhkbjmB7SsOAx/CIbwvBA=="
   },
   "type": "integration",
-  "version": "2.1.1"
+  "version": "2.1.2"
 }
