@@ -51,8 +51,7 @@
         "name": "devin",
         "operation_url": true,
         "protocols": [
-          "openai",
-          "anthropic"
+          "openai"
         ],
         "thinking_in_model_id": true
       }
@@ -62,8 +61,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "BBtb8i+0ltOYAGOThyGioJBHOQsN80teD1OSpeD/aIbhObKQF9R8dwQyREC6F6L0MnxUMYTxuFMmfTKgm6/+DA=="
+    "sig": "BUrAFUjlLGpDIh+C4y95rVpBPkFWUQTGoBhiMxXfxjv8bV3NHu5yQWdz0PAuFPtn+y/23En1r84M6Vo9c6yvBw=="
   },
   "type": "integration",
-  "version": "1.0.6"
+  "version": "1.0.7"
 }

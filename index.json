@@ -986,7 +986,7 @@
         "coding",
         "cognition"
       ],
-      "version": "1.0.6",
+      "version": "1.0.7",
       "type": "integration",
       "name": {
         "en": "Devin",
@@ -999,8 +999,7 @@
       "publisher": "veildawn",
       "provider_name": "devin",
       "protocols": [
-        "openai",
-        "anthropic"
+        "openai"
       ],
       "capabilities": [
         "provider",
