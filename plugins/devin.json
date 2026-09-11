@@ -53,7 +53,8 @@
         "protocols": [
           "openai",
           "anthropic"
-        ]
+        ],
+        "thinking_in_model_id": true
       }
     ]
   },
@@ -61,8 +62,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "BUiE+3ROwXVCBbge+0gj7gTNvAD9aJSJQWmW6ypOPdhiqxkh9RSOv+bNh7gfFzekAauiBxVDbi4mZQfG5gdBBQ=="
+    "sig": "a82i9VQL/PPvNVnbOzF33yfBsMIcistv4pqJdO7Y7jULxLaH7zIENCcnNCzYqg/TGmm3LpAcoxH9rK22R4BrBw=="
   },
   "type": "integration",
-  "version": "1.0.1"
+  "version": "1.0.2"
 }
