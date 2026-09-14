@@ -87,7 +87,6 @@
     "providers": [
       {
         "base_url": "https://token.sensenova.cn/v1",
-        "chat_images": "markdown",
         "display_name": "商汤日日新",
         "family": "openai",
         "http": [
@@ -113,8 +112,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "xi+UTetB8Vo0k/Zfe4FKrQ4+gH+D00zYh42Ijh/5i7d8L8zgmMEm2llaeYQwMyW2dq563dPRA/RmvQ+M0vfMBw=="
+    "sig": "SDJQrli6OdzWLzibhPcuRagEcFG5KMEVqQCHRdf7M4C15q54Q20WRLnXfRIgW5dARExcRDj/1Wvtnitqlx2vDQ=="
   },
   "type": "integration",
-  "version": "1.3.0"
+  "version": "1.3.1"
 }

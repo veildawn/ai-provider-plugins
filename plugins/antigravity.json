@@ -32,7 +32,6 @@
     "providers": [
       {
         "base_url": "https://daily-cloudcode-pa.googleapis.com",
-        "chat_images": "markdown",
         "display_name": "Antigravity",
         "failover_base_urls": [
           "https://daily-cloudcode-pa.sandbox.googleapis.com",
@@ -63,8 +62,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "9YN1MFeCuoT2cwiES/8Fi8YjT7f/ax3nshHnkyR6z7oIAD7smVofoNniMfxYl7lKj29Mj1icIBL4dsBWlwVKDA=="
+    "sig": "1vC+SH8GfeAzuLtPBiWHPPtpaVKtNDzrTkyDzQOL8kblp+PqKFahwpellPKB9eSUPh6QsEUq8Ha18JTzZPocBQ=="
   },
   "type": "integration",
-  "version": "1.6.7"
+  "version": "1.6.8"
 }
