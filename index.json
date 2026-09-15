@@ -355,7 +355,7 @@
     },
     {
       "id": "xai",
-      "version": "1.3.5",
+      "version": "1.4.2",
       "type": "integration",
       "name": {
         "en": "xAI",

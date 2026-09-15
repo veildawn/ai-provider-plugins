@@ -53,8 +53,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "dY64v0za55GSdslFJX+JSzFssKOyKDABeD8aF6YItn8YFUn2/+rBNwDVblgRVqVU51MAfQOj6bvaZtokYD+6BQ=="
+    "sig": "8Kraush8Z9M8m9C9opkk+hh9zta5yBk+86Oe7hDUZBdFG1quUk203yLs2bmCa1S6dclRRgpvjl7j/oKETa2TBg=="
   },
   "type": "integration",
-  "version": "1.3.5"
+  "version": "1.4.2"
 }
