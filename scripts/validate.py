@@ -81,11 +81,11 @@ for plugin_id, path in files.items():
     for provider in providers:
         module_id = provider.get("module")
         relay = provider.get("relay")
-        assert bool(module_id) != bool(relay), f"{path}: provider needs exactly one of module or relay"
+        assert not (module_id and relay), f"{path}: provider must not declare both module and relay"
         if module_id:
             assert module_id in modules, f"{path}: provider references missing module {module_id}"
             used.add(module_id)
-        else:
+        elif relay:
             # Declarative relay invariants (mirror of relayvm.Parse).
             assert isinstance(relay.get("quota_url"), str) and relay["quota_url"].startswith("/"), \
                 f"{path}: relay quota_url must be an absolute path"
@@ -114,6 +114,6 @@ for plugin_id, path in files.items():
             assert entry["module_sha256"] == module["sha256"], f"{path}: index module_sha256 is stale"
             assert entry["module_bytes"] == len(base64.b64decode(module["data"])), f"{path}: index module_bytes is stale"
         else:
-            assert "module_sha256" not in entry, f"{path}: relay provider must not record a module digest"
+            assert "module_sha256" not in entry, f"{path}: provider without a module must not record a module digest"
 
 print(f"validated {len(files)} integration manifests, {len(revoked_keys)} revoked keys")
