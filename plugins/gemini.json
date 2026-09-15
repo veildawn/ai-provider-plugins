@@ -54,6 +54,9 @@
           "https://generativelanguage.googleapis.com"
         ],
         "family": "openai",
+        "http": [
+          "generativelanguage.googleapis.com"
+        ],
         "module": "provider",
         "name": "gemini",
         "operation_url": true,
@@ -68,8 +71,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "KDACkqKtUPILaQk64NOzwYG8Fr5Ign5hUZERRcnJlCaTqOjs6C6/QEqfwFzZJOmvYWC3PZkDayQg5wvc1AKCCQ=="
+    "sig": "sL0K9dy+BL1inS2AwVRDUrsBHSL24FHAh1kbunIFDpvtvs+r6Ybttxwt9Scc2B0Sd/QgZSzPlSrYVNcP1xLgAw=="
   },
   "type": "integration",
-  "version": "1.1.2"
+  "version": "1.1.3"
 }
