@@ -70,7 +70,6 @@
             "zh": "会话令牌（可选）"
           },
           "name": "session_token",
-          "required": false,
           "type": "password"
         }
       ],
@@ -168,8 +167,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "HCiFByFmzmlc1pcBDwdlBqfHAUrs2V0RCxrIQBXU5U4muBcWaofHUeo5s4uhbbr/LnORUg3K9nX9PZn24YoiAA=="
+    "sig": "HlvCzyBjJsob3gc090f/Ho3jAUmtemGJyZ5Gp80zKu6paTASCPSOhdyuYQtT1aKlk66d6l8UomtPpsUfInQpBw=="
   },
   "type": "integration",
-  "version": "1.0.2"
+  "version": "1.0.3"
 }
