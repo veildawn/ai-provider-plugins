@@ -457,7 +457,8 @@
         },
         "module": {
           "type": "string",
-          "pattern": "^[a-z][a-z0-9_]{0,63}$"
+          "pattern": "^[a-z][a-z0-9_]{0,63}$",
+          "description": "Wasm module owning this provider's hooks. Omit for a declarative provider: the host then serves the standard protocol path — generic request preparation, quota via quota_query/kind presets, and the standard /v1/models probe or the static models catalog."
         },
         "http": {
           "type": "array",
@@ -498,6 +499,27 @@
           "type": "object",
           "additionalProperties": {
             "$ref": "#/$defs/protocol_base"
+          }
+        },
+        "model_protocols": {
+          "type": "object",
+          "maxProperties": 64,
+          "description": "Per-model protocol narrowing for upstreams whose catalog does not speak every declared arm uniformly: keys are exact model ids or `*`-anchored patterns (leading and/or trailing `*` only), values are the ONLY protocols that model is served over. A model matching no key keeps the provider's full protocols set; every value must be a protocol the provider declares. The host parses manifests strictly, so a plugin carrying this field installs only on hosts that know it — gate the release with min_app_version.",
+          "propertyNames": {
+            "pattern": "^(\\*[^*]+|[^*]+\\*|\\*[^*]+\\*|[^*]+)$"
+          },
+          "additionalProperties": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "openai",
+                "anthropic",
+                "responses",
+                "realtime"
+              ]
+            }
           }
         },
         "operation_url": {
@@ -548,9 +570,6 @@
             "$ref": "#/$defs/model"
           }
         },
-        "relay": {
-          "$ref": "#/$defs/relay"
-        },
         "aliases": {
           "type": "array",
           "items": {
@@ -586,19 +605,7 @@
           "type": "object",
           "additionalProperties": true
         }
-      },
-      "oneOf": [
-        {
-          "required": [
-            "module"
-          ]
-        },
-        {
-          "required": [
-            "relay"
-          ]
-        }
-      ]
+      }
     },
     "module": {
       "type": "object",
@@ -615,7 +622,10 @@
           "pattern": "^[a-z][a-z0-9_]{0,63}$"
         },
         "runtime": {
-          "const": "wasm@1"
+          "enum": [
+            "jobs@1",
+            "wasm@2"
+          ]
         },
         "data": {
           "type": "string",
@@ -721,165 +731,6 @@
           }
         }
       ]
-    },
-    "relay": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "quota_url",
-        "windows"
-      ],
-      "description": "Declarative relay: the host serves this provider without a wasm module.",
-      "properties": {
-        "quota_url": {
-          "type": "string",
-          "pattern": "^/"
-        },
-        "quota_method": {
-          "type": "string",
-          "enum": [
-            "GET",
-            "POST"
-          ]
-        },
-        "quota_bearer": {
-          "type": "boolean"
-        },
-        "plan_path": {
-          "type": "string",
-          "minLength": 1
-        },
-        "models_url": {
-          "type": "string",
-          "pattern": "^/"
-        },
-        "models_fallback": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/relay_model"
-          }
-        },
-        "windows": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/$defs/relay_window"
-          }
-        }
-      }
-    },
-    "relay_window": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "key"
-      ],
-      "properties": {
-        "path": {
-          "type": "string",
-          "minLength": 1
-        },
-        "key": {
-          "type": "string",
-          "minLength": 1
-        },
-        "label": {
-          "type": "string"
-        },
-        "kind": {
-          "type": "string"
-        },
-        "used_percent": {
-          "type": "number",
-          "minimum": 0,
-          "maximum": 100
-        },
-        "percent_of": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": [
-            "total",
-            "remaining"
-          ],
-          "properties": {
-            "total": {
-              "type": "string",
-              "minLength": 1
-            },
-            "remaining": {
-              "type": "string",
-              "minLength": 1
-            }
-          }
-        },
-        "refill": {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "kind": {
-              "type": "string",
-              "enum": [
-                "rolling",
-                "cycle"
-              ]
-            },
-            "seconds": {
-              "type": "integer",
-              "minimum": 1
-            },
-            "cycle": {
-              "type": "string",
-              "enum": [
-                "hour",
-                "day",
-                "week",
-                "month"
-              ]
-            }
-          }
-        },
-        "reset_path": {
-          "type": "string",
-          "minLength": 1
-        }
-      },
-      "anyOf": [
-        {
-          "required": [
-            "path"
-          ]
-        },
-        {
-          "required": [
-            "percent_of"
-          ]
-        },
-        {
-          "required": [
-            "used_percent"
-          ]
-        }
-      ]
-    },
-    "relay_model": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "id"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "minLength": 1
-        },
-        "display_name": {
-          "type": "string"
-        },
-        "context_window": {
-          "type": "integer",
-          "minimum": 1
-        }
-      }
     }
   }
 }
