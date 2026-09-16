@@ -131,7 +131,7 @@
     },
     {
       "id": "bedrock",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "type": "integration",
       "name": {
         "en": "AWS Bedrock (Claude)",
@@ -151,8 +151,8 @@
         "wasm"
       ],
       "min_app_version": "0.18.0",
-      "module_sha256": "c2ceb1347debedd75d177652e1aecf14aa2fd14fae6beac76bf84b11df90600c",
-      "module_bytes": 362284,
+      "module_sha256": "9d7ee5a5879049e00d603e3f986df5274cb77c8a63263ba413b3badcf1e1e9dd",
+      "module_bytes": 362334,
       "updated_at": "2026-09-16",
       "key_id": "ed25519:4da5f976df1e1bfb"
     },
