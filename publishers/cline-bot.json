@@ -1,0 +1,11 @@
+{
+  "handle": "cline-bot",
+  "keys": [
+    {
+      "key_id": "ed25519:61bbfa160064a048",
+      "alg": "ed25519",
+      "public_key": "Ybv6FgBkoEhX40ZaOQYltFW22QJct15k15noxSXe4DA=",
+      "created_at": "2026-09-19T10:00:00Z"
+    }
+  ]
+}
