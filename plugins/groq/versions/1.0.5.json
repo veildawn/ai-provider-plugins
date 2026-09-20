@@ -1,0 +1,63 @@
+{
+  "author": "veildawn",
+  "description": {
+    "en": "Groq's low-latency OpenAI and Responses APIs with account model discovery.",
+    "zh": "Groq 的低延迟 OpenAI 与 Responses API，含账号模型发现。"
+  },
+  "homepage": "https://groq.com",
+  "icon": "data:image/png;base64,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",
+  "id": "groq",
+  "manifest_version": 3,
+  "min_app_version": "0.17.18",
+  "name": {
+    "en": "Groq",
+    "zh": "Groq"
+  },
+  "provides": {
+    "account": {
+      "description": {
+        "en": "Paste a Groq API key. Models are discovered from your account.",
+        "zh": "粘贴 Groq API Key；模型将从你的账号自动发现。"
+      },
+      "fields": [
+        {
+          "label": {
+            "en": "API key",
+            "zh": "API Key"
+          },
+          "name": "api_key",
+          "placeholder": "gsk_...",
+          "required": true,
+          "type": "password"
+        }
+      ],
+      "flow": "form",
+      "guide_url": "https://console.groq.com/keys",
+      "title": {
+        "en": "Connect Groq",
+        "zh": "连接 Groq"
+      }
+    },
+    "providers": [
+      {
+        "base_url": "https://api.groq.com/openai/v1",
+        "display_name": "Groq",
+        "family": "openai",
+        "name": "groq",
+        "operation_url": true,
+        "protocols": [
+          "openai",
+          "responses"
+        ]
+      }
+    ]
+  },
+  "publisher": "veildawn",
+  "signature": {
+    "alg": "ed25519",
+    "key_id": "ed25519:a2b36ebc3a600442",
+    "sig": "/Gj1vZNzjofA9kcAEPGtTLS1jYe7ieELwM39MFJiuUdEJNVkQfOcjVuN+Q1BeNUWh/4P22wkLyfb4ndt256WCg=="
+  },
+  "type": "integration",
+  "version": "1.0.5"
+}

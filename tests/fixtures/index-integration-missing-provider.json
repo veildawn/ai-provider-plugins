@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "plugins": [
+    {
+      "id": "incomplete",
+      "version": "1.0.0",
+      "type": "integration",
+      "name": {
+        "en": "Incomplete"
+      },
+      "description": {
+        "en": "An integration that forgot its provider."
+      },
+      "publisher": "veildawn",
+      "capabilities": [
+        "provider"
+      ]
+    }
+  ]
+}

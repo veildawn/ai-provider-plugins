@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "plugins": [
+    {
+      "id": "not-a-job",
+      "version": "1.0.0",
+      "type": "automation",
+      "name": {
+        "en": "Not a job"
+      },
+      "description": {
+        "en": "An automation that declares no job capability."
+      },
+      "publisher": "veildawn",
+      "capabilities": [
+        "provider"
+      ]
+    }
+  ]
+}

@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"sort"
 )
 
 type publisher struct {
@@ -54,7 +55,13 @@ func main() {
 			keys[pub.Handle][item.KeyID] = key
 		}
 	}
+	// The latest release of every plugin, plus every archived release the
+	// index advertises. An archive is what an older server installs, so a bad
+	// signature there is as load-bearing as one on the latest.
 	paths, _ := filepath.Glob("plugins/*.json")
+	archived, _ := filepath.Glob("plugins/*/versions/*.json")
+	paths = append(paths, archived...)
+	sort.Strings(paths)
 	if len(paths) == 0 {
 		fmt.Println("plugins/ absent (build artifacts not committed) — nothing to verify")
 		return

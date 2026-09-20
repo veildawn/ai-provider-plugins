@@ -60,17 +60,31 @@ else:
         f"files-only={sorted(set(files)-set(by_id))}"
     )
 
+integration_count = 0
 for plugin_id, path in files.items():
     manifest = load(path)
     entry = by_id[plugin_id]
     assert manifest["id"] == plugin_id, f"{path}: id does not match filename"
     for field in ("version", "type", "name", "description", "publisher"):
         assert entry[field] == manifest[field], f"{path}: index {field} differs from manifest"
-    assert manifest["type"] == "integration", f"{path}: provider market only accepts integrations"
+    # Two lanes share one index. An integration installs resources for an
+    # upstream; an automation declares jobs and no provider. The host infers
+    # automation from jobs when a manifest omits the field, so accept that too.
+    package_type = manifest.get("type") or (
+        "automation" if manifest["provides"].get("jobs") else "integration"
+    )
+    assert package_type in ("integration", "automation"), f"{path}: unknown package type {package_type}"
+    assert entry["type"] == package_type, f"{path}: index type differs from manifest"
     providers = manifest["provides"].get("providers", [])
-    assert providers, f"{path}: integration has no provider"
-    assert entry["provider_name"] == providers[0]["name"], f"{path}: provider_name differs"
-    assert entry["protocols"] == providers[0].get("protocols", ["openai"]), f"{path}: protocols differ"
+    if package_type == "integration":
+        integration_count += 1
+        assert providers, f"{path}: integration has no provider"
+        assert entry["provider_name"] == providers[0]["name"], f"{path}: provider_name differs"
+        assert entry["protocols"] == providers[0].get("protocols", ["openai"]), f"{path}: protocols differ"
+    else:
+        assert manifest["provides"].get("jobs"), f"{path}: automation declares no job"
+        assert providers == [], f"{path}: automation must not declare a provider"
+        assert "job" in entry.get("capabilities", []), f"{path}: automation must advertise the job capability"
     signature = manifest["signature"]
     assert signature["key_id"] in publishers.get(manifest["publisher"], {}), f"{path}: signing key is not published"
     assert entry.get("key_id") == signature["key_id"], f"{path}: index key_id differs"
@@ -116,4 +130,4 @@ for plugin_id, path in files.items():
         else:
             assert "module_sha256" not in entry, f"{path}: provider without a module must not record a module digest"
 
-print(f"validated {len(files)} integration manifests, {len(revoked_keys)} revoked keys")
+print(f"validated {len(files)} manifests ({integration_count} integration, {len(files) - integration_count} automation), {len(revoked_keys)} revoked keys")
