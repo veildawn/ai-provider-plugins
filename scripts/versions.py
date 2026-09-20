@@ -261,18 +261,52 @@ def expected_index_versions(root, plugin_id):
     return published_entries(root, plugin_id)
 
 
+def sync_latest_archive(root, plugin_id, latest_version):
+    """Mirror plugins/<id>.json into the archive under its own version.
+
+    A republish can keep the version number and change the bytes — a re-sign, a
+    hotfix, a corrected adapter. The unversioned endpoint would then serve the
+    new artifact while the versioned one still served the superseded bytes, so
+    the newest release is mirrored rather than only created. Older releases stay
+    append-only: a server mid-install fetches one by version, so removing or
+    rewriting one would break a download rather than shrink the repository.
+    """
+    source = root / "plugins" / f"{plugin_id}.json"
+    destination = archive_dir(root, plugin_id) / f"{latest_version}.json"
+    raw = source.read_bytes()
+    if not raw.endswith(b"\n"):
+        raw += b"\n"
+    if destination.exists() and destination.read_bytes() == raw:
+        return False
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_bytes(raw)
+    return True
+
+
 def cmd_write(root):
     index = load(root / "index.json")
     for entry in index["plugins"]:
-        entries = expected_index_versions(root, entry["id"])
-        if not entries:
-            raise SystemExit(f"{entry['id']}: no package on disk to advertise")
-        latest = entries[0]
-        if latest["version"] != entry["version"]:
+        plugin_id = entry["id"]
+        latest_path = root / "plugins" / f"{plugin_id}.json"
+        if not latest_path.is_file():
+            raise SystemExit(f"{plugin_id}: plugins/{plugin_id}.json is missing; build it first")
+        latest_version, _ = read_manifest(latest_path)
+        if latest_version != entry["version"]:
             raise SystemExit(
-                f"{entry['id']}: plugins/{entry['id']}.json is {latest['version']} "
+                f"{plugin_id}: plugins/{plugin_id}.json is {latest_version} "
                 f"but the index says {entry['version']}; publish the built manifest first"
             )
+        mirrored = sync_latest_archive(root, plugin_id, latest_version)
+        entries = expected_index_versions(root, plugin_id)
+        if not entries:
+            raise SystemExit(f"{plugin_id}: no package on disk to advertise")
+        if entries[0]["version"] != entry["version"]:
+            raise SystemExit(
+                f"{plugin_id}: the newest archived release is {entries[0]['version']}, "
+                f"which is newer than the index's {entry['version']}"
+            )
+        if mirrored:
+            print(f"mirrored {plugin_id}@{latest_version}")
         entry["versions"] = entries
     dump(root / "index.json", index)
     total = sum(len(entry["versions"]) for entry in index["plugins"])
@@ -377,12 +411,10 @@ def cmd_backfill(root):
         keep = {item["version"]: item for item in floors_to_newest(sort_newest_first(candidates))}
         for version in keep:
             path = archive_dir(root, plugin_id) / f"{version}.json"
-            if path.exists():
+            if path.exists() or version == latest_version:
+                # The newest release is mirrored by cmd_write, which runs below.
                 continue
-            if version == latest_version:
-                raw = latest_path.read_bytes()
-            else:
-                raw = history[version][1]
+            raw = history[version][1]
             key_id = str((json.loads(raw).get("signature") or {}).get("key_id") or "").strip().lower()
             if revoked(plugin_id, version, key_id):
                 print(f"skipped {plugin_id}@{version}: revoked")

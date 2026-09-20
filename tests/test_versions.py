@@ -193,6 +193,22 @@ class FixtureRepo(unittest.TestCase):
         with self.assertRaises(SystemExit):
             versions.revoked_matcher(self.root)
 
+    def test_write_mirrors_a_republished_latest_into_the_archive(self):
+        self.write("plugins/acme.json", manifest("acme", "2.0.0", "0.19.0"))
+        self.index({"id": "acme", "version": "2.0.0", "type": "integration"})
+        versions.cmd_write(self.root)
+        archived = self.root / "plugins/acme/versions/2.0.0.json"
+        self.assertEqual("acme", json.loads(archived.read_text())["id"])
+
+        # Same version, different bytes: a re-sign or a hotfix.
+        self.write("plugins/acme.json", manifest("acme", "2.0.0", "0.19.0", key_id="ed25519:bbbbbbbbbbbbbbbb"))
+        versions.cmd_write(self.root)
+        self.assertEqual(
+            "ed25519:bbbbbbbbbbbbbbbb",
+            json.loads(archived.read_text())["signature"]["key_id"],
+        )
+        versions.cmd_check(self.root)
+
     def test_index_shape_omits_an_empty_floor(self):
         self.write("plugins/acme.json", manifest("acme", "1.0.0"))
         self.index({"id": "acme", "version": "1.0.0", "type": "integration"})
