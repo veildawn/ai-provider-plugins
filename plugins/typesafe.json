@@ -1,0 +1,69 @@
+{
+  "author": "veildawn",
+  "description": {
+    "en": "TypeSafe System One (Jev): typed decisions on POST /v1/systemone.",
+    "zh": "TypeSafe System One（Jev）：POST /v1/systemone 上的带类型决策。"
+  },
+  "homepage": "https://typesafe.ai",
+  "id": "typesafe",
+  "manifest_version": 3,
+  "min_app_version": "0.20.0",
+  "name": {
+    "en": "TypeSafe",
+    "zh": "TypeSafe"
+  },
+  "provides": {
+    "account": {
+      "description": {
+        "en": "Paste a TypeSafe API key. Jev answers typed questions over a state document in one call.",
+        "zh": "粘贴 TypeSafe API Key。Jev 在一次调用里对状态文档回答带类型的问题。"
+      },
+      "fields": [
+        {
+          "help_text": {
+            "en": "Create it in the TypeSafe console.",
+            "zh": "在 TypeSafe 控制台创建。"
+          },
+          "label": {
+            "en": "API key",
+            "zh": "API Key"
+          },
+          "name": "api_key",
+          "placeholder": "ts_...",
+          "required": true,
+          "type": "password"
+        }
+      ],
+      "flow": "form",
+      "guide_url": "https://console.typesafe.ai/settings/keys",
+      "title": {
+        "en": "Connect TypeSafe",
+        "zh": "连接 TypeSafe"
+      }
+    },
+    "providers": [
+      {
+        "base_url": "https://api.typesafe.ai",
+        "display_name": "TypeSafe",
+        "models": [
+          {
+            "display_name": "Jev 1.13",
+            "id": "jev-1.13.0"
+          }
+        ],
+        "name": "typesafe",
+        "protocols": [
+          "decisions"
+        ]
+      }
+    ]
+  },
+  "publisher": "veildawn",
+  "signature": {
+    "alg": "ed25519",
+    "key_id": "ed25519:a2b36ebc3a600442",
+    "sig": "ADclPwjSc9fUXAgls7IlVAzUKfZNGw/J9Bx+SHq0VJmT4OHd+tOHfogN+7TrblKVFn2nSd8FIMV4nrjMk2JSDA=="
+  },
+  "type": "integration",
+  "version": "0.1.0"
+}

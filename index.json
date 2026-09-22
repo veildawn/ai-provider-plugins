@@ -2,6 +2,45 @@
   "version": 1,
   "plugins": [
     {
+      "id": "agentjev",
+      "tags": [
+        "agentjev",
+        "decisions",
+        "jev",
+        "local"
+      ],
+      "version": "0.1.0",
+      "type": "integration",
+      "name": {
+        "en": "AgentJev",
+        "zh": "AgentJev"
+      },
+      "description": {
+        "en": "Local AgentJev-0.6B typed-decision model (jev_service) adapted onto the Jev-compatible /v1/systemone surface.",
+        "zh": "本地 AgentJev-0.6B 决策模型（jev_service），经转换接入 Jev 兼容的 /v1/systemone 面。"
+      },
+      "publisher": "veildawn",
+      "provider_name": "agentjev",
+      "protocols": [
+        "decisions"
+      ],
+      "capabilities": [
+        "provider",
+        "wasm"
+      ],
+      "min_app_version": "0.20.0",
+      "updated_at": "2026-09-22",
+      "key_id": "ed25519:a2b36ebc3a600442",
+      "module_sha256": "60fab8b0682287e2027720cafabecc8ce893b3683561a3bc83d6bb3d7707094a",
+      "module_bytes": 156520,
+      "versions": [
+        {
+          "version": "0.1.0",
+          "min_app_version": "0.20.0"
+        }
+      ]
+    },
+    {
       "id": "anthropic",
       "version": "1.4.7",
       "type": "integration",
@@ -1486,6 +1525,41 @@
         {
           "version": "1.0.0",
           "min_app_version": "0.14.0"
+        }
+      ]
+    },
+    {
+      "id": "typesafe",
+      "tags": [
+        "typesafe",
+        "jev",
+        "decisions"
+      ],
+      "version": "0.1.0",
+      "type": "integration",
+      "name": {
+        "en": "TypeSafe",
+        "zh": "TypeSafe"
+      },
+      "description": {
+        "en": "TypeSafe System One (Jev): typed decisions on POST /v1/systemone.",
+        "zh": "TypeSafe System One（Jev）：POST /v1/systemone 上的带类型决策。"
+      },
+      "publisher": "veildawn",
+      "provider_name": "typesafe",
+      "protocols": [
+        "decisions"
+      ],
+      "capabilities": [
+        "provider"
+      ],
+      "min_app_version": "0.20.0",
+      "updated_at": "2026-09-22",
+      "key_id": "ed25519:a2b36ebc3a600442",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "min_app_version": "0.20.0"
         }
       ]
     },
