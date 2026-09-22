@@ -46,10 +46,7 @@
         "base_url": "https://api.typesafe.ai",
         "display_name": "TypeSafe",
         "models": [
-          {
-            "display_name": "Jev 1.13",
-            "id": "jev-1.13.0"
-          }
+          "jev-1.13.0"
         ],
         "name": "typesafe",
         "protocols": [
@@ -62,7 +59,7 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "ADclPwjSc9fUXAgls7IlVAzUKfZNGw/J9Bx+SHq0VJmT4OHd+tOHfogN+7TrblKVFn2nSd8FIMV4nrjMk2JSDA=="
+    "sig": "SWJpBhTyRdkUsLLJ3Z/VXz6Uuda0EWFzXZEHhFHSgYJ6b6SJryDP5llh4cCBNWm+064J0J13zadgdMgXcA2dDg=="
   },
   "type": "integration",
   "version": "0.1.0"
