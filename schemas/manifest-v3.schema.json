@@ -256,6 +256,21 @@
           "items": {
             "$ref": "#/$defs/account_control"
           }
+        },
+        "oauth": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "callback_port": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 65535
+            },
+            "redirect_uri": {
+              "type": "string",
+              "format": "uri"
+            }
+          }
         }
       },
       "allOf": [
@@ -555,7 +570,8 @@
                 "openai",
                 "anthropic",
                 "responses",
-                "realtime"
+                "realtime",
+                "decisions"
               ]
             }
           }
