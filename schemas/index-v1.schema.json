@@ -98,7 +98,8 @@
               "openai",
               "anthropic",
               "responses",
-              "realtime"
+              "realtime",
+              "decisions"
             ]
           }
         },
