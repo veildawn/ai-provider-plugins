@@ -102,7 +102,7 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "FPrYs+HhjQkBde8Ni9SD2vbFNGG6Apj+EALTCuHraGj+rTIUUoHRldV77VEIYshyTL2SVMr7N5ngvCO3AiB1DA=="
+    "sig": "ECKKHDPXDr0C1amqVZu6uOFlSabLhf7sXm87o1SO0VtLOqs+xR/15E7cHRwvoaVvKwYC6bTOrplGrcN3uIIZCg=="
   },
   "type": "integration",
   "version": "1.3.7"
