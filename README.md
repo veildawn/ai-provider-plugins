@@ -16,6 +16,12 @@ revoke.json                        Revocation list
 scripts/versions.py                Maintains the release archive and the index
 ```
 
+The provider wasm ABI is not defined here. It lives with the provider SDK in the
+private `ai-provider-source` repository (`schemas/abi-v2.json`), which is the
+only place a hook name, limit or payload shape may be declared. An older
+`schemas/abi.json` used to sit in this repository as well; it was a copy nothing
+here read, it drifted from the IDL, and it was removed rather than synced.
+
 ## Releases and the `versions` array
 
 A server installs the newest release *its own build* can run, so the index
