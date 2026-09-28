@@ -18,6 +18,12 @@
       "alg": "ed25519",
       "public_key": "G+oQXCac0ggKl3T8hbZNhRxNQKsCUwG/OqcBjhW/Puk=",
       "created_at": "2026-09-23T00:00:00Z"
+    },
+    {
+      "key_id": "ed25519:61bbfa160064a048",
+      "alg": "ed25519",
+      "public_key": "Ybv6FgBkoEhX40ZaOQYltFW22QJct15k15noxSXe4DA=",
+      "created_at": "2026-09-28T15:01:03Z"
     }
   ]
 }
