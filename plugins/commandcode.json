@@ -1,0 +1,674 @@
+{
+  "author": "veildawn",
+  "description": {
+    "en": "CommandCode multi-model API with Chat, Responses and Claude Messages, API-key account setup and model-specific routing.",
+    "zh": "CommandCode 多模型 API，支持 Chat、Responses 与 Claude Messages，提供 API Key 账号配置与按模型协议路由。"
+  },
+  "docs": {
+    "en": "Create a CommandCode API key in Studio (https://commandcode.ai/studio) and add an account. Use full model IDs, for example deepseek/deepseek-v4.1-flash. Claude models use Messages; other models use Chat and, where advertised by the official catalog, Responses. Models are discovered from /models with a catalog fallback. No public quota API is documented; check billing in Studio. Provider API docs: https://commandcode.ai/docs/provider",
+    "zh": "在 CommandCode Studio（https://commandcode.ai/studio）创建 API Key 后添加账号。使用完整模型 ID，例如 deepseek/deepseek-v4.1-flash。Claude 仅走 Messages；其他模型走 Chat，官方目录声明支持时可走 Responses。通过 /models 自动发现模型，并提供目录回退。官方未公开额度查询 API，请在 Studio 查看账单。接口文档：https://commandcode.ai/docs/provider"
+  },
+  "homepage": "https://commandcode.ai",
+  "icon": "data:image/png;base64,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4CX7scceS1LEuISHH34YsfmKjfJEDBPJMIdxICKvEPxV3GxeomV7rAbVqVOnsCBt3749wl+0GigWfvvtt72Kww4LXrP07Nu3L4InxfZTyQifFqzUa1azC9MmKysLC2XLoilUmEAG2Pv161eYIjzvPwHspIRYJ6yWo2g5dTEM6oXoxp9MGhuMw2FOvb2KkkCdn58vWLw+WUOmeEYArleYgoFvpqIVncUQAIUQWAQfeqZfmgoqUaJE7969165d69xexbPAi9dOermlyZgK1WJaFDE0cPFVtGiCGKZU582bh3grkzc1UcCQKILmdO7cGU0TzxkDKcAiPCOx6JD/DkE8gIAwbnu4S912220Ymca2z/hcdrigsXX2nt17NmzcgD2w8Ic4MkGNYcmCjxkskoV9sxEEh1dHh0A2+DNjHVys9YIA648++gjPEN0V6ULBJJodwIoeq3zGdlvCdyHsjZ8IBEM8FDZgxe0Q8wn4mMMu6iYv4GptjlfHCARD7AuiXuBTjRsEyOAPEIAFfwiDxNA+1vPBsVc1shwSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESMJbAvwGOc58Z9a83AgAAAABJRU5ErkJggg==",
+  "id": "commandcode",
+  "manifest_version": 3,
+  "min_app_version": "0.19.0",
+  "name": {
+    "en": "CommandCode",
+    "zh": "CommandCode"
+  },
+  "provides": {
+    "account": {
+      "description": {
+        "en": "Paste a CommandCode API key from Studio. Models are discovered automatically. Provider requests are billed by CommandCode.",
+        "zh": "粘贴从 CommandCode Studio 创建的 API Key；模型会自动发现，Provider 请求由 CommandCode 计费。"
+      },
+      "fields": [
+        {
+          "label": {
+            "en": "API key",
+            "zh": "API Key"
+          },
+          "name": "api_key",
+          "placeholder": "user_...",
+          "required": true,
+          "type": "password"
+        }
+      ],
+      "flow": "form",
+      "guide_url": "https://commandcode.ai/docs/provider",
+      "title": {
+        "en": "Connect CommandCode",
+        "zh": "连接 CommandCode"
+      }
+    },
+    "providers": [
+      {
+        "base_url": "https://api.commandcode.ai/provider/v1",
+        "display_name": "CommandCode",
+        "family": "openai",
+        "model_protocols": {
+          "*/*": [
+            "openai"
+          ],
+          "MiniMaxAI/MiniMax-M2.5": [
+            "openai",
+            "responses"
+          ],
+          "MiniMaxAI/MiniMax-M2.7": [
+            "openai",
+            "responses"
+          ],
+          "MiniMaxAI/MiniMax-M3": [
+            "openai",
+            "responses"
+          ],
+          "Qwen/Qwen3.6-Max-Preview": [
+            "openai",
+            "responses"
+          ],
+          "Qwen/Qwen3.6-Plus": [
+            "openai",
+            "responses"
+          ],
+          "Qwen/Qwen3.7-Flash": [
+            "openai",
+            "responses"
+          ],
+          "Qwen/Qwen3.7-Max": [
+            "openai",
+            "responses"
+          ],
+          "Qwen/Qwen3.7-Plus": [
+            "openai",
+            "responses"
+          ],
+          "Qwen/Qwen3.8-27B": [
+            "openai",
+            "responses"
+          ],
+          "Qwen/Qwen3.8-Max": [
+            "openai",
+            "responses"
+          ],
+          "Qwen/Qwen3.8-Omni-Flash": [
+            "openai",
+            "responses"
+          ],
+          "claude-*": [
+            "anthropic"
+          ],
+          "deepseek/deepseek-v4-flash": [
+            "openai",
+            "responses"
+          ],
+          "deepseek/deepseek-v4-flash-vision-exp": [
+            "openai",
+            "responses"
+          ],
+          "deepseek/deepseek-v4-pro": [
+            "openai",
+            "responses"
+          ],
+          "deepseek/deepseek-v4.1-flash": [
+            "openai",
+            "responses"
+          ],
+          "deepseek/deepseek-v4.1-flash-fast": [
+            "openai",
+            "responses"
+          ],
+          "google/gemini-3.1-flash-lite": [
+            "openai",
+            "responses"
+          ],
+          "google/gemini-3.5-flash": [
+            "openai",
+            "responses"
+          ],
+          "google/gemini-3.5-flash-lite": [
+            "openai",
+            "responses"
+          ],
+          "google/gemini-3.6-flash": [
+            "openai",
+            "responses"
+          ],
+          "google/gemini-3.8-flash": [
+            "openai",
+            "responses"
+          ],
+          "google/gemini-4-argon": [
+            "openai",
+            "responses"
+          ],
+          "gpt-*": [
+            "openai",
+            "responses"
+          ],
+          "meta/muse-spark-1.1": [
+            "openai",
+            "responses"
+          ],
+          "meta/muse-spark-1.2": [
+            "openai",
+            "responses"
+          ],
+          "meta/muse-spark-1.2-contributor": [
+            "openai",
+            "responses"
+          ],
+          "meta/muse-spark-1.3": [
+            "openai",
+            "responses"
+          ],
+          "meta/muse-spark-1.3-contributor": [
+            "openai",
+            "responses"
+          ],
+          "meta/muse-wonder-1.0": [
+            "openai",
+            "responses"
+          ],
+          "mistral/mistral-large-4": [
+            "openai",
+            "responses"
+          ],
+          "moonshotai/Kimi-K2.5": [
+            "openai",
+            "responses"
+          ],
+          "moonshotai/Kimi-K2.6": [
+            "openai",
+            "responses"
+          ],
+          "moonshotai/Kimi-K2.7-Code": [
+            "openai",
+            "responses"
+          ],
+          "moonshotai/Kimi-K2.7-Code-Highspeed": [
+            "openai",
+            "responses"
+          ],
+          "moonshotai/Kimi-K3": [
+            "openai",
+            "responses"
+          ],
+          "nvidia/nemotron-3-ultra-550b-a55b": [
+            "openai",
+            "responses"
+          ],
+          "poolside/laguna-s-2.1-free": [
+            "openai",
+            "responses"
+          ],
+          "sakana/fugu-ultra": [
+            "openai",
+            "responses"
+          ],
+          "stealth/glyph-cluster:free": [
+            "openai",
+            "responses"
+          ],
+          "stepfun/Step-3.5-Flash": [
+            "openai",
+            "responses"
+          ],
+          "stepfun/Step-3.7-Flash": [
+            "openai",
+            "responses"
+          ],
+          "stepfun/Step-5-Preview": [
+            "openai",
+            "responses"
+          ],
+          "tencent/hy3-paid": [
+            "openai",
+            "responses"
+          ],
+          "thinkingmachines/inkling": [
+            "openai",
+            "responses"
+          ],
+          "thinkingmachines/inkling-small": [
+            "openai",
+            "responses"
+          ],
+          "xai/grok-4.5": [
+            "openai",
+            "responses"
+          ],
+          "xai/grok-4.6": [
+            "openai",
+            "responses"
+          ],
+          "xai/grok-4.7": [
+            "openai",
+            "responses"
+          ],
+          "xiaomi/mimo-v2.5": [
+            "openai",
+            "responses"
+          ],
+          "xiaomi/mimo-v2.5-pro": [
+            "openai",
+            "responses"
+          ],
+          "xiaomi/mimo-v2.6-flash": [
+            "openai",
+            "responses"
+          ],
+          "xiaomi/mimo-v2.6-pro": [
+            "openai",
+            "responses"
+          ],
+          "xiaomi/mimo-v2.6-pro-ultraspeed": [
+            "openai",
+            "responses"
+          ],
+          "z-ai/glm-5.3-flash": [
+            "openai",
+            "responses"
+          ],
+          "z-ai/glm-5.3-flashx": [
+            "openai",
+            "responses"
+          ],
+          "zai-org/GLM-5": [
+            "openai",
+            "responses"
+          ],
+          "zai-org/GLM-5.1": [
+            "openai",
+            "responses"
+          ],
+          "zai-org/GLM-5.2": [
+            "openai",
+            "responses"
+          ],
+          "zai-org/GLM-5.2-Fast": [
+            "openai",
+            "responses"
+          ],
+          "zai-org/GLM-5.3": [
+            "openai",
+            "responses"
+          ]
+        },
+        "models": [
+          {
+            "context_window": 1000000,
+            "id": "claude-sonnet-5-5"
+          },
+          {
+            "context_window": 1000000,
+            "id": "claude-sonnet-5"
+          },
+          {
+            "context_window": 1000000,
+            "id": "claude-sonnet-4-6"
+          },
+          {
+            "context_window": 1000000,
+            "id": "claude-fable-5-1"
+          },
+          {
+            "context_window": 1000000,
+            "id": "claude-fable-5"
+          },
+          {
+            "context_window": 1000000,
+            "id": "claude-opus-5-5"
+          },
+          {
+            "context_window": 1000000,
+            "id": "claude-opus-5"
+          },
+          {
+            "context_window": 1000000,
+            "id": "claude-opus-4-8"
+          },
+          {
+            "context_window": 1000000,
+            "id": "claude-opus-4-7"
+          },
+          {
+            "context_window": 1000000,
+            "id": "claude-haiku-5-5"
+          },
+          {
+            "context_window": 200000,
+            "id": "claude-haiku-4-5-20251001"
+          },
+          {
+            "context_window": 1050000,
+            "id": "gpt-6-astra"
+          },
+          {
+            "context_window": 1050000,
+            "id": "gpt-6.1-sol"
+          },
+          {
+            "context_window": 1050000,
+            "id": "gpt-6-sol"
+          },
+          {
+            "context_window": 1050000,
+            "id": "gpt-6-luna"
+          },
+          {
+            "context_window": 1050000,
+            "id": "gpt-5.6-sol"
+          },
+          {
+            "context_window": 1050000,
+            "id": "gpt-5.6-terra"
+          },
+          {
+            "context_window": 1050000,
+            "id": "gpt-5.6-luna"
+          },
+          {
+            "context_window": 400000,
+            "id": "gpt-5.5"
+          },
+          {
+            "context_window": 400000,
+            "id": "gpt-5.4"
+          },
+          {
+            "context_window": 400000,
+            "id": "gpt-5.3-codex"
+          },
+          {
+            "context_window": 400000,
+            "id": "gpt-5.4-mini"
+          },
+          {
+            "context_window": 1000000,
+            "id": "deepseek/deepseek-v4-pro"
+          },
+          {
+            "context_window": 1000000,
+            "id": "deepseek/deepseek-v4-flash"
+          },
+          {
+            "context_window": 1000000,
+            "id": "deepseek/deepseek-v4-flash-vision-exp"
+          },
+          {
+            "context_window": 1000000,
+            "id": "deepseek/deepseek-v4-flash-fast"
+          },
+          {
+            "context_window": 1000000,
+            "id": "deepseek/deepseek-v4.1-flash"
+          },
+          {
+            "context_window": 1000000,
+            "id": "deepseek/deepseek-v4.1-flash-fast"
+          },
+          {
+            "context_window": 1000000,
+            "id": "moonshotai/Kimi-K3"
+          },
+          {
+            "context_window": 256000,
+            "id": "moonshotai/Kimi-K2.7-Code"
+          },
+          {
+            "context_window": 262000,
+            "id": "moonshotai/Kimi-K2.7-Code-Highspeed"
+          },
+          {
+            "context_window": 256000,
+            "id": "moonshotai/Kimi-K2.6"
+          },
+          {
+            "context_window": 256000,
+            "id": "moonshotai/Kimi-K2.5"
+          },
+          {
+            "context_window": 1048576,
+            "id": "z-ai/glm-5.3-flash"
+          },
+          {
+            "context_window": 1000000,
+            "id": "z-ai/glm-5.3-flashx"
+          },
+          {
+            "context_window": 1000000,
+            "id": "zai-org/GLM-5.3"
+          },
+          {
+            "context_window": 1000000,
+            "id": "zai-org/GLM-5.2"
+          },
+          {
+            "context_window": 1000000,
+            "id": "zai-org/GLM-5.2-Fast"
+          },
+          {
+            "context_window": 200000,
+            "id": "zai-org/GLM-5.1"
+          },
+          {
+            "context_window": 200000,
+            "id": "zai-org/GLM-5"
+          },
+          {
+            "context_window": 1000000,
+            "id": "MiniMaxAI/MiniMax-M3"
+          },
+          {
+            "context_window": 200000,
+            "id": "MiniMaxAI/MiniMax-M2.7"
+          },
+          {
+            "context_window": 200000,
+            "id": "MiniMaxAI/MiniMax-M2.5"
+          },
+          {
+            "context_window": 1048576,
+            "id": "xiaomi/mimo-v2.6-pro"
+          },
+          {
+            "context_window": 1048576,
+            "id": "xiaomi/mimo-v2.6-pro-ultraspeed"
+          },
+          {
+            "context_window": 1048576,
+            "id": "xiaomi/mimo-v2.6-flash"
+          },
+          {
+            "context_window": 1000000,
+            "id": "xiaomi/mimo-v2.5-pro"
+          },
+          {
+            "context_window": 1000000,
+            "id": "xiaomi/mimo-v2.5"
+          },
+          {
+            "context_window": 1000000,
+            "id": "Qwen/Qwen3.8-Omni-Flash"
+          },
+          {
+            "context_window": 1000000,
+            "id": "Qwen/Qwen3.8-Max-0902"
+          },
+          {
+            "context_window": 1000000,
+            "id": "Qwen/Qwen3.8-Max"
+          },
+          {
+            "context_window": 262144,
+            "id": "Qwen/Qwen3.8-27B"
+          },
+          {
+            "context_window": 1000000,
+            "id": "Qwen/Qwen3.8-Flash"
+          },
+          {
+            "context_window": 1000000,
+            "id": "Qwen/Qwen3.7-Max"
+          },
+          {
+            "context_window": 1000000,
+            "id": "Qwen/Qwen3.7-Plus"
+          },
+          {
+            "context_window": 1000000,
+            "id": "Qwen/Qwen3.7-Flash"
+          },
+          {
+            "context_window": 200000,
+            "id": "Qwen/Qwen3.6-Max-Preview"
+          },
+          {
+            "context_window": 200000,
+            "id": "Qwen/Qwen3.6-Plus"
+          },
+          {
+            "context_window": 1048576,
+            "id": "meituan/LongCat-2.0"
+          },
+          {
+            "context_window": 1000000,
+            "id": "stepfun/Step-5-Preview"
+          },
+          {
+            "context_window": 256000,
+            "id": "stepfun/Step-3.7-Flash"
+          },
+          {
+            "context_window": 262144,
+            "id": "stepfun/Step-3.5-Flash"
+          },
+          {
+            "context_window": 262144,
+            "id": "tencent/hy3-paid"
+          },
+          {
+            "context_window": 1048576,
+            "id": "tencent/hy4-preview"
+          },
+          {
+            "context_window": 1000000,
+            "id": "google/gemini-4-argon"
+          },
+          {
+            "context_window": 1000000,
+            "id": "google/gemini-3.8-flash"
+          },
+          {
+            "context_window": 1048576,
+            "id": "google/gemini-3.7-flash"
+          },
+          {
+            "context_window": 1000000,
+            "id": "google/gemini-3.6-flash"
+          },
+          {
+            "context_window": 1000000,
+            "id": "google/gemini-3.5-flash"
+          },
+          {
+            "context_window": 1000000,
+            "id": "google/gemini-3.5-flash-lite"
+          },
+          {
+            "context_window": 1000000,
+            "id": "google/gemini-3.1-flash-lite"
+          },
+          {
+            "context_window": 1000000,
+            "id": "sakana/fugu-ultra"
+          },
+          {
+            "context_window": 1000000,
+            "id": "nvidia/nemotron-3-ultra-550b-a55b"
+          },
+          {
+            "context_window": 256000,
+            "id": "thinkingmachines/inkling"
+          },
+          {
+            "context_window": 1000000,
+            "id": "thinkingmachines/inkling-small"
+          },
+          {
+            "context_window": 256000,
+            "id": "stealth/glyph-cluster:free"
+          },
+          {
+            "context_window": 256000,
+            "id": "poolside/laguna-s-2.1-free"
+          },
+          {
+            "context_window": 262144,
+            "id": "inclusionai/ling-3.0-flash-sante:free"
+          },
+          {
+            "context_window": 262144,
+            "id": "inclusionai/ling-3.1-flash:free"
+          },
+          {
+            "context_window": 1048576,
+            "id": "meta/muse-spark-1.1"
+          },
+          {
+            "context_window": 1048576,
+            "id": "meta/muse-spark-1.2"
+          },
+          {
+            "context_window": 1048576,
+            "id": "meta/muse-spark-1.2-contributor"
+          },
+          {
+            "context_window": 1048576,
+            "id": "meta/muse-spark-1.3"
+          },
+          {
+            "context_window": 1048576,
+            "id": "meta/muse-spark-1.3-contributor"
+          },
+          {
+            "context_window": 1048576,
+            "id": "meta/muse-wonder-1.0"
+          },
+          {
+            "context_window": 500000,
+            "id": "xai/grok-4.5"
+          },
+          {
+            "context_window": 500000,
+            "id": "xai/grok-4.6"
+          },
+          {
+            "context_window": 500000,
+            "id": "xai/grok-4.7"
+          },
+          {
+            "context_window": 524288,
+            "id": "mistral/mistral-large-4"
+          }
+        ],
+        "name": "commandcode",
+        "operation_url": true,
+        "protocols": [
+          "openai",
+          "anthropic",
+          "responses"
+        ]
+      }
+    ]
+  },
+  "publisher": "veildawn",
+  "signature": {
+    "alg": "ed25519",
+    "key_id": "ed25519:a2b36ebc3a600442",
+    "sig": "9yoRpuwqyQ/427W8XGYfHF+3ZzUcEs7zhUXGW5DMNi/PZFrcai716FU0xy8WRVZM2QsziVWXPsQhqqaWrLITCw=="
+  },
+  "type": "integration",
+  "version": "0.2.0"
+}
