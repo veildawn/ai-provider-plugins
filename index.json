@@ -2204,6 +2204,50 @@
       ]
     },
     {
+      "id": "vercel",
+      "tags": [
+        "aggregator",
+        "vercel"
+      ],
+      "versions": [
+        {
+          "version": "1.0.1",
+          "min_app_version": "0.19.0"
+        },
+        {
+          "version": "1.0.0",
+          "min_app_version": "0.19.0"
+        }
+      ],
+      "version": "1.0.1",
+      "type": "integration",
+      "name": {
+        "en": "Vercel AI Gateway",
+        "zh": "Vercel AI Gateway"
+      },
+      "description": {
+        "en": "Vercel AI Gateway multi-provider model routing, balance quota, subscription tier filtering, and OpenAI / Anthropic / Responses protocol support.",
+        "zh": "Vercel AI Gateway 多供应商模型路由，支持余额额度查询、订阅套餐模型筛选，以及 OpenAI / Anthropic / Responses 协议。"
+      },
+      "publisher": "veildawn",
+      "provider_name": "vercel",
+      "protocols": [
+        "openai",
+        "anthropic",
+        "responses"
+      ],
+      "capabilities": [
+        "provider",
+        "wasm"
+      ],
+      "min_app_version": "0.19.0",
+      "updated_at": "2026-10-16",
+      "key_id": "ed25519:1bea105c269cd208",
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAFNklEQVR4nO3XwXbUSgxF0az3//8MA1iPENKJ221XSbp7TzLEXSUfmbc3AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIBZfux+APb5b/cDsNWPD38JIwAQTAByfdz6vgICCQAEE4BMj7a9r4AwAgDBBCDPd1veV0AQAchy9OUWgRACAMEEIMezW91XQAABgGACkOHsNvcVMJwAzPfqSywCgwkABBOA2a7a3r4ChhIACCYAc129tX0FDCQAEEwAZrprW/sKGEYA5rn7JRWBQQQAggnALKu2s6+AIQQAggnAHKu3sq+AAQQAggnADLu2sa+A5gSgv90v4e5/nxcIAAQTgN6qbN8qz8GTBACCCUBf1bZutefhAAGAYALQU9VtW/W5eEAA+qn+klV/Pt4RAAgmAL102a5dnjOeAEAwAeij21bt9ryRBKCHri9T1+eOIQAQTADq675Fuz//aAIAwQSgtinbc8rvGEcAIJgA1DVta077PSMIQE1TX5apv6stAYBgAlDP9C05/fe1IgAQTABqSdmOKb+zPAGAYAJQR9pWTPu9JQlADakvQ+rvLkMAIJgA7Je+BdN//1YCAMEEYC/b7xfnsIkA7GPo/+Y8NhAACCYAe9h2n3MuiwkABBOA9Wy5rzmfhQQAggnAWrbbMc5pEQFYx1A/x3ktIAAQTADWsM3OcW43EwAIJgD3s8Ve4/xuJAAQTADuZXtdwzneRADuY2iv5TxvIAAQTADuYVvdw7leTAAgmABcz5a6l/O9kABAMAG4lu20hnO+iABcx1Cu5bwvIAAQTACuYRvt4dxfJAAQTABeZwvt5fxfIACvMXw1uIeTBACCCcB5tk4t7uMEAYBgAnCObVOTe3mSAEAwAXieLVOb+3mCADzHcPXgng4SAAgmAMfZKr24rwMEAIIJwDG2SU/u7RsCAMEE4Hu2SG/u7wsC8DXDM4N7fEAAIJgAPGZrzOI+PyEAEEwAPmdbzORePxCAfxmS2dzvOwIAwQTgb7ZDBvf8mwBAMAH4w1bI4r7fBACiCcAvtkGm+HsXAEOQLvr+BQCCQkQguv78L3YO0gMA0ZIDEFt9PhU5D8kBgHipAYisPd+Km4vEAMRdMk+Jmo/EAAC/pQUgqu6cFjMnaQEA3kkKQEzVuUTEvCQFAPggJQARNedy4+cmIQDjL5FbjZ6fhAAAD0wPwOh6s8zYOZoeAOALkwMwttpsMXKepgZg5GWx3bi5mhoA4ICJARhXaUoZNV8TAwAcNC0Ao+pMWWPmbFoAgCdMCsCYKtPCiHmbEoARl0E77eduSgCAEyYEoH2Faa31/E0IAHBS9wC0ri9jtJ3D7gEAXtA5AG2ry0gt57FrAFoeNuO1m8uuAQAu0DEA7SpLlFbz2TEAwEW6BaBVXYnVZk47BaDNocJbk3ntFADgYl0C0KKm8EH5ue0SAOAGHQJQvqLwhdLz2yEAwE2qB6B0PeGgsnNcOQBlDw1OKDnPlQMA3KxqAErWEl5Ubq6rBgBYoGIAylUSLlRqvisGAFikWgBK1RFuUmbOKwWgzKHAAiXmvVIAgMWqBKBEDWGx7XNfJQDABhUCsL2CsNHW+a8QAGCT3QGw/WHje7AzAF5++GPL+7D7CwDYaFcAbH/41/L3whcABNsRANsfHlv6fqwOgJcfvrfsPfFfAAi2MgC2Pxy35H3xBQDBVgXA9ofn3f7e+AKAYCsCYPvDed4fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAqOEnyezRmJHLqqkAAAAASUVORK5CYII=",
+      "module_sha256": "8bdb58f78a9a7124d1818826e060db059bfe17ed865933dc8da1815fd0b2bea7",
+      "module_bytes": 211941
+    },
+    {
       "id": "workbuddy",
       "version": "1.4.1",
       "type": "integration",
