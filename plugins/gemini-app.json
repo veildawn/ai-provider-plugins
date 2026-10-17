@@ -33,18 +33,18 @@
       },
       "fields": [
         {
-          "help": {
+          "help_text": {
             "en": "A Google OAuth refresh token. Mint one with the Gemini app's scopes; the plugin never sees your password.",
             "zh": "Google OAuth refresh token。需携带 Gemini App 的 scope；插件不会接触你的密码。"
           },
-          "key": "refresh_token",
           "label": {
             "en": "Refresh token",
             "zh": "Refresh token"
           },
+          "name": "refresh_token",
           "placeholder": "1//0...",
           "required": true,
-          "type": "secret"
+          "type": "string"
         }
       ],
       "flow": "oauth",
@@ -90,8 +90,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:4da5f976df1e1bfb",
-    "sig": "yfOtv87oNomW8X+5bIUbUwuaWanFu9XB0FeXRQbi/ctDLP61KUovFDxJNSK3CK7Z5pZoQoCD2Gc5vbyPhFWBBA=="
+    "sig": "1I63rJTSPFunSrBVjVCUzSRObVF0zB1Su6TFKmxfY5xvwaC75mU4nMOaloXXlJ7/nB9Z4UOyl/UPQUGB5v8VBA=="
   },
   "type": "integration",
-  "version": "1.0.1"
+  "version": "1.0.2"
 }

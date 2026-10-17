@@ -905,7 +905,7 @@
     },
     {
       "id": "gemini-app",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "type": "integration",
       "name": {
         "en": "Gemini App",
@@ -938,6 +938,10 @@
       "key_id": "ed25519:4da5f976df1e1bfb",
       "module_bytes": 240107,
       "versions": [
+        {
+          "version": "1.0.2",
+          "min_app_version": "0.26.0"
+        },
         {
           "version": "1.0.1",
           "min_app_version": "0.26.0"
