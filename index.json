@@ -524,8 +524,8 @@
           "min_app_version": "0.19.0"
         }
       ],
-      "module_sha256": "528312092fc759b4e0a72fa723cf58cb52683b99d35111e151ea4a95bb6dab1b",
-      "module_bytes": 200694
+      "module_sha256": "219ee7b23c62da778d279fd642e1329d08a9aae74c2ff8c1a772218b8feb1352",
+      "module_bytes": 200470
     },
     {
       "id": "cursor",

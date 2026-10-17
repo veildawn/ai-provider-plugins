@@ -95,11 +95,13 @@
           "uniqueItems": true,
           "items": {
             "enum": [
+              "gemini",
               "openai",
               "anthropic",
               "responses",
               "realtime",
-              "decisions"
+              "decisions",
+              "images"
             ]
           }
         },

@@ -215,6 +215,40 @@
               }
             }
           }
+        },
+        "schedule": {
+          "type": "array",
+          "maxItems": 16,
+          "description": "Account-scoped hooks the host runs on a timer, once per bound account. Not provides.jobs: a job is a package-level automation with its own store and no account, while a schedule is the account-scoped work a provider used to smuggle into poll_quota.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "schedule"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_]*$"
+              },
+              "hook": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_]*$"
+              },
+              "schedule": {
+                "type": "string",
+                "minLength": 1
+              },
+              "enabled_by": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_]*$"
+              },
+              "disabled": {
+                "type": "boolean"
+              }
+            }
+          }
         }
       }
     },
@@ -269,6 +303,39 @@
             "redirect_uri": {
               "type": "string",
               "format": "uri"
+            }
+          }
+        },
+        "settings": {
+          "type": "array",
+          "maxItems": 32,
+          "description": "Per-account operator switches, stored outside the credential document.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "key",
+              "label",
+              "type"
+            ],
+            "properties": {
+              "key": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_]*$"
+              },
+              "label": {
+                "$ref": "#/$defs/text"
+              },
+              "type": {
+                "enum": [
+                  "bool",
+                  "text"
+                ]
+              },
+              "default": {},
+              "help": {
+                "$ref": "#/$defs/text"
+              }
             }
           }
         }
@@ -489,11 +556,13 @@
           "uniqueItems": true,
           "items": {
             "enum": [
+              "gemini",
               "openai",
               "anthropic",
               "responses",
               "realtime",
-              "decisions"
+              "decisions",
+              "images"
             ]
           }
         },
@@ -516,17 +585,33 @@
           "description": "Public dialect ingress adapters implemented by this provider's Wasm module. Each entry declares the public protocol, endpoints, stream support, and public-protocol losses. Vendor-private wire names intentionally do not appear here.",
           "items": {
             "type": "object",
-            "required": ["public", "endpoints", "stream"],
+            "required": [
+              "public",
+              "endpoints",
+              "stream"
+            ],
             "additionalProperties": false,
             "properties": {
-              "public": {"type": "string", "enum": ["openai", "anthropic", "responses"]},
+              "public": {
+                "type": "string",
+                "enum": [
+                  "openai",
+                  "anthropic",
+                  "responses",
+                  "images"
+                ]
+              },
               "endpoints": {
                 "type": "array",
                 "minItems": 1,
                 "uniqueItems": true,
-                "items": {"type": "string"}
+                "items": {
+                  "type": "string"
+                }
               },
-              "stream": {"type": "boolean"},
+              "stream": {
+                "type": "boolean"
+              },
               "losses": {
                 "type": "array",
                 "uniqueItems": true,
@@ -567,11 +652,13 @@
             "uniqueItems": true,
             "items": {
               "enum": [
+                "gemini",
                 "openai",
                 "anthropic",
                 "responses",
                 "realtime",
-                "decisions"
+                "decisions",
+                "images"
               ]
             }
           }
@@ -581,6 +668,7 @@
         },
         "family": {
           "enum": [
+            "gemini",
             "openai",
             "anthropic",
             "responses"
@@ -640,6 +728,36 @@
         "thinking_in_model_id": {
           "type": "boolean"
         },
+        "variant_suffixes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "suffix"
+            ],
+            "properties": {
+              "suffix": {
+                "type": "string",
+                "minLength": 2,
+                "pattern": "^-.+",
+                "description": "Trailing segment peeled off an advertised id, e.g. '-high-thinking'. Must start with '-' and be at least 2 chars; longest suffixes peel first."
+              },
+              "effort": {
+                "type": "string",
+                "description": "Reasoning effort the peeled segment stands for, restored onto the upstream id on request."
+              },
+              "thinking": {
+                "type": "boolean"
+              },
+              "fast": {
+                "type": "boolean"
+              }
+            }
+          },
+          "description": "Custom variant peel rules for a thinking_in_model_id provider: id tail segments the gateway folds off for listing and expands back from reasoning_effort on request. Extends the built-in Cursor/Antigravity table; it never replaces it."
+        },
         "translation_profile": {
           "type": "string"
         },
@@ -653,7 +771,8 @@
           "type": "boolean"
         },
         "images_vocabulary": {
-          "type": "string"
+          "type": "string",
+          "description": "Legacy admission record for the images routes under the openai arm. New manifests do not set this: a canonical-form provider declares the images protocol plus an images adapter (which the host serves through its own image arm), and a gemini-form provider declares neither — its gemini arm receives the gateway's pre-folded generateContent body. Old manifests carrying the value keep working through the host's legacy row, which admits images/generations and images/edits onto the arm the vocabulary's provider resolves to; `openai_full` means that arm takes size/quality in the folded body."
         },
         "request_overrides": {
           "type": "object",
