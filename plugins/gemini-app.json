@@ -44,7 +44,7 @@
           "name": "refresh_token",
           "placeholder": "1//0...",
           "required": true,
-          "type": "string"
+          "type": "password"
         }
       ],
       "flow": "oauth",
@@ -90,8 +90,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:4da5f976df1e1bfb",
-    "sig": "1I63rJTSPFunSrBVjVCUzSRObVF0zB1Su6TFKmxfY5xvwaC75mU4nMOaloXXlJ7/nB9Z4UOyl/UPQUGB5v8VBA=="
+    "sig": "vBndNiCgaWUTHCVnYVtsZwKr0kHcAXAlSEGa1gdiDS0tMrpI9hQV8vHAmR6ae6bXhYD4uR3im8XugX2TS/vvDw=="
   },
   "type": "integration",
-  "version": "1.0.2"
+  "version": "1.0.3"
 }
