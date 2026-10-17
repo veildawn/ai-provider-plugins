@@ -1,0 +1,67 @@
+{
+  "author": "veildawn",
+  "description": {
+    "en": "TypeSafe System One (Jev): typed decisions on POST /v1/systemone.",
+    "zh": "TypeSafe System One（Jev）：POST /v1/systemone 上的带类型决策。"
+  },
+  "homepage": "https://typesafe.ai",
+  "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAADY0lEQVR42u3YIU7EQBSA4ZkJukfgCkgsCQ6DgHAARD0CV1kugFwc5+AaKE7Big2uaMiyYbttoPO+7wAVk7x/XienGTVdOyTgIOt+lef6djbwEDcI2eBD3BBkgw9xQ5ANPsQNQTH8UIcxs1kMP8SNQDb4EPeXoBh+iLsNFMMPcSNQHBHEVdz+EHcLKIYf4kagGH6IGwFvAOANwO0PEbcAGwDYANz+EHELsAFA9A3A7Q8xtwAbAHgDAAQACCX7/wcbACAAgAAAAgAIACAAgAAAAgAIACAAgAAAAgAIACAAgAAAAgAIACAAgAAAAgAIACAAgAAAAgAIACAAgAAAAgAIACAAgAAAAgAIACAAgAAAAgACAAgAIACAAAACAAgAIACAAAACAAgAIACAAAACAAgAIACAAAACAAgAIACAAAACAAgAIACAAAACAAgAMJ0jR/B37s8uUnd+6SBSSscPd+n9Y+MgbACAAAACAAgAIACAAAACAAgAIACAAAACAAgAIADANrnp2sEx1Ovp+jbdnJwe9I2r58f08vbqMG0AgAAAAgAIACAAgAAAAgAIACAAgAAAAgAIACAAgAAAAgAIACAAgAAAAgAIACAAgAAAAgAIACAAgAAAAgAIACAAgAAAAgACAAgAIACAAAACAAgAIACAAAACAAgAIACAAAACAAgAIACAAAACAAgAIACAAAACAAgAIACAAAACAAgAIACAAAACAAgAIACAAAACAAgAIACAAAACAAIARJSbrh0cA9gAAAEABAAQAEAAAAEABAAQAEAAAAEABAAQAEAAAAEABAAQAEAAAAEABAAQAEAAAAEABAAQAEAAAAEABAAQAEAAAAEABAAQAEAAAAEABAAQABAAQAAAAQAEABAAQAAAAQAEABAAQAAAAQAEABAAQAAAAQAEABAAQAAAAQAEABAAQAAAAQAEABAAQACAiQKw7lfZMUA8636VbQDgFwAQACBeALwDQLz/fxsA2AC+FgGIcfvbAMAGsL0MQN23vw0AbAC7CwHUefv/uAGIANQ//Dt/AUQA6h5+bwDgDWBcOYBl3/6/2gBEAOoc/pRS2mu4m64dHCssf/BHvQHYBqCe4R/1CCgCUMfw7/0L4JcA6hj8SQIgBLDMwZ80AEIAyxr8WQIgCPC/B/67Txuek+SgUX0tAAAAAElFTkSuQmCC",
+  "id": "typesafe",
+  "manifest_version": 3,
+  "min_app_version": "0.20.0",
+  "name": {
+    "en": "TypeSafe",
+    "zh": "TypeSafe"
+  },
+  "provides": {
+    "account": {
+      "description": {
+        "en": "Paste a TypeSafe API key. Jev answers typed questions over a state document in one call.",
+        "zh": "粘贴 TypeSafe API Key。Jev 在一次调用里对状态文档回答带类型的问题。"
+      },
+      "fields": [
+        {
+          "help_text": {
+            "en": "Create it in the TypeSafe console.",
+            "zh": "在 TypeSafe 控制台创建。"
+          },
+          "label": {
+            "en": "API key",
+            "zh": "API Key"
+          },
+          "name": "api_key",
+          "placeholder": "ts_...",
+          "required": true,
+          "type": "password"
+        }
+      ],
+      "flow": "form",
+      "guide_url": "https://console.typesafe.ai/settings/keys",
+      "title": {
+        "en": "Connect TypeSafe",
+        "zh": "连接 TypeSafe"
+      }
+    },
+    "providers": [
+      {
+        "base_url": "https://api.typesafe.ai",
+        "display_name": "TypeSafe",
+        "models": [
+          "jev-1.13.0"
+        ],
+        "name": "typesafe",
+        "protocols": [
+          "decisions"
+        ]
+      }
+    ]
+  },
+  "publisher": "veildawn",
+  "signature": {
+    "alg": "ed25519",
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "HP/n2HYvZfPgdEU2mYdqsWWHsUYH9oRxeq/kwVaDgeWhqDOGofI2uNsrIqsD14Ur7Qgco3EMILKazv1vhoHuCw=="
+  },
+  "type": "integration",
+  "version": "0.1.1"
+}
