@@ -105,7 +105,8 @@
         "display_name": "WorkBuddy",
         "http": [
           "copilot.tencent.com",
-          "www.workbuddy.cn"
+          "www.workbuddy.cn",
+          "www.codebuddy.cn"
         ],
         "module": "provider",
         "name": "workbuddy",
@@ -134,8 +135,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:4da5f976df1e1bfb",
-    "sig": "J2VCjROkvWF4ZIkMlOdt089yEzrUHqOLbSNB0UR2SGwf+jjKpyGPmVwVEa7k5eIX4d6kkYhS0s35RsPyQQ/FDw=="
+    "sig": "AvzGl9IMpE+Dvi/eq4TQmPAkrAadgX4a5gYykM9ZARtvkKZCW4v9Tm3TXQWpX7KGyMnQebOy+dd2+ewzN/YWDg=="
   },
   "type": "integration",
-  "version": "2.0.3"
+  "version": "2.0.4"
 }
