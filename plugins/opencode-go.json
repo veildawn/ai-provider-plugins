@@ -18,8 +18,7 @@
     }
   ],
   "name": {
-    "en": "OpenCode Go",
-    "zh": "OpenCode Go"
+    "en": "OpenCode Go"
   },
   "provides": {
     "account": {
@@ -215,9 +214,9 @@
   "publisher": "veildawn",
   "signature": {
     "alg": "ed25519",
-    "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "GGrZWfZLnSqOSMivvKzOUEHrVgY7Kkoo4pii4Bgq+6aJfrjUZSjdL2MXFHz4TFQ7TDkTb9MPyj6Fiu0ZcO6vBA=="
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "9TvRHsGUmiOqAPY6S9N6VBNys82riqFR4IqRtcQ04M7XYvoJEV3Lf8MdDr1pOYxj4PzPTPOcTpjNC6cxnRDFCQ=="
   },
   "type": "integration",
-  "version": "1.3.1"
+  "version": "1.3.2"
 }

@@ -18,8 +18,7 @@
     }
   ],
   "name": {
-    "en": "Claude",
-    "zh": "Claude"
+    "en": "Claude"
   },
   "provides": {
     "account": {
@@ -66,9 +65,9 @@
   "publisher": "veildawn",
   "signature": {
     "alg": "ed25519",
-    "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "k7qXol/htrDvmAiz5r7YyKrL2hx3gF89OqEC1jrOuYSrQKTouFxM33+kPilA9xTPww2D+5mpkKVWgW/HGVKYBg=="
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "Tbm6Lm1unwM9sA326u/j9igwL83ouH0LNXC9HLW3sPpq2ai0Akdbnq6kX6pQyPLY0ar39fy1UXh61OUOWlImDQ=="
   },
   "type": "integration",
-  "version": "1.4.8"
+  "version": "1.4.9"
 }

@@ -18,8 +18,7 @@
     }
   ],
   "name": {
-    "en": "DeepSeek",
-    "zh": "DeepSeek"
+    "en": "DeepSeek"
   },
   "provides": {
     "account": {
@@ -113,9 +112,9 @@
   "publisher": "veildawn",
   "signature": {
     "alg": "ed25519",
-    "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "cubqlifqTrrqCLTepCha/uf8On7ZCSnUdS1KDlWZasI3ebP3QdWjg3JHffCkWZvaI2C0HM04FCfPXmbbrxdYCg=="
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "HT9oqiy1WysxBIBHomASMi1VdKdj6UGaadNi/z2dRrasy1MML5KRHU1wT/Zs04bUXO6FClljGtHEcjFVdAScDA=="
   },
   "type": "integration",
-  "version": "1.1.11"
+  "version": "1.1.12"
 }

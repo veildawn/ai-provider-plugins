@@ -10,8 +10,7 @@
   "manifest_version": 3,
   "min_app_version": "0.19.0",
   "name": {
-    "en": "Groq",
-    "zh": "Groq"
+    "en": "Groq"
   },
   "provides": {
     "account": {
@@ -55,9 +54,9 @@
   "publisher": "veildawn",
   "signature": {
     "alg": "ed25519",
-    "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "iuaMW+hACJwR1qsBmUUctaEF97nL033EB9BIwmijr6my2kZTk5MWEiJz0lKEO+zYlpU5O/mwRau81WP2hTHYAA=="
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "2GUCOspBXZkb+/D2WzMlU6JN7Q5Q7zU0uw5iJ8Ax2OYN8bfSPpmvTr0n408ZxJJUDuVl+duI1jzzXQ0El70WCQ=="
   },
   "type": "integration",
-  "version": "1.0.6"
+  "version": "1.0.7"
 }

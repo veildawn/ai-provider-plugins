@@ -19,7 +19,7 @@
   ],
   "name": {
     "en": "GLM Coding Plan",
-    "zh": "GLM Coding Plan"
+    "zh": "GLM 编程套餐"
   },
   "provides": {
     "account": {
@@ -76,7 +76,7 @@
         ],
         "base_url": "https://open.bigmodel.cn/api/coding/paas/v4",
         "count_tokens_upstream": true,
-        "display_name": "GLM",
+        "display_name": "GLM Coding Plan",
         "family": "openai",
         "http": [
           "zcode.z.ai"
@@ -99,9 +99,9 @@
   "publisher": "veildawn",
   "signature": {
     "alg": "ed25519",
-    "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "lMw+0KmQhUEqaQlmHXUBSCsAwHzl2/qF893j5jzaRUct9D7Nb0XcMGEJb8PeNucal8tEiwf0sZgGoyCmzmSlAg=="
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "dQbm8xZHltxTsONdxsX4szIPXphaHvaDXlWYpAemG3n2cQrz7W2XEjYIuP5o86X+q5tinDU56habYvYjkZbXAA=="
   },
   "type": "integration",
-  "version": "1.4.11"
+  "version": "1.4.12"
 }

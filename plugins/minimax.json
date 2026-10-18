@@ -19,7 +19,7 @@
   ],
   "name": {
     "en": "MiniMax Token Plan",
-    "zh": "MiniMax Token Plan"
+    "zh": "MiniMax 套餐"
   },
   "provides": {
     "providers": [
@@ -43,7 +43,7 @@
         ],
         "base_url": "https://api.minimaxi.com/v1",
         "count_tokens_upstream": true,
-        "display_name": "MiniMax",
+        "display_name": "MiniMax Token Plan",
         "family": "openai",
         "module": "provider",
         "name": "minimax",
@@ -63,9 +63,9 @@
   "publisher": "veildawn",
   "signature": {
     "alg": "ed25519",
-    "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "OQytKIbA+G6/7oVcbkruMgMf/SMzawrEyYhzOk+bCZJOTZx9wnqFmvUQzDigR+g1tW/LvXDQMYe6VW0+QCPPDg=="
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "hVejhiAlZtHu4FanOs13A6tXD5fa6tcsfzcqoeoawQ4oKLtl3Ri02ZT8e9FpW4KABSorwAfG022XlJX7uewjBA=="
   },
   "type": "integration",
-  "version": "1.2.6"
+  "version": "1.2.7"
 }

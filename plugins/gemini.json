@@ -18,8 +18,7 @@
     }
   ],
   "name": {
-    "en": "Gemini API",
-    "zh": "Gemini API"
+    "en": "Gemini API"
   },
   "provides": {
     "account": {
@@ -93,9 +92,9 @@
   "publisher": "veildawn",
   "signature": {
     "alg": "ed25519",
-    "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "OQUG+RC+AiL5OstQOMMniVKuMjnkGdUuR1C6a8CiN1qWi2Trd25kBBzChslc2Cdx0IFXs7J0EOfKLABjlFWzCQ=="
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "s6ZgAMgvkNnsniwOwsmTzUrmIw54fzNwNnIPYNrnsxIHV6ShlQdXkgtefULvj9BatkI5QrDaZG2MeflBf0tkAg=="
   },
   "type": "integration",
-  "version": "1.3.0"
+  "version": "1.3.1"
 }

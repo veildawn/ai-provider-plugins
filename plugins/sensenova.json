@@ -19,7 +19,7 @@
   ],
   "name": {
     "en": "SenseNova Token Plan",
-    "zh": "商汤日日新 Token Plan"
+    "zh": "日日新套餐"
   },
   "provides": {
     "account": {
@@ -118,7 +118,7 @@
           }
         ],
         "base_url": "https://token.sensenova.cn/v1",
-        "display_name": "商汤日日新",
+        "display_name": "SenseNova Token Plan",
         "family": "openai",
         "http": [
           "platform.sensenova.cn"
@@ -152,9 +152,9 @@
   "publisher": "veildawn",
   "signature": {
     "alg": "ed25519",
-    "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "1yU9jeAj8xjEniu8toioBw0VK/If2qMPteqYMIfJC1BwxWqssy76eRjjlL1bGENBo5RbDfSLDGMIHZhL2wsrCA=="
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "ubBsPli9rHTJ9y54CAq5Jmy7oRcdqc7azIpsAxEORMFXaD5aVKtKNu5DaCLkHBJw49YOkV/o5a2DwKa2sO8eDw=="
   },
   "type": "integration",
-  "version": "1.7.0"
+  "version": "1.7.1"
 }

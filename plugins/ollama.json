@@ -18,8 +18,7 @@
     }
   ],
   "name": {
-    "en": "Ollama",
-    "zh": "Ollama"
+    "en": "Ollama"
   },
   "provides": {
     "account": {
@@ -97,9 +96,9 @@
   "publisher": "veildawn",
   "signature": {
     "alg": "ed25519",
-    "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "+8iUOGWFdXxA5fkTn7YY8829FmBISB8XtxUgKfd1NylM0cEIsuRj0Ytv+nShlNNlZOva0lPlnb3SgJj05u07Dg=="
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "trRZSwQGnfM+rBLEZGAW46e3vRldrDFD79ArYIbaUQ06wqF0+g97iMMLoSrgndYH0eRhs7QDRZyiFJ9OEHDkAw=="
   },
   "type": "integration",
-  "version": "1.4.2"
+  "version": "1.4.3"
 }

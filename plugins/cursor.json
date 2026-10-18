@@ -22,8 +22,7 @@
     }
   ],
   "name": {
-    "en": "Cursor",
-    "zh": "Cursor"
+    "en": "Cursor"
   },
   "provides": {
     "account": {
@@ -83,9 +82,9 @@
   "publisher": "veildawn",
   "signature": {
     "alg": "ed25519",
-    "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "0NXyZEnOW5WrLXaddj2Wxp419tyN/HhFEdjdoUmR2UqZG3XBalWvLgCNjd8Q6mP1nPrzrZo8Y9J//lJM2I/2DQ=="
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "QXS6/jPwyiBPFEBvzERdQO9+zufVgQxhMfVRSGiqI2fym8Jt3ubhu4Mr1klh2hRLryalRuE7cQ16O1Z1aUwEBA=="
   },
   "type": "integration",
-  "version": "1.2.7"
+  "version": "1.2.8"
 }

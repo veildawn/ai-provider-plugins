@@ -18,8 +18,7 @@
     }
   ],
   "name": {
-    "en": "OpenCode Free",
-    "zh": "OpenCode Free"
+    "en": "OpenCode Free"
   },
   "provides": {
     "account": {
@@ -87,9 +86,9 @@
   "publisher": "veildawn",
   "signature": {
     "alg": "ed25519",
-    "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "LLMV38evlnDhrK54RXhDQ2/caSNDfcsCWwSuL6s28JIo6f4FgwSvQ/sahA1Gtf+Djgn4bMKeUlIMNY140RTaCA=="
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "nil8k2J+14gAcuzkUMbrs0hHH/vaZ0ZdYvsfH0JQxPjBs8cQ3uwffIAsxSvC4pozHgbi+WqWjK3NVhqxDimDBg=="
   },
   "type": "integration",
-  "version": "1.0.0"
+  "version": "1.0.1"
 }

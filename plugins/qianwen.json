@@ -19,7 +19,7 @@
   ],
   "name": {
     "en": "Qianwen Token Plan",
-    "zh": "千问 Token Plan"
+    "zh": "千问套餐"
   },
   "provides": {
     "account": {
@@ -69,7 +69,7 @@
           }
         ],
         "base_url": "https://token-plan.cn-beijing.maas.aliyuncs.com/apps/anthropic",
-        "display_name": "千问 Token Plan",
+        "display_name": "Qianwen Token Plan",
         "family": "anthropic",
         "http": [
           "cs-data.qianwenai.com"
@@ -85,9 +85,9 @@
   "publisher": "veildawn",
   "signature": {
     "alg": "ed25519",
-    "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "AHR0iYnYOZPuIFN2parjjxMbONdGRI05Pv/jYiVj4rDyrd5CNXjiwy48mnTQ5ogxpYqHnGQxAF7DoFF8L11PCg=="
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "9VHnBYA03UNWx+3jBUoKVmykgVOIQcQ9qQrvjjlsM/W9xaWQDeI9zQZWZoj/dUpqdk/mQmb3Oxit+Vh2DrOoBg=="
   },
   "type": "integration",
-  "version": "1.1.8"
+  "version": "1.1.9"
 }

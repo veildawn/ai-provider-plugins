@@ -18,8 +18,7 @@
     }
   ],
   "name": {
-    "en": "OpenRouter",
-    "zh": "OpenRouter"
+    "en": "OpenRouter"
   },
   "provides": {
     "account": {
@@ -112,9 +111,9 @@
   "publisher": "veildawn",
   "signature": {
     "alg": "ed25519",
-    "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "AqIzeuceGkdz8TFFQKmDFFgp1nuBua2BIbQXYd54jDLMsYeOPbM+99KdhmSSsAf/xhXIi16ZhJuRYAYVefM8DQ=="
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "Z3FGptEnuB/isiVybvLqXtS1Y95PNEY1V49k84LdYWJ1qZtZ5vWcAsZjO/idJJMkt/P1mc1/JppoY43RF94sBA=="
   },
   "type": "integration",
-  "version": "1.0.11"
+  "version": "1.0.12"
 }

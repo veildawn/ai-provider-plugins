@@ -10,8 +10,7 @@
   "manifest_version": 3,
   "min_app_version": "0.19.0",
   "name": {
-    "en": "Cerebras",
-    "zh": "Cerebras"
+    "en": "Cerebras"
   },
   "provides": {
     "account": {
@@ -53,9 +52,9 @@
   "publisher": "veildawn",
   "signature": {
     "alg": "ed25519",
-    "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "zHeUZmM1/N8pLXvw4iS6FAPVwUIzSlOLkfgesgulx1TPlGWPCK0bVnUTxi2IWKRO4EVv/ei78dBzTlF2wtTeCw=="
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "4lQkNVbBheGhvQNknWuQ07vSC9bu77mRvyYthsPyEKSJGHY5vpHGXqrcWA9Cz7t5TjSLIjx+7jnp+ScJ6UGrAA=="
   },
   "type": "integration",
-  "version": "1.0.6"
+  "version": "1.0.7"
 }

@@ -19,7 +19,7 @@
   ],
   "name": {
     "en": "MiMo Token Plan",
-    "zh": "MiMo Token Plan"
+    "zh": "MiMo 套餐"
   },
   "provides": {
     "account": {
@@ -49,7 +49,7 @@
           }
         ],
         "base_url": "https://token-plan-cn.xiaomimimo.com/v1",
-        "display_name": "MiMo",
+        "display_name": "MiMo Token Plan",
         "family": "openai",
         "http": [
           "platform.xiaomimimo.com",
@@ -67,9 +67,9 @@
   "publisher": "veildawn",
   "signature": {
     "alg": "ed25519",
-    "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "eW/IxaOtEW5EKTi7o2gpVfvwajfKpzrRphJno/clh9G72TDOlROlS5R/RKS2z6N+956mcw+xpJimZZ+m/wnzAw=="
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "Gb+MB4znU5zhqIB9uI1IEtmsBEG/Lxs0xZ7ZkHms1s3VDYrYm9Y283U31VqFy9N2MVUvwpgXPC1zwf9N4G+HBw=="
   },
   "type": "integration",
-  "version": "2.0.5"
+  "version": "2.0.6"
 }

@@ -18,8 +18,7 @@
     }
   ],
   "name": {
-    "en": "Antigravity",
-    "zh": "Antigravity"
+    "en": "Antigravity"
   },
   "provides": {
     "account": {
@@ -62,9 +61,9 @@
   "publisher": "veildawn",
   "signature": {
     "alg": "ed25519",
-    "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "8kd3FmaOV7nN5vz0DfleaP7EIhZWQWUu+2HmzIJwSeXuFjsL2q49A7Ts7AkHzCOksNbVd9FS9zEm7vXzzAjFAQ=="
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "Q/ZbDDmnhD/XretyiiNrpceIsDFUEy4mKDb1fwhH5UHOe7sBTJY2AyvQ8mfYGwq8fAR0DSwwweHO64XRXES7Cg=="
   },
   "type": "integration",
-  "version": "1.8.1"
+  "version": "1.8.2"
 }

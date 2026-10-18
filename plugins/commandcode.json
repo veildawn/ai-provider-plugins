@@ -22,8 +22,7 @@
     }
   ],
   "name": {
-    "en": "CommandCode",
-    "zh": "CommandCode"
+    "en": "CommandCode"
   },
   "provides": {
     "account": {
@@ -340,9 +339,9 @@
   "publisher": "veildawn",
   "signature": {
     "alg": "ed25519",
-    "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "fnMAfprNEIFahK1PkRH3rusF3lP2BbYD5Rpsx8qBrhXm7nteFWMmtCuzQGKZp+Ny0jAnhpytnCKOVfsLA4mOBw=="
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "SPHxDG7uz1Wex03QKOS5q5fUJCXW/Yq+E6xOclE3EfggSTZnsuD+9E2ug/PZElR2iGw3qxo4gY3tgN1p5sPECA=="
   },
   "type": "integration",
-  "version": "0.7.0"
+  "version": "0.7.1"
 }

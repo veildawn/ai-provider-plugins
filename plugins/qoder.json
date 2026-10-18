@@ -1,8 +1,8 @@
 {
   "author": "veildawn",
   "description": {
-    "en": "Qoder CN COSY signing, stream unwrap, quota windows and model catalog.",
-    "zh": "Qoder 国内版 COSY 签名、流解码、配额窗口与模型目录。"
+    "en": "The domestic deployment (formerly Lingma / 通义灵码). Qoder CN COSY signing, stream unwrap, quota windows and model catalog.",
+    "zh": "国内部署（原通义灵码 Lingma）。 Qoder 国内版 COSY 签名、流解码、配额窗口与模型目录。"
   },
   "docs": {
     "en": "Accounts use device OAuth. This package signs COSY requests, unwraps the stream, and polls quota and models.",
@@ -22,8 +22,8 @@
     }
   ],
   "name": {
-    "en": "Qoder CN (Lingma)",
-    "zh": "Qoder（通义灵码）"
+    "en": "Qoder CN",
+    "zh": "Qoder 国内版"
   },
   "provides": {
     "account": {
@@ -49,7 +49,7 @@
           }
         ],
         "base_url": "https://gateway.qoder.com.cn/algo",
-        "display_name": "Qoder",
+        "display_name": "Qoder CN",
         "http": [
           "openapi.qoder.com.cn"
         ],
@@ -66,9 +66,9 @@
   "publisher": "veildawn",
   "signature": {
     "alg": "ed25519",
-    "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "SoVfutWdxZpSTY70QXPEoBv297XPXvylfQYPL/nc5cc8Sox8Xn0/5ptDUGeodeQG3c4i2HgjTklZllJzdQ56Cw=="
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "uPV9JgBNJm+zXQRDMe20j4HpIxOw32afBNEnYJiBsyWVKLbnYOdw7JR6QY/SdWqFj4GjUDVtyDVHLvwBxRCvDQ=="
   },
   "type": "integration",
-  "version": "2.0.12"
+  "version": "2.0.13"
 }

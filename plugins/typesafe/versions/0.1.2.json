@@ -1,0 +1,66 @@
+{
+  "author": "veildawn",
+  "description": {
+    "en": "TypeSafe System One (Jev): typed decisions on POST /v1/systemone.",
+    "zh": "TypeSafe System One（Jev）：POST /v1/systemone 上的带类型决策。"
+  },
+  "homepage": "https://typesafe.ai",
+  "icon": "data:image/png;base64,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",
+  "id": "typesafe",
+  "manifest_version": 3,
+  "min_app_version": "0.20.0",
+  "name": {
+    "en": "TypeSafe"
+  },
+  "provides": {
+    "account": {
+      "description": {
+        "en": "Paste a TypeSafe API key. Jev answers typed questions over a state document in one call.",
+        "zh": "粘贴 TypeSafe API Key。Jev 在一次调用里对状态文档回答带类型的问题。"
+      },
+      "fields": [
+        {
+          "help_text": {
+            "en": "Create it in the TypeSafe console.",
+            "zh": "在 TypeSafe 控制台创建。"
+          },
+          "label": {
+            "en": "API key",
+            "zh": "API Key"
+          },
+          "name": "api_key",
+          "placeholder": "ts_...",
+          "required": true,
+          "type": "password"
+        }
+      ],
+      "flow": "form",
+      "guide_url": "https://console.typesafe.ai/settings/keys",
+      "title": {
+        "en": "Connect TypeSafe",
+        "zh": "连接 TypeSafe"
+      }
+    },
+    "providers": [
+      {
+        "base_url": "https://api.typesafe.ai",
+        "display_name": "TypeSafe",
+        "models": [
+          "jev-1.13.0"
+        ],
+        "name": "typesafe",
+        "protocols": [
+          "decisions"
+        ]
+      }
+    ]
+  },
+  "publisher": "veildawn",
+  "signature": {
+    "alg": "ed25519",
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "5/2CgW8aUvzNrA+dqKjVwm9cevUGbr841pOyHOGYj/HiJK5c1MLIlJ7TqOvWW5/K4R3XhG8VQhTfj0iXSMgoCA=="
+  },
+  "type": "integration",
+  "version": "0.1.2"
+}
