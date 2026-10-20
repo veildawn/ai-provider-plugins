@@ -193,6 +193,10 @@
               "label": {
                 "$ref": "#/$defs/text"
               },
+              "icon": {
+                "type": "string",
+                "description": "A mark name the console resolves, not a data: URL: `calendar-dots` and `package` are the vocabulary today, and the console falls back to matching the action id. Deliberately unconstrained — the host decodes it as an opaque string and the console's name table grows independently, so an enum here would make every new mark a schema release."
+              },
               "type": {
                 "enum": [
                   "flow",
