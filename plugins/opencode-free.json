@@ -23,20 +23,9 @@
   "provides": {
     "account": {
       "description": {
-        "en": "Each created account receives a distinct, isolated project and session identity. You may enter any custom label (e.g. account nickname) or leave it as public.",
-        "zh": "每次创建的账号都会自动分配全新的独立设备与项目会话身份，实现完全隔离。可填入任意自定义身份别名或填 public。"
+        "en": "No key is needed. Each account you add gets its own isolated project and session identity automatically.",
+        "zh": "无需填写密钥。每添加一个账号都会自动分配独立的设备与项目会话身份。"
       },
-      "fields": [
-        {
-          "label": {
-            "en": "Identity label / Key (e.g. public, dev-1)",
-            "zh": "身份别名 / 凭据（如 public、dev-1）"
-          },
-          "name": "access_token",
-          "required": true,
-          "type": "password"
-        }
-      ],
       "flow": "form",
       "guide_url": "https://opencode.ai",
       "title": {
@@ -172,8 +161,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "thaLpJpqVD72Afl+p/4DRm2P5k2F7AkU3mpGvSAFmaJY9IJ/nzj2zsNM4U3fx5runwW6p+3AN+tTM6yIM8vrCQ=="
+    "sig": "Lg4820QlB13wkESJQlhcEpYef9wvA/Ry8zBbrcdOWpHbGkOA5R1a6rLre2uiCtR9IZUtopnC0ucC/wfAPKFuAg=="
   },
   "type": "integration",
-  "version": "1.0.4"
+  "version": "1.0.5"
 }
