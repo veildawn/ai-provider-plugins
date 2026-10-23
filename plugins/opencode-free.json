@@ -26,8 +26,9 @@
         "en": "No key is needed. Each account you add gets its own isolated project and session identity automatically.",
         "zh": "无需填写密钥。每添加一个账号都会自动分配独立的设备与项目会话身份。"
       },
-      "flow": "form",
+      "flow": "oauth",
       "guide_url": "https://opencode.ai",
+      "oauth": {},
       "title": {
         "en": "Connect OpenCode Free",
         "zh": "连接 OpenCode Free"
@@ -161,8 +162,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "Lg4820QlB13wkESJQlhcEpYef9wvA/Ry8zBbrcdOWpHbGkOA5R1a6rLre2uiCtR9IZUtopnC0ucC/wfAPKFuAg=="
+    "sig": "huGkHlMZVJjiq5YLlEq6cH2QLtvbV+MxQ5WuYlFN3fwizNiig4KQYdTYNXq/MvI5g9/QT7nF/khKlGG194FJDg=="
   },
   "type": "integration",
-  "version": "1.0.5"
+  "version": "1.0.6"
 }
