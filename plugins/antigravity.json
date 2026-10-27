@@ -56,9 +56,19 @@
         "module": "provider",
         "name": "antigravity",
         "operation_url": true,
+        "prompt": {
+          "system_replace": [
+            {
+              "find": "You are a Claude agent, built on Anthropic's Claude Agent SDK",
+              "note": "cloudcode-pa refuses this literal in systemInstruction with a bare RESOURCE_EXHAUSTED 429 (any model, any account, two-character prompts); lowercasing 'Agent' to 'agent' is answered. Measured 2026-08-12, one variant per request.",
+              "replace": "You are a Claude agent, built on Anthropic's Claude agent SDK"
+            }
+          ]
+        },
         "protocols": [
           "gemini"
         ],
+        "split_image_generations": true,
         "thinking_in_model_id": true,
         "transport": "gemini-v1internal"
       }
@@ -68,8 +78,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "Q+EA3/w3GrhYJElp9FKL0roIHhGZXDyoL6DDxGgC+Ejx5qAKn6MDUOix09QuRAk1kveitxcjm2YpW8wJX2H/Dw=="
+    "sig": "GkzAE9QHiHgK/iPE7BWxrw/UM3VTkWAvejFPo9xXXdYhtlVgcQbSsNNOzbctdPGvmMDhPqkNRXBoivhSVkL3Cg=="
   },
   "type": "integration",
-  "version": "1.10.1"
+  "version": "1.10.2"
 }

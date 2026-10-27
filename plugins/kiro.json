@@ -206,6 +206,7 @@
           }
         ],
         "base_url": "https://runtime.us-east-1.kiro.dev",
+        "cache_affinity": true,
         "display_name": "Kiro",
         "http": [
           "runtime.eu-central-1.kiro.dev",
@@ -223,6 +224,8 @@
           "anthropic"
         ],
         "quota_on_402": true,
+        "retry_in_band_error": true,
+        "simulated_cache": true,
         "transport": "codewhisperer"
       }
     ]
@@ -231,8 +234,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "8VpOwA9F27XM6S/a7AJ0GJ9iRz625UpMjXmVh96xXB9dgclb3GNx77kzWAZYOGYr9oF0XppiKvMd43IxxUTaDA=="
+    "sig": "mlMOsOEH+tnkLtYhaiwR1JtWgP6GV6IzDz9cLBuJsbQzKrzhF9gmfavI69X+60ukqz32f6BNt1orzZ+HqtqKCg=="
   },
   "type": "integration",
-  "version": "1.3.0"
+  "version": "1.3.1"
 }
