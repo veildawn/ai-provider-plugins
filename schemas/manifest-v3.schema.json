@@ -342,6 +342,163 @@
               }
             }
           }
+        },
+        "import": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "detect": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "hook": {
+              "const": "import_accounts"
+            },
+            "aliases": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "provider_aliases": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "provider",
+                  "names"
+                ],
+                "properties": {
+                  "provider": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "names": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "uniqueItems": true
+                  }
+                }
+              }
+            },
+            "nested": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "fields": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "to"
+                ],
+                "properties": {
+                  "to": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "from": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "uniqueItems": true
+                  }
+                }
+              }
+            },
+            "rules": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "field"
+                ],
+                "properties": {
+                  "field": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "from": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "uniqueItems": true
+                  },
+                  "map": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "string"
+                    }
+                  },
+                  "if_all": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "uniqueItems": true
+                  },
+                  "if_any": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "uniqueItems": true
+                  },
+                  "then": {
+                    "type": "string"
+                  },
+                  "otherwise": {
+                    "type": "string"
+                  },
+                  "when_value": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "uniqueItems": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "export": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "hook"
+          ],
+          "properties": {
+            "hook": {
+              "const": "export_account"
+            }
+          }
         }
       },
       "allOf": [
@@ -726,6 +883,12 @@
         "cache_affinity": {
           "type": "boolean"
         },
+        "simulated_cache": {
+          "type": "boolean"
+        },
+        "retry_in_band_error": {
+          "type": "boolean"
+        },
         "long_context_beta": {
           "type": "string"
         },
@@ -781,6 +944,9 @@
         "request_overrides": {
           "type": "object",
           "additionalProperties": true
+        },
+        "split_image_generations": {
+          "type": "boolean"
         }
       }
     },
