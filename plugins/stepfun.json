@@ -117,8 +117,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "IAw+5NlAupmaSVNts2c9AWWZM7KEgJMwrZxqUCiQHm08XmsUqurcas0x1+8Yb55pQMeMAEThwq9c7I67bEQQAw=="
+    "sig": "vfdrwX1HsBLOLmykhq2o7B2emQ1HvrH+AoaTTMyc+BxcRP5GUkIWr956+eEcKZkQOxEDNJ90zvHD/LCukev7Cw=="
   },
   "type": "integration",
-  "version": "1.3.6"
+  "version": "1.3.7"
 }

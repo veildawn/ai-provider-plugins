@@ -73,8 +73,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "er+AtAJQ2z3gQAH24KHh5/F7Z7XFuiGamvQMcb5gRMidS4RqC+4E/FOsP38kuB8CfY+jaICkwyUN46ygsHtaAA=="
+    "sig": "uhYF34iGPU7ZK44Snayn2Ryj8PUuO8LQKtmGaKmuHOynF2+B9MkPxrxOSwLE8uzWOnQwOKXkXEG0HwFG40t9Dg=="
   },
   "type": "integration",
-  "version": "2.0.29"
+  "version": "2.0.30"
 }
