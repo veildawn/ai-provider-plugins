@@ -3240,6 +3240,14 @@
           "min_app_version": "0.19.0"
         },
         {
+          "version": "1.2.11",
+          "min_app_version": "0.19.0"
+        },
+        {
+          "version": "1.2.10",
+          "min_app_version": "0.19.0"
+        },
+        {
           "version": "1.2.9",
           "min_app_version": "0.19.0"
         },
