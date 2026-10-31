@@ -168,8 +168,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:4da5f976df1e1bfb",
-    "sig": "8oqBLS6xDigr6jGhlEmOlFNxr1j2ToGQSneWUVtzt+LDN8VY48eHCwpeTkqdNhw23QMv0HjnlGh8D3lz9XJiBQ=="
+    "sig": "Q+IDtkgjY5wWO5/v70LPgM+JS0w7OciqLzPnFx1+fGSPcQOVn8KVfKzFUaTY8barCdpTs9Afn6tvwlcd4sr1Cw=="
   },
   "type": "integration",
-  "version": "1.8.7"
+  "version": "1.8.8"
 }
