@@ -1,6 +1,6 @@
 # AI Provider Plugins (Marketplace)
 
-Official plugin marketplace and distribution repository for [`ai-proxy-service`](https://github.com/veildawn/ai-proxy-service).
+Official plugin marketplace and distribution repository for [AI Proxy](https://github.com/veildawn/ai-proxy-releases).
 
 This repository contains signed WebAssembly (Wasm) plugin manifests, marketplace indexes, and JSON schemas for runtime distribution.
 
@@ -16,11 +16,11 @@ revoke.json                        Revocation list
 scripts/versions.py                Maintains the release archive and the index
 ```
 
-The provider wasm ABI is not defined here. It lives with the provider SDK in the
-private `ai-provider-source` repository (`schemas/abi-v2.json`), which is the
-only place a hook name, limit or payload shape may be declared. An older
-`schemas/abi.json` used to sit in this repository as well; it was a copy nothing
-here read, it drifted from the IDL, and it was removed rather than synced.
+The provider wasm ABI is not defined here. It lives with the provider SDK
+(`schemas/abi-v2.json`), which is the only place a hook name, limit or payload
+shape may be declared. An older `schemas/abi.json` used to sit in this
+repository as well; it was a copy nothing here read, it drifted from the IDL,
+and it was removed rather than synced.
 
 ## Releases and the `versions` array
 
@@ -59,7 +59,7 @@ python3 scripts/versions.py --backfill # archive history, newest release per min
 
 ## Supported Provider Integrations
 
-Requires [`ai-proxy-service`](https://github.com/veildawn/ai-proxy-service) **0.17.0+** (`min_app_version`).
+Requires [AI Proxy](https://github.com/veildawn/ai-proxy-releases) **0.17.0+** (`min_app_version`).
 
 - **Qoder CN / International** (`qoder`, `qoder-intl`)
 - **Kiro / AWS CodeWhisperer** (`kiro`)
