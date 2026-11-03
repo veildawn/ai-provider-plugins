@@ -223,8 +223,8 @@
   "publisher": "veildawn",
   "signature": {
     "alg": "ed25519",
-    "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "vLj0sxn1VtuUlsJfecxijY05ECT299w9bJE25f2kfgV7lawAhj3PRbqvbeS9kE0iwz6DOWulG5qP6SlwNUzhAg=="
+    "key_id": "ed25519:4da5f976df1e1bfb",
+    "sig": "xi3ighgL5KqZ5h198DauAPrGpaXsZU99CJU+CBRu9QyPQ1zHODx9l/hcGWupCQAwZihiN2mQpx4pojVgO8xBCA=="
   },
   "type": "integration",
   "version": "1.3.8"
