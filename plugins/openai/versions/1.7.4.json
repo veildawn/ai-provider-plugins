@@ -113,8 +113,8 @@
   "publisher": "veildawn",
   "signature": {
     "alg": "ed25519",
-    "key_id": "ed25519:4da5f976df1e1bfb",
-    "sig": "xCYiYIQAcMHCzPSC2XYy5VVhhMn6yX/+PAqlw585kpSyDFhenVWSda/TQBHEsBhyaQCU1IOUcjje/kkOemsRDg=="
+    "key_id": "ed25519:a2b36ebc3a600442",
+    "sig": "KsE/ftmLwI6DqgqtrdNl1heZswA9aE3rfZwZ+MBPs1Y0PgWcpzgLFMjGdSaXA2H3xRHSrmDBA0C152Tnbx2tDw=="
   },
   "type": "integration",
   "version": "1.7.4"
