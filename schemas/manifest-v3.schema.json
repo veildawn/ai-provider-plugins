@@ -931,6 +931,11 @@
         "is_default": {
           "type": "boolean"
         },
+        "tier": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Default routing preference when several providers serve the same model and the operator has not set a routing.model_policies entry for it. Preference groups sort by this integer, with 1 the most preferred; a provider that omits the field falls into the implicit last group. Any operator policy for that model, even a strategy with no tiers, disables the manifest value entirely — the two layers are never merged, so a plugin update cannot rewrite an operator's order. Negative values are rejected at parse time. The GLM start-plan provider sets 1 so that gift lane is preferred over the paid coding plan when the operator has not chosen. The host parses manifests strictly, so a plugin carrying this field installs only on hosts that know it — gate the release with min_app_version."
+        },
         "supports_realtime": {
           "type": "boolean"
         },
