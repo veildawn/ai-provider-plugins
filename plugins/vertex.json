@@ -1,4 +1,5 @@
 {
+  "author": "veildawn",
   "description": {
     "en": "Google Cloud Vertex AI Express Mode provider with native Gemini protocol support.",
     "zh": "Google Cloud Vertex AI Express Mode 提供商，原生支持 Gemini 协议。"
@@ -13,24 +14,23 @@
   },
   "provides": {
     "account": {
+      "description": {
+        "en": "Paste a Vertex AI Express Mode API key (starting with AQ.) from Google Cloud Console.",
+        "zh": "粘贴 Google Cloud 控制台生成的 Vertex AI Express Mode API Key（以 AQ. 开头）。"
+      },
       "fields": [
         {
           "label": {
-            "en": "Vertex AI API Key",
-            "zh": "Vertex AI API 密钥"
+            "en": "Vertex AI API key",
+            "zh": "Vertex AI API Key"
           },
           "name": "api_key",
           "placeholder": "AQ...",
           "required": true,
-          "target": "access_token",
-          "type": "secret"
+          "type": "password"
         }
       ],
       "flow": "form",
-      "guide_label": {
-        "en": "Get Vertex AI API Key",
-        "zh": "获取 Vertex AI API 密钥"
-      },
       "guide_url": "https://console.cloud.google.com/vertex-ai/studio/settings/api-keys",
       "import": {
         "aliases": [
@@ -39,6 +39,10 @@
           "vertex-express",
           "aiplatform"
         ]
+      },
+      "title": {
+        "en": "Connect Vertex AI",
+        "zh": "连接 Vertex AI"
       }
     },
     "providers": [
@@ -85,8 +89,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "rAlSI2Ae9gDGCasQLlsrw1yxbvBwdQz9F5/yOx1PWshn0PgGOIq2RWDk+4FQJ+FG5CrvABI1bnlgIjdHmT0FBQ=="
+    "sig": "iQi0UwYHTOjPFnSEV0tKm/M8+smrYg9inGeHg/cSPId2xzqRU8GPvFVp1hSTDO8IbyEooLeIW4x/M0M7jKkvBQ=="
   },
   "type": "integration",
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
