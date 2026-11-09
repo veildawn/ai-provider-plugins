@@ -105,8 +105,8 @@
   "publisher": "veildawn",
   "signature": {
     "alg": "ed25519",
-    "key_id": "ed25519:4da5f976df1e1bfb",
-    "sig": "S6uPAeV9qKdeYyqBDlEF3WLjlMWxMDNgNoX9UuKYI80IP9JmWxq97d/Cug4HWFxCmOViUBqWO1egzff2UtWXDg=="
+    "key_id": "ed25519:a2b36ebc3a600442",
+    "sig": "venVTzmumUzfWQESrigOPdfucnlTrnl8P/eX/yp+LuSGrQ/wyGEKRhXXFNH4xOLNqUu08LIuPSSPVTPnQRQmAQ=="
   },
   "type": "integration",
   "version": "1.5.2"
