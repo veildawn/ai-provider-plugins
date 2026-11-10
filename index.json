@@ -3547,7 +3547,7 @@
         "google",
         "gemini"
       ],
-      "version": "1.0.4",
+      "version": "1.0.5",
       "type": "integration",
       "name": {
         "en": "Vertex AI"
@@ -3571,6 +3571,10 @@
       "updated_at": "2026-11-10",
       "versions": [
         {
+          "version": "1.0.5",
+          "min_app_version": "0.38.3"
+        },
+        {
           "version": "1.0.4",
           "min_app_version": "0.38.3"
         },
@@ -3591,8 +3595,8 @@
           "min_app_version": "0.38.3"
         }
       ],
-      "module_sha256": "6de0e80615a531b26eaa8ad33c8a1aafa18aac41580c3dde2ff0f7a3457853a8",
-      "module_bytes": 6623912
+      "module_sha256": "933d2c13e9f921cf7cbd7c700c4a9fd40ce46f9bd6db8d1abf76c57b4355a691",
+      "module_bytes": 6624060
     },
     {
       "id": "workbuddy",
