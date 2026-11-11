@@ -130,4 +130,29 @@ for plugin_id, path in files.items():
         else:
             assert "module_sha256" not in entry, f"{path}: provider without a module must not record a module digest"
 
-print(f"validated {len(files)} manifests ({integration_count} integration, {len(files) - integration_count} automation), {len(revoked_keys)} revoked keys")
+RAW_RELEASES_PREFIX = "https://raw.githubusercontent.com/veildawn/ai-provider-plugins/main/releases/"
+release_manifests = sorted((ROOT / "releases").glob("*/*.json"))
+for rel_path in release_manifests:
+    rel_doc = load(rel_path)
+    assert set(rel_doc) == {"version", "url", "sha512"}, (
+        f"{rel_path}: release manifest must have exact keys version, url, sha512"
+    )
+    assert re.fullmatch(r"\d+\.\d+\.\d+", str(rel_doc["version"])), f"{rel_path}: bad version"
+    url = str(rel_doc["url"])
+    assert url.startswith(RAW_RELEASES_PREFIX), (
+        f"{rel_path}: url must start with {RAW_RELEASES_PREFIX}"
+    )
+    assert re.fullmatch(r"[0-9a-f]{128}", str(rel_doc["sha512"])), f"{rel_path}: bad sha512"
+    archive_rel = url[len("https://raw.githubusercontent.com/veildawn/ai-provider-plugins/main/"):]
+    archive_file = ROOT / archive_rel
+    assert archive_file.is_file(), f"{rel_path}: referenced archive {archive_rel} is missing"
+    actual_sha512 = hashlib.sha512(archive_file.read_bytes()).hexdigest()
+    assert actual_sha512 == rel_doc["sha512"], (
+        f"{rel_path}: archive sha512 {actual_sha512} != manifest {rel_doc['sha512']}"
+    )
+
+print(
+    f"validated {len(files)} manifests ({integration_count} integration, "
+    f"{len(files) - integration_count} automation), {len(revoked_keys)} revoked keys, "
+    f"{len(release_manifests)} host release manifests"
+)
