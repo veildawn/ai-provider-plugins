@@ -4110,15 +4110,15 @@
     },
     {
       "id": "antigravity-acp",
-      "version": "0.1.6",
+      "version": "0.1.7",
       "type": "integration",
       "name": {
         "en": "Antigravity ACP",
         "zh": "Antigravity 本机桥"
       },
       "description": {
-        "en": "Uses your own Antigravity CLI through acp-bridge. On a non-Docker gateway host, enabling this plugin automatically runs the local companion bridge once agy and acp-bridge are installed, and each account added in Accounts → Add Account signs in inside its own isolated CLI directory with its own bridge process and outbound proxy. The login stays in the CLI and only the per-account bridge key reaches the gateway. Everyone routed to the same account shares that CLI workspace, so restrict each account to trusted plans if needed. Tools run one at a time; sampling parameters and replayed images are lost, and an image or document in a new message is refused.",
-        "zh": "通过 acp-bridge 使用你自己的 Antigravity CLI。在非 Docker 网关主机上，装好 agy 和 acp-bridge 后启用本插件会自动运行本机伴随 bridge、停用时自动关闭；前往「账号管理 → 添加账号」即可为每个账号在独立隔离的 CLI 目录中完成 Google 登录，拥有各自独立的 bridge 子进程与出站代理。登录态留在 CLI，网关只保存各账号独立的 bridge 密钥。路由到同一账号的请求共用该账号的本地目录；工具逐个执行，采样参数和重放中的图片不生效，新消息里的图片或文档会被拒绝。"
+        "en": "Uses your own Antigravity CLI through acp-bridge. On a non-Docker gateway host, enabling this plugin automatically runs the local companion bridge once agy and acp-bridge are installed, and each account added in Accounts → Add Account signs in inside its own isolated CLI directory with its own bridge process and outbound proxy. The login stays in the CLI and only the per-account bridge key reaches the gateway. Everyone routed to the same account shares that CLI workspace, so restrict each account to trusted plans if needed. Tools run one at a time; sampling parameters are not supported. Base64 images are passed to the agent; documents are refused.",
+        "zh": "通过 acp-bridge 使用你自己的 Antigravity CLI。在非 Docker 网关主机上，装好 agy 和 acp-bridge 后启用本插件会自动运行本机伴随 bridge、停用时自动关闭；前往「账号管理 → 添加账号」即可为每个账号在独立隔离的 CLI 目录中完成 Google 登录，拥有各自独立的 bridge 子进程与出站代理。登录态留在 CLI，网关只保存各账号独立的 bridge 密钥。路由到同一账号的请求共用该账号的本地目录；工具逐个执行，不支持采样参数。Base64 图片会发送给 agent，文档会被拒绝。"
       },
       "publisher": "veildawn",
       "provider_name": "antigravity-acp",
@@ -4137,6 +4137,10 @@
         "local"
       ],
       "versions": [
+        {
+          "version": "0.1.7",
+          "min_app_version": "0.50.4"
+        },
         {
           "version": "0.1.6",
           "min_app_version": "0.50.4"
