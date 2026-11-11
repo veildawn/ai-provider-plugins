@@ -1,0 +1,38 @@
+name: release-acp-bridge
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "releases/acp-bridge/v*/**"
+      - ".github/workflows/release-acp-bridge.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify checksums and publish GitHub Releases
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          for dir in releases/acp-bridge/v*; do
+            [ -d "$dir" ] || continue
+            ver="${dir##*/v}"
+            tag="acp-bridge-v${ver}"
+            (cd "$dir" && sha256sum -c checksums.txt)
+            if gh release view "$tag" >/dev/null 2>&1; then
+              echo "$tag already published; uploading any missing assets"
+              gh release upload "$tag" "$dir"/*.tar.gz "$dir/checksums.txt" --clobber=false || true
+            else
+              gh release create "$tag" \
+                --title "acp-bridge v${ver}" \
+                --notes "Prebuilt static \`acp-bridge\` ${ver} binaries for \`antigravity-acp\` (macOS & Linux amd64/arm64). Verify downloads with \`sha256sum -c checksums.txt --ignore-missing\` or install directly from the gateway admin panel." \
+                --latest=false \
+                "$dir"/*.tar.gz "$dir/checksums.txt"
+            fi
+          done

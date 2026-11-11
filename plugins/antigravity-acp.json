@@ -120,6 +120,61 @@
     },
     {
       "detect": {
+        "args": [
+          "version"
+        ],
+        "command": "acp-bridge",
+        "pattern": "^acp-bridge (\\d+\\.\\d+\\.\\d+)"
+      },
+      "homepage": "https://github.com/veildawn/ai-provider-plugins/releases",
+      "id": "acp-bridge-cli",
+      "install": [
+        {
+          "archive": "tar.gz",
+          "checksum": "sha512",
+          "download_hosts": [
+            "https://raw.githubusercontent.com/veildawn/ai-provider-plugins/main/releases/acp-bridge/"
+          ],
+          "manifest_url": "https://raw.githubusercontent.com/veildawn/ai-provider-plugins/main/releases/acp-bridge/{platform}.json",
+          "member": "acp-bridge",
+          "method": "release_manifest",
+          "os": [
+            "darwin",
+            "linux"
+          ],
+          "platforms": {
+            "darwin_amd64": "darwin_amd64",
+            "darwin_arm64": "darwin_arm64",
+            "linux_amd64": "linux_amd64",
+            "linux_amd64_musl": "linux_amd64",
+            "linux_arm64": "linux_arm64",
+            "linux_arm64_musl": "linux_arm64"
+          },
+          "target": "~/.local/bin/acp-bridge"
+        }
+      ],
+      "name": {
+        "en": "ACP Bridge CLI",
+        "zh": "ACP 本机桥程序"
+      },
+      "probes": [
+        {
+          "args": [
+            "serve",
+            "--help"
+          ],
+          "expect": [
+            "--key-file",
+            "--listen",
+            "--agy",
+            "--home"
+          ]
+        }
+      ],
+      "range": ">=0.1.0"
+    },
+    {
+      "detect": {
         "field": "bridge_version",
         "from": "provider_health",
         "path": "/healthz",
@@ -127,7 +182,7 @@
       },
       "id": "acp-bridge",
       "name": {
-        "en": "ACP Bridge",
+        "en": "ACP Bridge Service",
         "zh": "ACP 本机桥服务"
       },
       "range": ">=0.1.0",
@@ -137,8 +192,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "jbr21Qo+jm895hSbm5yu4DTjZdrbwof9KMWb52oEefkZm8I1QeeGTk5tCfHR3PlDHykzWdLODTDKPPHgYbPtCw=="
+    "sig": "4jNHMokgooMfPn2vIHVQh3od019zZNDgZFqqrPrTWfxvbCR7dvzA5QoTQYN4DF5OWn5zeueA08Tc7YI5TvrCDg=="
   },
   "type": "integration",
-  "version": "0.1.1"
+  "version": "0.1.2"
 }
