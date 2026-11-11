@@ -65,6 +65,14 @@
         "$ref": "#/$defs/dependency"
       }
     },
+    "requires": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "items": {
+        "$ref": "#/$defs/host_requirement"
+      }
+    },
     "provides": {
       "$ref": "#/$defs/provides"
     },
@@ -139,6 +147,831 @@
         }
       }
     },
+    "host_requirement": {
+      "description": "A program this package needs (requires[]). Mirrors the gateway's HostRequirement (internal/plugin/requires.go). where: gateway (default) runs detect.command and probes on the gateway host; where: provider reads detect.field from the provider's health endpoint. install lists the fixed ways the gateway may install it on its own host, only for a signed manifest.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "detect"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/slug"
+        },
+        "name": {
+          "$ref": "#/$defs/text"
+        },
+        "where": {
+          "enum": [
+            "gateway",
+            "provider"
+          ]
+        },
+        "range": {
+          "type": "string",
+          "pattern": "^(\\S(.*\\S)?)?$"
+        },
+        "detect": {
+          "$ref": "#/$defs/host_detect"
+        },
+        "probes": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "$ref": "#/$defs/host_probe"
+          }
+        },
+        "install": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 6,
+          "items": {
+            "$ref": "#/$defs/host_install"
+          }
+        },
+        "homepage": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https?://\\S+$"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "where": {
+                "const": "provider"
+              }
+            },
+            "required": [
+              "where"
+            ]
+          },
+          "then": {
+            "properties": {
+              "detect": {
+                "required": [
+                  "from",
+                  "provider",
+                  "path",
+                  "field"
+                ],
+                "not": {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "command"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "args"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "pattern"
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            "not": {
+              "required": [
+                "probes"
+              ]
+            }
+          },
+          "else": {
+            "properties": {
+              "detect": {
+                "required": [
+                  "command",
+                  "pattern"
+                ],
+                "not": {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "from"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "provider"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "path"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "field"
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "host_detect": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "command": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9._-]{0,63}$"
+        },
+        "args": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "string",
+            "pattern": "^(--?[A-Za-z][A-Za-z0-9-]*|[a-z][a-z0-9-]{0,31})$",
+            "maxLength": 64
+          }
+        },
+        "pattern": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "from": {
+          "const": "provider_health"
+        },
+        "provider": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^/[a-z0-9][a-z0-9_.-]{0,31}(/[a-z0-9][a-z0-9_.-]{0,31}){0,3}$"
+        },
+        "field": {
+          "type": "string",
+          "pattern": "^[a-z_][a-z0-9_]{0,31}(\\.[a-z_][a-z0-9_]{0,31}){0,3}$"
+        }
+      }
+    },
+    "host_probe": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "expect"
+      ],
+      "properties": {
+        "args": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "string",
+            "pattern": "^(--?[A-Za-z][A-Za-z0-9-]*|[a-z][a-z0-9-]{0,31})$",
+            "maxLength": 64
+          }
+        },
+        "expect": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 8,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128,
+            "pattern": "^[^\\u0000-\\u001f\\u007f-\\u009f]+$"
+          }
+        }
+      }
+    },
+    "host_install": {
+      "description": "One way to install the program. A field that does not belong to the method is refused, as the gateway refuses it.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "os",
+        "method"
+      ],
+      "properties": {
+        "os": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "darwin",
+              "linux",
+              "windows"
+            ]
+          }
+        },
+        "method": {
+          "enum": [
+            "script",
+            "binary",
+            "npm",
+            "brew",
+            "pip",
+            "release_manifest"
+          ]
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https://[^\\s/@?#]+(/\\S*)?$"
+        },
+        "interpreter": {
+          "enum": [
+            "bash",
+            "sh"
+          ]
+        },
+        "installs": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]{0,31}$"
+        },
+        "target": {
+          "type": "string",
+          "maxLength": 256,
+          "pattern": "^(/|~/)(?!.*(^|/)\\.\\.(/|$))\\S.*$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "package": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 192
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]{0,31}$",
+          "not": {
+            "const": "latest"
+          }
+        },
+        "args": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          }
+        },
+        "manifest_url": {
+          "type": "string",
+          "pattern": "^https://[^\\s/@?#{}]+/[^\\s#{}]*(\\{platform\\}[^\\s#{}]*)?$"
+        },
+        "platforms": {
+          "type": "object",
+          "minProperties": 1,
+          "propertyNames": {
+            "enum": [
+              "darwin_amd64",
+              "darwin_arm64",
+              "linux_amd64",
+              "linux_arm64",
+              "linux_amd64_musl",
+              "linux_arm64_musl"
+            ]
+          },
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9_.-]{0,63}$"
+          }
+        },
+        "download_hosts": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^https://[^\\s/@?#]+/([^\\s?#]*/)?$"
+          }
+        },
+        "archive": {
+          "enum": [
+            "tar.gz",
+            "none"
+          ]
+        },
+        "member": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+        },
+        "checksum": {
+          "const": "sha512"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "method": {
+                "const": "script"
+              }
+            },
+            "required": [
+              "method"
+            ]
+          },
+          "then": {
+            "required": [
+              "url",
+              "interpreter",
+              "installs"
+            ],
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "package"
+                  ]
+                },
+                {
+                  "required": [
+                    "version"
+                  ]
+                },
+                {
+                  "required": [
+                    "manifest_url"
+                  ]
+                },
+                {
+                  "required": [
+                    "platforms"
+                  ]
+                },
+                {
+                  "required": [
+                    "download_hosts"
+                  ]
+                },
+                {
+                  "required": [
+                    "archive"
+                  ]
+                },
+                {
+                  "required": [
+                    "member"
+                  ]
+                },
+                {
+                  "required": [
+                    "checksum"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "method": {
+                "const": "binary"
+              }
+            },
+            "required": [
+              "method"
+            ]
+          },
+          "then": {
+            "required": [
+              "url",
+              "sha256",
+              "target",
+              "installs"
+            ],
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "interpreter"
+                  ]
+                },
+                {
+                  "required": [
+                    "package"
+                  ]
+                },
+                {
+                  "required": [
+                    "version"
+                  ]
+                },
+                {
+                  "required": [
+                    "args"
+                  ]
+                },
+                {
+                  "required": [
+                    "manifest_url"
+                  ]
+                },
+                {
+                  "required": [
+                    "platforms"
+                  ]
+                },
+                {
+                  "required": [
+                    "download_hosts"
+                  ]
+                },
+                {
+                  "required": [
+                    "archive"
+                  ]
+                },
+                {
+                  "required": [
+                    "member"
+                  ]
+                },
+                {
+                  "required": [
+                    "checksum"
+                  ]
+                }
+              ]
+            },
+            "properties": {
+              "installs": {
+                "not": {
+                  "const": "latest"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "method": {
+                "const": "npm"
+              }
+            },
+            "required": [
+              "method"
+            ]
+          },
+          "then": {
+            "required": [
+              "package",
+              "version"
+            ],
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "url"
+                  ]
+                },
+                {
+                  "required": [
+                    "interpreter"
+                  ]
+                },
+                {
+                  "required": [
+                    "installs"
+                  ]
+                },
+                {
+                  "required": [
+                    "sha256"
+                  ]
+                },
+                {
+                  "required": [
+                    "target"
+                  ]
+                },
+                {
+                  "required": [
+                    "args"
+                  ]
+                },
+                {
+                  "required": [
+                    "manifest_url"
+                  ]
+                },
+                {
+                  "required": [
+                    "platforms"
+                  ]
+                },
+                {
+                  "required": [
+                    "download_hosts"
+                  ]
+                },
+                {
+                  "required": [
+                    "archive"
+                  ]
+                },
+                {
+                  "required": [
+                    "member"
+                  ]
+                },
+                {
+                  "required": [
+                    "checksum"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "method": {
+                "const": "brew"
+              }
+            },
+            "required": [
+              "method"
+            ]
+          },
+          "then": {
+            "required": [
+              "package"
+            ],
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "url"
+                  ]
+                },
+                {
+                  "required": [
+                    "interpreter"
+                  ]
+                },
+                {
+                  "required": [
+                    "sha256"
+                  ]
+                },
+                {
+                  "required": [
+                    "target"
+                  ]
+                },
+                {
+                  "required": [
+                    "version"
+                  ]
+                },
+                {
+                  "required": [
+                    "args"
+                  ]
+                },
+                {
+                  "required": [
+                    "manifest_url"
+                  ]
+                },
+                {
+                  "required": [
+                    "platforms"
+                  ]
+                },
+                {
+                  "required": [
+                    "download_hosts"
+                  ]
+                },
+                {
+                  "required": [
+                    "archive"
+                  ]
+                },
+                {
+                  "required": [
+                    "member"
+                  ]
+                },
+                {
+                  "required": [
+                    "checksum"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "method": {
+                "const": "pip"
+              }
+            },
+            "required": [
+              "method"
+            ]
+          },
+          "then": {
+            "required": [
+              "package",
+              "version"
+            ],
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "url"
+                  ]
+                },
+                {
+                  "required": [
+                    "interpreter"
+                  ]
+                },
+                {
+                  "required": [
+                    "installs"
+                  ]
+                },
+                {
+                  "required": [
+                    "sha256"
+                  ]
+                },
+                {
+                  "required": [
+                    "target"
+                  ]
+                },
+                {
+                  "required": [
+                    "args"
+                  ]
+                },
+                {
+                  "required": [
+                    "manifest_url"
+                  ]
+                },
+                {
+                  "required": [
+                    "platforms"
+                  ]
+                },
+                {
+                  "required": [
+                    "download_hosts"
+                  ]
+                },
+                {
+                  "required": [
+                    "archive"
+                  ]
+                },
+                {
+                  "required": [
+                    "member"
+                  ]
+                },
+                {
+                  "required": [
+                    "checksum"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "method": {
+                "const": "release_manifest"
+              }
+            },
+            "required": [
+              "method"
+            ]
+          },
+          "then": {
+            "required": [
+              "manifest_url",
+              "platforms",
+              "download_hosts",
+              "archive",
+              "target",
+              "checksum"
+            ],
+            "properties": {
+              "os": {
+                "items": {
+                  "enum": [
+                    "darwin",
+                    "linux"
+                  ]
+                }
+              },
+              "target": {
+                "pattern": "^~/.*[^/]$"
+              }
+            },
+            "allOf": [
+              {
+                "not": {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "url"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "interpreter"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "installs"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "sha256"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "package"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "version"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "args"
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "archive": {
+                      "const": "tar.gz"
+                    }
+                  },
+                  "required": [
+                    "archive"
+                  ]
+                },
+                "then": {
+                  "required": [
+                    "member"
+                  ]
+                },
+                "else": {
+                  "not": {
+                    "anyOf": [
+                      {
+                        "required": [
+                          "member"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
     "provides": {
       "type": "object",
       "additionalProperties": false,
@@ -159,19 +992,126 @@
         "model_facts": {
           "type": "array",
           "items": {
-            "type": "object"
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "provider",
+              "models"
+            ],
+            "properties": {
+              "provider": {
+                "$ref": "#/$defs/slug"
+              },
+              "models": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/model"
+                }
+              }
+            }
           }
         },
         "model_pools": {
           "type": "array",
           "items": {
-            "type": "object"
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "members"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "display_name": {
+                "type": "string"
+              },
+              "strategy": {
+                "type": "string"
+              },
+              "disabled": {
+                "type": "boolean"
+              },
+              "members": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "provider",
+                    "model"
+                  ],
+                  "properties": {
+                    "provider": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "model": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "tier": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "plans": {
           "type": "array",
           "items": {
-            "type": "object"
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "type"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "quota",
+                  "budget"
+                ]
+              },
+              "description": {
+                "type": "string"
+              },
+              "quota_limits": {
+                "type": "object"
+              },
+              "monthly_budget": {
+                "type": "number",
+                "minimum": 0
+              },
+              "currency": {
+                "type": "string"
+              },
+              "allowed_models": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "model_provider_pins": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "inactive": {
+                "type": "boolean"
+              }
+            }
           }
         },
         "actions": {
@@ -298,15 +1238,41 @@
         "oauth": {
           "type": "object",
           "additionalProperties": false,
+          "description": "OAuth/OIDC configuration for redirect and device_code flows. Empty means the compiled defaults for the provider's transport.",
           "properties": {
-            "callback_port": {
-              "type": "integer",
-              "minimum": 1,
-              "maximum": 65535
+            "client_id": {
+              "type": "string"
+            },
+            "client_secret": {
+              "type": "string"
+            },
+            "authorize_url": {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https?://"
+            },
+            "token_url": {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https?://"
             },
             "redirect_uri": {
               "type": "string",
               "format": "uri"
+            },
+            "scopes": {
+              "type": "string",
+              "description": "The space-separated scope string."
+            },
+            "device_code_url": {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https?://"
+            },
+            "callback_port": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 65535
             }
           }
         },
@@ -933,8 +1899,8 @@
         },
         "tier": {
           "type": "integer",
-          "minimum": 0,
-          "description": "Default routing preference when several providers serve the same model and the operator has not set a routing.model_policies entry for it. Preference groups sort by this integer, with 1 the most preferred; a provider that omits the field falls into the implicit last group. Any operator policy for that model, even a strategy with no tiers, disables the manifest value entirely — the two layers are never merged, so a plugin update cannot rewrite an operator's order. Negative values are rejected at parse time. The GLM start-plan provider sets 1 so that gift lane is preferred over the paid coding plan when the operator has not chosen. The host parses manifests strictly, so a plugin carrying this field installs only on hosts that know it — gate the release with min_app_version."
+          "minimum": 1,
+          "description": "The provider author's default preference group for the models this provider offers alongside others. Groups are tried in ascending order, so 1 is preferred, and a provider that declares none sorts after every declared group. The gateway consults it only for a public model the operator has not configured in routing.model_policies: an operator policy replaces it for that model and is never merged with it. The gateway reads 0 as unset, but omit the key instead of writing 0. The gateway verifies the signature over its own canonical form, which drops an omitempty zero, so a signed 0 would not verify. Gateways before 0.38.0 refuse the field at parse, so a manifest that declares it needs min_app_version 0.38.0 or later."
         },
         "supports_realtime": {
           "type": "boolean"
@@ -999,6 +1965,10 @@
         },
         "operation_url": {
           "type": "boolean"
+        },
+        "bearer_auth": {
+          "type": "boolean",
+          "description": "An Anthropic arm that authenticates with Authorization: Bearer rather than the dialect's x-api-key."
         }
       }
     },
