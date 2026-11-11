@@ -164,10 +164,10 @@
             "--help"
           ],
           "expect": [
-            "--key-file",
-            "--listen",
-            "--agy",
-            "--home"
+            "-key-file",
+            "-listen",
+            "-agy",
+            "-home"
           ]
         }
       ],
@@ -192,8 +192,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "4jNHMokgooMfPn2vIHVQh3od019zZNDgZFqqrPrTWfxvbCR7dvzA5QoTQYN4DF5OWn5zeueA08Tc7YI5TvrCDg=="
+    "sig": "GCFJ4Kur0oW4P7R/xip1tuHg45T3XuOFue+vP0yHz+k5sVY26eLBVEXjJ5iYlYRZcm8p+0Jr2RiklG+gU826Cg=="
   },
   "type": "integration",
-  "version": "0.1.2"
+  "version": "0.1.3"
 }
