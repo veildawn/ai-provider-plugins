@@ -49,14 +49,29 @@
           "claude-opus-5-5-low",
           "claude-opus-5-5-medium",
           "claude-opus-5-5-high",
+          "claude-sonnet-5-5-low",
+          "claude-sonnet-5-5-medium",
+          "claude-sonnet-5-5-high",
           "gemini-4-argon-low",
           "gemini-4-argon-medium",
           "gemini-4-argon-high",
+          "gemini-4-carbon-low",
+          "gemini-4-carbon-medium",
+          "gemini-4-carbon-high",
+          "gemini-3.8-flash-low",
+          "gemini-3.8-flash-medium",
+          "gemini-3.8-flash-high",
           "gpt-oss-120b-medium"
         ],
         "name": "antigravity-acp",
         "protocols": [
           "anthropic"
+        ],
+        "thinking_in_model_id": true,
+        "variant_suffixes": [
+          {
+            "suffix": "-gpt-oss-120b-medium"
+          }
         ]
       }
     ]
@@ -175,7 +190,7 @@
           ]
         }
       ],
-      "range": ">=0.1.1"
+      "range": ">=0.1.2"
     },
     {
       "detect": {
@@ -189,15 +204,15 @@
         "en": "ACP Bridge Service",
         "zh": "ACP 本机桥服务"
       },
-      "range": ">=0.1.1",
+      "range": ">=0.1.2",
       "where": "provider"
     }
   ],
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "2z9R8fB1IbyTKi3hx3UBKTCgBURLP+pVZVWjzt8ubAx6Ctorcxfr1dTqd9uJ+m9wGH7CszDhKTKMx9aIg5RcDA=="
+    "sig": "6neradr0yoTl8rUXX+e965YQnIfg4EdbprcNabG6gcfQH90apmu6SzC0z73qBw6zvkzOADDe5IVp91vzB8JmBw=="
   },
   "type": "integration",
-  "version": "0.1.5"
+  "version": "0.1.6"
 }
