@@ -1,0 +1,4 @@
+49bd3e2e3040c1dbd70a882043555e373493b48c70d080f0518a554223c4c8f7  acp-bridge_0.1.4_darwin_amd64.tar.gz
+ca38cfd6b77ac1b491e0384ae6a92744cadd50e4c5a928ba4b855d853d5c6d22  acp-bridge_0.1.4_darwin_arm64.tar.gz
+359f3896769f500c32411d5ff7529a5d606443e3e9ca749f26e045233907e0a8  acp-bridge_0.1.4_linux_amd64.tar.gz
+437bafb1ca2ec600165b564c1c09e1aa7c7c857a357fa04e46130f0bacd1bf13  acp-bridge_0.1.4_linux_arm64.tar.gz
