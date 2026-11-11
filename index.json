@@ -4110,7 +4110,7 @@
     },
     {
       "id": "antigravity-acp",
-      "version": "0.1.10",
+      "version": "0.1.11",
       "type": "integration",
       "name": {
         "en": "Antigravity ACP",
@@ -4137,6 +4137,10 @@
         "local"
       ],
       "versions": [
+        {
+          "version": "0.1.11",
+          "min_app_version": "0.50.5"
+        },
         {
           "version": "0.1.10",
           "min_app_version": "0.50.5"

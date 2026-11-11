@@ -1,5 +1,5 @@
 {
-  "version": "0.1.5",
-  "url": "https://raw.githubusercontent.com/veildawn/ai-provider-plugins/main/releases/acp-bridge/v0.1.5/acp-bridge_0.1.5_linux_arm64.tar.gz",
-  "sha512": "4de2a9d63d0cb957a1aab8a1f734cce18d4e35c6b4c9181f25caff70e51fa81fcffb22b444292a025bba0ffa4e271013582995f80ab4268b8bc0d7319d1a0abc"
+  "version": "0.1.6",
+  "url": "https://raw.githubusercontent.com/veildawn/ai-provider-plugins/main/releases/acp-bridge/v0.1.6/acp-bridge_0.1.6_linux_arm64.tar.gz",
+  "sha512": "0c660919e1df9a76e7388914b22bc28bc053589cfab787ae5d0bba0d51061cd2b682b5af4096843a55f26b7ef7007ab0faeb96b05f6eac728a40081dfd924e39"
 }
