@@ -68,8 +68,59 @@
           "anthropic"
         ],
         "quota_query": {
-          "result_path": "$",
-          "url": "/v1/quota"
+          "url": "/v1/quota",
+          "windows": [
+            {
+              "key": "gemini-5h",
+              "kind": "percent",
+              "label": "Gemini · 5-hour",
+              "perishable": true,
+              "refill": "rolling:18000",
+              "remaining_percent_path": "windows.key=gemini-5h.remaining",
+              "resets_at_path": "windows.key=gemini-5h.resets_at",
+              "scope": "surface:gemini"
+            },
+            {
+              "key": "gemini-weekly",
+              "kind": "percent",
+              "label": "Gemini · Weekly",
+              "perishable": true,
+              "refill": "cycle:week",
+              "remaining_percent_path": "windows.key=gemini-weekly.remaining",
+              "resets_at_path": "windows.key=gemini-weekly.resets_at",
+              "scope": "surface:gemini"
+            },
+            {
+              "key": "gemini-argon-weekly",
+              "kind": "percent",
+              "label": "Gemini 4 Argon · Weekly",
+              "perishable": true,
+              "refill": "cycle:week",
+              "remaining_percent_path": "windows.key=gemini-argon-weekly.remaining",
+              "resets_at_path": "windows.key=gemini-argon-weekly.resets_at",
+              "scope": "surface:gemini_4_argon"
+            },
+            {
+              "key": "3p-5h",
+              "kind": "percent",
+              "label": "Claude & GPT · 5-hour",
+              "perishable": true,
+              "refill": "rolling:18000",
+              "remaining_percent_path": "windows.key=3p-5h.remaining",
+              "resets_at_path": "windows.key=3p-5h.resets_at",
+              "scope": "surface:claude_gpt"
+            },
+            {
+              "key": "3p-weekly",
+              "kind": "percent",
+              "label": "Claude & GPT · Weekly",
+              "perishable": true,
+              "refill": "cycle:week",
+              "remaining_percent_path": "windows.key=3p-weekly.remaining",
+              "resets_at_path": "windows.key=3p-weekly.resets_at",
+              "scope": "surface:claude_gpt"
+            }
+          ]
         },
         "thinking_in_model_id": true,
         "variant_suffixes": [
@@ -131,7 +182,6 @@
             "--gemini-dir",
             "--app-data-dir",
             "--agent",
-            "--process-per-session",
             "--disable-telemetry",
             "--log-file",
             "--sandbox",
@@ -194,7 +244,7 @@
           ]
         }
       ],
-      "range": ">=0.1.4"
+      "range": ">=0.1.5"
     },
     {
       "detect": {
@@ -208,15 +258,15 @@
         "en": "ACP Bridge Service",
         "zh": "ACP 本机桥服务"
       },
-      "range": ">=0.1.4",
+      "range": ">=0.1.5",
       "where": "provider"
     }
   ],
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "GYMHIxQ9w05lKUwxtAM1C5SBD5TL0lbNOMi7Owzlxb1zk+HcgkVlEKFqqKkpaHNKZlsTA5uBwgr9JfzEFshfBg=="
+    "sig": "B9ORWOZPfW0a+DgZOlZbm39eoGJMBRmGDk4ePotnll0812jMCWwwinJx4dMmdJg6QNP9IvwIqAGm/0W6roRJDg=="
   },
   "type": "integration",
-  "version": "0.1.9"
+  "version": "0.1.10"
 }
