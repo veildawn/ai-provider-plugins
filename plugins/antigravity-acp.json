@@ -117,13 +117,28 @@
         }
       ],
       "range": ">=1.5.3 <1.6.0"
+    },
+    {
+      "detect": {
+        "field": "bridge_version",
+        "from": "provider_health",
+        "path": "/healthz",
+        "provider": "antigravity-acp"
+      },
+      "id": "acp-bridge",
+      "name": {
+        "en": "ACP Bridge",
+        "zh": "ACP 本机桥服务"
+      },
+      "range": ">=0.1.0",
+      "where": "provider"
     }
   ],
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "gNiQNnT4Ml/PIjZYjMcCAN9ivYL7SfhUAXQrN+PfVWAr/BSlfdv4fpt4TBPNYiW6g8y0NJe4T8q86qW1cGKfDg=="
+    "sig": "jbr21Qo+jm895hSbm5yu4DTjZdrbwof9KMWb52oEefkZm8I1QeeGTk5tCfHR3PlDHykzWdLODTDKPPHgYbPtCw=="
   },
   "type": "integration",
-  "version": "0.1.0"
+  "version": "0.1.1"
 }
