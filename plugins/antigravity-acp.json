@@ -244,7 +244,7 @@
           ]
         }
       ],
-      "range": ">=0.1.6"
+      "range": ">=0.1.7"
     },
     {
       "detect": {
@@ -258,15 +258,15 @@
         "en": "ACP Bridge Service",
         "zh": "ACP 本机桥服务"
       },
-      "range": ">=0.1.6",
+      "range": ">=0.1.7",
       "where": "provider"
     }
   ],
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "9zRq4B8kH9bVD38tXKVHaOjWVByvO/G6eyQtm4zRQaAwPXbvyi3jlMC5K6MYr5k0K5wIbCYK6cH537urPCiWDg=="
+    "sig": "Nh7U3Q662f1jVbi0GhUOq9OgB7ZRq+asImWBzSs2dJSCcC5NwIfXbiL1fqfw5gyRGicsivOHG75mydq8QAdpCw=="
   },
   "type": "integration",
-  "version": "0.1.11"
+  "version": "0.1.12"
 }
