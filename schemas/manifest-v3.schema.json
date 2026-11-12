@@ -1273,6 +1273,13 @@
               "type": "integer",
               "minimum": 1,
               "maximum": 65535
+            },
+            "callback_format": {
+              "enum": [
+                "code",
+                "raw"
+              ],
+              "description": "code (default) extracts an authorization code and checks the host state before handoff; raw passes the complete callback query to auth_poll, for providers that return a signed JWT document instead of a code."
             }
           }
         },
