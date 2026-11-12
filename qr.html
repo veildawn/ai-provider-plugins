@@ -1,0 +1,46 @@
+<!doctype html>
+<!-- The marketplace's QR relay page: a plugin that has a scannable image but
+     no page of its own to show it (Doubao Work's passport mints the QR as a
+     bare PNG) hands it over in the URL fragment — which never leaves the
+     browser — and this page paints it. Served from the CDN as static bytes;
+     it fetches nothing and tracks nothing. -->
+<html lang="zh">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>扫码登录 · Scan to sign in</title>
+<style>
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center;
+         background: #f7f8fa; font-family: system-ui, -apple-system, sans-serif; }
+  .card { background: #fff; border-radius: 16px; padding: 28px 32px;
+          box-shadow: 0 4px 24px rgba(20, 26, 51, .08); text-align: center; }
+  img { display: block; width: min(70vw, 360px); height: auto;
+        image-rendering: pixelated; background: #fff; }
+  h1 { font-size: 17px; margin: 0 0 4px; color: #1f2329; font-weight: 600; }
+  p { font-size: 13px; color: #646a73; margin: 6px 0 18px; line-height: 1.6; }
+  #err { color: #d83931; display: none; }
+</style>
+<div class="card">
+  <h1>扫码登录</h1>
+  <p>打开豆包 App，点「扫一扫」扫描这个二维码<br>Open the Doubao app and scan this code</p>
+  <img id="qr" alt="登录二维码">
+  <p id="err"></p>
+</div>
+<script>
+  const raw = location.hash.slice(1);
+  const img = document.getElementById('qr');
+  const err = document.getElementById('err');
+  if (!raw) {
+    img.remove();
+    err.style.display = 'block';
+    err.textContent = '链接缺少二维码（No QR payload in the link）';
+  } else {
+    const b64 = decodeURIComponent(raw);
+    img.src = b64.startsWith('data:') ? b64 : 'data:image/png;base64,' + b64;
+    img.onerror = () => {
+      img.remove();
+      err.style.display = 'block';
+      err.textContent = '二维码无法显示（The QR payload is not a valid image）';
+    };
+  }
+</script>
