@@ -2067,6 +2067,74 @@
       ]
     },
     {
+      "id": "mistral",
+      "version": "0.1.0",
+      "type": "integration",
+      "name": {
+        "zh": "Mistral AI",
+        "en": "Mistral AI"
+      },
+      "description": {
+        "zh": "Mistral 第一方 API：OpenAI / Responses 双协议、向量、模型目录与 API / Vibe 双额度。",
+        "en": "Mistral's first-party API: OpenAI and Responses arms, embeddings, model catalog and the API and Vibe monthly budgets."
+      },
+      "publisher": "veildawn",
+      "provider_name": "mistral",
+      "protocols": [
+        "openai",
+        "responses"
+      ],
+      "capabilities": [
+        "provider",
+        "wasm"
+      ],
+      "min_app_version": "0.19.0",
+      "updated_at": "2026-11-13",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "min_app_version": "0.19.0"
+        }
+      ],
+      "key_id": "ed25519:a2b36ebc3a600442",
+      "module_sha256": "2a42357a0932443e72280d709358e632633c9a8d2fba8740abe1f7c73e796ac6",
+      "module_bytes": 198449
+    },
+    {
+      "id": "mistral-vibe",
+      "version": "0.1.0",
+      "type": "integration",
+      "name": {
+        "zh": "Mistral Vibe Code",
+        "en": "Mistral Vibe Code"
+      },
+      "description": {
+        "zh": "把 Vibe Code 的 Mistral 登录态接入网关：浏览器 OIDC 授权后，OpenAI / Responses 与 API / Vibe 双额度都按账号池化，续期自动完成。",
+        "en": "Pools a Vibe Code sign-in: browser OIDC authorization, then OpenAI and Responses traffic plus the API and Vibe monthly budgets, with automatic token refresh."
+      },
+      "publisher": "veildawn",
+      "provider_name": "mistral-vibe",
+      "protocols": [
+        "openai",
+        "responses"
+      ],
+      "capabilities": [
+        "provider",
+        "wasm"
+      ],
+      "min_app_version": "0.19.0",
+      "updated_at": "2026-11-13",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "min_app_version": "0.19.0"
+        }
+      ],
+      "key_id": "ed25519:a2b36ebc3a600442",
+      "module_sha256": "b6348af73759d5003591497adefe88ff09d1f9a00f125b657bdf030a2f209317",
+      "module_bytes": 225797
+    },
+    {
       "id": "ollama",
       "version": "1.5.2",
       "type": "integration",
