@@ -2068,7 +2068,7 @@
     },
     {
       "id": "mistral",
-      "version": "0.1.2",
+      "version": "0.2.0",
       "type": "integration",
       "name": {
         "zh": "Mistral AI",
@@ -2092,6 +2092,10 @@
       "updated_at": "2026-11-13",
       "versions": [
         {
+          "version": "0.2.0",
+          "min_app_version": "0.19.0"
+        },
+        {
           "version": "0.1.2",
           "min_app_version": "0.19.0"
         },
@@ -2105,20 +2109,20 @@
         }
       ],
       "key_id": "ed25519:a2b36ebc3a600442",
-      "module_sha256": "991855ae77ffb7c85fe7a2bde8614f0bacceefc41935062efef2e4f833e51da5",
-      "module_bytes": 198531
+      "module_sha256": "5afcd0ad7d267d164f3a807da815e775ce3bb4e4161fc96f83bd32297625630c",
+      "module_bytes": 198455
     },
     {
       "id": "mistral-vibe",
-      "version": "0.1.2",
+      "version": "0.2.0",
       "type": "integration",
       "name": {
         "zh": "Mistral Vibe Code",
         "en": "Mistral Vibe Code"
       },
       "description": {
-        "zh": "把 Vibe Code 的 Mistral 登录态接入网关：浏览器 OIDC 授权后，OpenAI / Responses 与 API / Vibe 双额度都按账号池化，续期自动完成。",
-        "en": "Pools a Vibe Code sign-in: browser OIDC authorization, then OpenAI and Responses traffic plus the API and Vibe monthly budgets, with automatic token refresh."
+        "zh": "把 Vibe Code 的 Mistral 登录态接入网关：浏览器登录由控制台完成，随后换取 API Key，OpenAI / Responses 与 API / Vibe 双额度都按账号池化。",
+        "en": "Pools a Vibe Code sign-in: the console completes the browser flow and mints an API key, then OpenAI and Responses traffic plus the API and Vibe monthly budgets run from the account pool."
       },
       "publisher": "veildawn",
       "provider_name": "mistral-vibe",
@@ -2134,6 +2138,10 @@
       "updated_at": "2026-11-13",
       "versions": [
         {
+          "version": "0.2.0",
+          "min_app_version": "0.19.0"
+        },
+        {
           "version": "0.1.2",
           "min_app_version": "0.19.0"
         },
@@ -2147,8 +2155,8 @@
         }
       ],
       "key_id": "ed25519:a2b36ebc3a600442",
-      "module_sha256": "af35dccb5fd6f4df809c28882039f3dbd29eea71ffd0340bf40243bc8023dcaa",
-      "module_bytes": 225845
+      "module_sha256": "13fbde65a30a2eeb79a4cda704becf1a9ae4dd31c49d708c55a1befe00c29c09",
+      "module_bytes": 224596
     },
     {
       "id": "ollama",
