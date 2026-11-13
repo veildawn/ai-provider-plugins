@@ -2068,7 +2068,7 @@
     },
     {
       "id": "mistral",
-      "version": "0.2.1",
+      "version": "0.2.2",
       "type": "integration",
       "name": {
         "zh": "Mistral AI",
@@ -2092,6 +2092,10 @@
       "updated_at": "2026-11-13",
       "versions": [
         {
+          "version": "0.2.2",
+          "min_app_version": "0.19.0"
+        },
+        {
           "version": "0.2.1",
           "min_app_version": "0.19.0"
         },
@@ -2113,12 +2117,12 @@
         }
       ],
       "key_id": "ed25519:a2b36ebc3a600442",
-      "module_sha256": "7c22c2fb5a7406fa4e472b2484550f7e3a65e27952ed4ea1580b8e22fc73c044",
-      "module_bytes": 205726
+      "module_sha256": "dd09693ea3665bc7ca1430228a99524d91f4260cb371783056b724f9aca9fa82",
+      "module_bytes": 217076
     },
     {
       "id": "mistral-vibe",
-      "version": "0.2.1",
+      "version": "0.2.2",
       "type": "integration",
       "name": {
         "zh": "Mistral Vibe Code",
@@ -2142,6 +2146,10 @@
       "updated_at": "2026-11-13",
       "versions": [
         {
+          "version": "0.2.2",
+          "min_app_version": "0.19.0"
+        },
+        {
           "version": "0.2.1",
           "min_app_version": "0.19.0"
         },
@@ -2163,8 +2171,8 @@
         }
       ],
       "key_id": "ed25519:a2b36ebc3a600442",
-      "module_sha256": "4e0893267d97e42bfc1290dcb39b488a029cfa035d3af29cb1dbbafccf023d0c",
-      "module_bytes": 231727
+      "module_sha256": "4910b48aee72a578b4a1600a0334de37f9dbe9a1e7230d822f191a61521497fb",
+      "module_bytes": 243023
     },
     {
       "id": "ollama",
