@@ -2068,7 +2068,7 @@
     },
     {
       "id": "mistral",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "type": "integration",
       "name": {
         "zh": "Mistral AI",
@@ -2092,6 +2092,10 @@
       "updated_at": "2026-11-13",
       "versions": [
         {
+          "version": "0.1.1",
+          "min_app_version": "0.19.0"
+        },
+        {
           "version": "0.1.0",
           "min_app_version": "0.19.0"
         }
@@ -2102,7 +2106,7 @@
     },
     {
       "id": "mistral-vibe",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "type": "integration",
       "name": {
         "zh": "Mistral Vibe Code",
@@ -2125,6 +2129,10 @@
       "min_app_version": "0.19.0",
       "updated_at": "2026-11-13",
       "versions": [
+        {
+          "version": "0.1.1",
+          "min_app_version": "0.19.0"
+        },
         {
           "version": "0.1.0",
           "min_app_version": "0.19.0"

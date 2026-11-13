@@ -107,14 +107,12 @@
           },
           {
             "cache_read_per_1m": 0.015,
-            "completion_per_1m": 0,
             "context_window": 8192,
             "id": "codestral-embed",
             "prompt_per_1m": 0.15
           },
           {
             "cache_read_per_1m": 0.015,
-            "completion_per_1m": 0,
             "context_window": 8192,
             "id": "codestral-embed-2505",
             "prompt_per_1m": 0.15
@@ -267,15 +265,11 @@
             "prompt_per_1m": 0.3
           },
           {
-            "cache_read_per_1m": 0,
-            "completion_per_1m": 0,
             "context_window": 8192,
             "id": "mistral-embed",
             "prompt_per_1m": 0.1
           },
           {
-            "cache_read_per_1m": 0,
-            "completion_per_1m": 0,
             "context_window": 8192,
             "id": "mistral-embed-2312",
             "prompt_per_1m": 0.1
@@ -484,8 +478,8 @@
   "signature": {
     "alg": "ed25519",
     "key_id": "ed25519:a2b36ebc3a600442",
-    "sig": "op4/PCkdi6Y4q2g7BOg/X3ufcyzdaqs5Z0STr3iN6kSawnWGjpKzSi1AIHJVf+xNO3ZSFuwfgdimR4eBz6/MDQ=="
+    "sig": "HPysq39F8dnsMAblWG40/UFL2JrHSZT0lWRDPhVcQYJm11Wy6YYo7SkuftJ2LDzeaGfMm1aeRGv2yKB08HslAQ=="
   },
   "type": "integration",
-  "version": "0.1.0"
+  "version": "0.1.1"
 }
