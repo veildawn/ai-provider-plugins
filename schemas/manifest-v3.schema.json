@@ -1518,7 +1518,8 @@
             "password",
             "textarea",
             "select",
-            "json_file"
+            "json_file",
+            "cascader"
           ]
         },
         "required": {
@@ -1552,6 +1553,13 @@
         },
         "label": {
           "$ref": "#/$defs/text"
+        },
+        "children": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/account_field_option"
+          }
         }
       }
     },
