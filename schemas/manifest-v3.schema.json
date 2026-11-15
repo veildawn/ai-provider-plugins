@@ -1925,6 +1925,18 @@
         },
         "split_image_generations": {
           "type": "boolean"
+        },
+        "network_profile": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "tls": {
+              "type": "object"
+            },
+            "http2": {
+              "type": "object"
+            }
+          }
         }
       }
     },
@@ -1945,7 +1957,7 @@
         "runtime": {
           "enum": [
             "jobs@1",
-            "wasm@2"
+            "wasm@3"
           ]
         },
         "data": {
