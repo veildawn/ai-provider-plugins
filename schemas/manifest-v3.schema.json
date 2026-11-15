@@ -1517,7 +1517,8 @@
             "text",
             "password",
             "textarea",
-            "select"
+            "select",
+            "json_file"
           ]
         },
         "required": {
